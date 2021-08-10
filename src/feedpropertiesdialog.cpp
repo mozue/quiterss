@@ -120,16 +120,14 @@ QWidget *FeedPropertiesDialog::createGeneralTab()
   displayOnStartup = new QCheckBox(tr("Display in new tab on startup"));
   duplicateNewsMode_ = new QCheckBox(tr("Automatically delete duplicate news"));
 
-  QHBoxLayout *layoutGeneralHomepage = new QHBoxLayout();
-  labelHomepage = new QLabel();
-  labelHomepage->setOpenExternalLinks(true);
-  layoutGeneralHomepage->addWidget(labelHomepageCapt);
-  layoutGeneralHomepage->addWidget(labelHomepage, 1);
+  editHomePage = new LineEdit();
 
   layoutGeneralGrid->addWidget(labelTitleCapt, 0, 0);
   layoutGeneralGrid->addLayout(layoutGeneralTitle, 0 ,1);
   layoutGeneralGrid->addWidget(labelURLCapt, 1, 0);
   layoutGeneralGrid->addWidget(editURL, 1, 1);
+  layoutGeneralGrid->addWidget(labelHomepageCapt, 2, 0);
+  layoutGeneralGrid->addWidget(editHomePage, 2, 1);
 
   addSingleNewsAnyDateOn_ = new QCheckBox(tr("Add news with any date into the database"));
   addSingleNewsAnyDateOn_->setCheckable(true);
@@ -153,7 +151,6 @@ QWidget *FeedPropertiesDialog::createGeneralTab()
   tabLayout->setMargin(10);
   tabLayout->setSpacing(5);
   tabLayout->addLayout(layoutGeneralGrid);
-  tabLayout->addLayout(layoutGeneralHomepage);
   tabLayout->addSpacing(15);
   tabLayout->addWidget(disableUpdate_);
   tabLayout->addLayout(updateFeedsLayout);
@@ -185,7 +182,7 @@ QWidget *FeedPropertiesDialog::createGeneralTab()
     labelURLCapt->hide();
     editURL->hide();
     labelHomepageCapt->hide();
-    labelHomepage->hide();
+    editHomePage->hide();
     starredOn_->hide();
     duplicateNewsMode_->hide();
     addSingleNewsAnyDateOn_->hide();
@@ -395,7 +392,7 @@ QWidget *FeedPropertiesDialog::createStatusTab()
   editURL->setText(feedProperties.general.url);
   editURL->selectAll();
   editURL->setFocus();
-  labelHomepage->setText(QString("<a href='%1'>%1</a>").arg(feedProperties.general.homepage));
+  editHomePage->setText(feedProperties.general.homepage);
   selectIconButton_->setIcon(windowIcon());
 
   updateEnable_->setChecked(feedProperties.general.updateEnable);
@@ -537,6 +534,7 @@ FEED_PROPERTIES FeedPropertiesDialog::getFeedProperties()
 {
   feedProperties.general.text = editTitle->text();
   feedProperties.general.url = editURL->text();
+  feedProperties.general.homepage = editHomePage->text();
 
   feedProperties.general.disableUpdate = disableUpdate_->isChecked();
   feedProperties.general.updateEnable = updateEnable_->isChecked();

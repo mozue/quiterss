@@ -155,7 +155,7 @@ private:
   // Tab "General"
   LineEdit *editURL; //!< Feed URL
   LineEdit *editTitle; //!< Feed title
-  QLabel *labelHomepage; //!< Link to feed's homepage
+  LineEdit *editHomePage; //!< Feed home page
   QToolButton *selectIconButton_;
   QCheckBox *disableUpdate_;
   QCheckBox *updateEnable_;

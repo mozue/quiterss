@@ -5456,13 +5456,14 @@ void MainWindow::showFeedPropertiesDlg()
 
   index = feedsModel_->indexById(feedId);
 
-  q.prepare("UPDATE feeds SET text = ?, xmlUrl = ?, displayOnStartup = ?, "
+  q.prepare("UPDATE feeds SET text = ?, xmlUrl = ?, htmlUrl = ?, displayOnStartup = ?, "
             "displayEmbeddedImages = ?, displayNews = ?, layoutDirection = ?, "
             "label = ?, duplicateNewsMode = ?, addSingleNewsAnyDateOn = ?, avoidedOldSingleNewsDateOn = ?, avoidedOldSingleNewsDate = ?,"
             " authentication = ?, disableUpdate = ?, "
             "javaScriptEnable = ? WHERE id == ?");
   q.addBindValue(properties.general.text);
   q.addBindValue(properties.general.url);
+  q.addBindValue(properties.general.homepage);
   q.addBindValue(properties.general.displayOnStartup);
   q.addBindValue(properties.display.displayEmbeddedImages);
   q.addBindValue(properties.display.displayNews);
@@ -5573,6 +5574,7 @@ void MainWindow::showFeedPropertiesDlg()
 
   QPersistentModelIndex indexText    = feedsModel_->indexSibling(index, "text");
   QPersistentModelIndex indexUrl     = feedsModel_->indexSibling(index, "xmlUrl");
+  QPersistentModelIndex indexHtmlUrl = feedsModel_->indexSibling(index, "htmlUrl");
   QPersistentModelIndex indexStartup = feedsModel_->indexSibling(index, "displayOnStartup");
   QModelIndex indexImages  = feedsModel_->indexSibling(index, "displayEmbeddedImages");
   QModelIndex indexNews    = feedsModel_->indexSibling(index, "displayNews");
@@ -5587,6 +5589,7 @@ void MainWindow::showFeedPropertiesDlg()
   QModelIndex indexJavaScript = feedsModel_->indexSibling(index, "javaScriptEnable");
   feedsModel_->setData(indexText, properties.general.text);
   feedsModel_->setData(indexUrl, properties.general.url);
+  feedsModel_->setData(indexHtmlUrl, properties.general.homepage);
   feedsModel_->setData(indexStartup, properties.general.displayOnStartup);
   feedsModel_->setData(indexImages, properties.display.displayEmbeddedImages);
   feedsModel_->setData(indexNews, properties.display.displayNews);
