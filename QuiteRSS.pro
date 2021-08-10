@@ -213,6 +213,7 @@ CONFIG(debug, debug|release) {
   BUILD_DIR = $$OUT_PWD/debug
 } else {
   BUILD_DIR = $$OUT_PWD/release
+  CONFIG += optimize_full
 #  DEFINES += QT_NO_DEBUG_OUTPUT
 }
 
