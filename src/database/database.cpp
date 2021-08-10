@@ -253,8 +253,10 @@ void Database::setPragma(QSqlDatabase &db)
 //  q.exec("PRAGMA journal_mode = MEMORY");
 //  q.exec("PRAGMA temp_store = MEMORY");
 
-  q.exec("PRAGMA page_size = 4096");
-  q.exec("PRAGMA cache_size = 16384");
+  q.exec("PRAGMA page_size = 32768");
+  q.exec("PRAGMA cache_size = 131072");
+  q.exec("PRAGMA mmap_size = 4294967296");
+
   q.finish();
 }
 
