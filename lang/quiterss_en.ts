@@ -2894,6 +2894,11 @@ Ancient news could reappear</source>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/newstabwidget.cpp" line="1814"/>
+        <source>Open Homepage Feed</source>
+        <translation type="unfinished"></translation>
+    </message> 
 </context>
 <context>
     <name>NotificationWidget</name>

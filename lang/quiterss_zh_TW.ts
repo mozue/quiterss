@@ -2895,6 +2895,11 @@ Ancient news could reappear</source>
         <source>Delete</source>
         <translation>刪除</translation>
     </message>
+    <message>
+        <location filename="../src/newstabwidget.cpp" line="1814"/>
+        <source>Open Homepage Feed</source>
+        <translation>開啟新聞源網站首頁</translation>
+    </message>
 </context>
 <context>
     <name>NotificationWidget</name>

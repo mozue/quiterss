@@ -1808,12 +1808,16 @@ void NewsTabWidget::loadNewspaper(int refresh)
                                           "<a href=\"quiterss://open.browser.ui?#%1\" title='%2'>"
                                           "<img class='quiterss-img' id=\"openBrowser%1\" src=\"qrc:/images/openBrowser\"'/></a></div>").
           arg(newsId).arg(tr("Open News in External Browser"));
+      QString openHomeAction = QString("<div class=\"open-home\">"
+                                       "<a href=\"quiterss://open.home.ui?#%1\" title='%2'>"
+                                       "<img class='quiterss-img' id=\"openHome%1\" src=\"qrc:/images/homePageNewspaper\"'/></a></div>").
+          arg(newsId).arg(tr("Open Homepage Feed"));
       QString deleteAction = QString("<div class=\"delete-action\">"
                                      "<a href=\"quiterss://delete.action.ui?#%1\" title='%2'>"
                                      "<img class='quiterss-img' id=\"deleteAction%1\" src=\"qrc:/images/delete\"/></a></div>").
           arg(newsId).arg(tr("Delete"));
       QString actionNews = starAction % labelsMenu % shareMenu % openBrowserAction %
-          deleteAction;
+          openHomeAction % deleteAction;
 
       QString border = "1";
       if (idx + 1 == newsModel_->rowCount())
@@ -2957,6 +2961,12 @@ void NewsTabWidget::actionNewspaper(QUrl url)
       if (!newsItem.isNull()) {
         newsItem.removeFromDocument();
       }
+    } else if (url.host() == "open.home.ui") {
+      QString feedId = newsModel_->dataField(indexList.first().row(), "feedId").toString();
+      QModelIndex feedIndex = feedsModel_->indexById(feedId.toInt());
+      QString homePage = feedsModel_->dataField(feedIndex, "htmlUrl").toString();
+      QDesktopServices::openUrl(homePage);
+      qWarning() << homePage;
     }
   }
 }
