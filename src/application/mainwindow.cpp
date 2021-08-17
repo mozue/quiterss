@@ -8009,23 +8009,10 @@ void MainWindow::slotOpenHomeFeed()
 {
   QModelIndex index = feedsView_->currentIndex();
   if (!index.isValid()) return;
+  index = feedsProxyModel_->mapToSource(index);
 
-  if (feedsView_->isFolder(index)) {
-    index = feedsProxyModel_->mapToSource(index);
-    int feedId = feedsModel_->idByIndex(index);
-
-    QList<int> list = UpdateObject::getIdFeedsInList(db_, feedId);
-    foreach (int id, list) {
-      index = feedsModel_->indexById(id);
-
-      QString homePage = feedsModel_->dataField(index, "htmlUrl").toString();
-      QDesktopServices::openUrl(homePage);
-    }
-  } else {
-    index = feedsProxyModel_->mapToSource(index);
-    QString homePage = feedsModel_->dataField(index, "htmlUrl").toString();
-    QDesktopServices::openUrl(homePage);
-  }
+  QString homePage = feedsModel_->dataField(index, "htmlUrl").toString();
+  QDesktopServices::openUrl(homePage);
 }
 
 /** @brief Sort feed and folders by title
