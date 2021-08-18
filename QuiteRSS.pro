@@ -261,9 +261,12 @@ os2 {
   RC_FILE = quiterss_os2.rc
 }
 
-os2|win32 {
+os2 {
   SOURCES += src/network/cabundleupdater.cpp
   HEADERS += src/network/cabundleupdater.h
+}
+
+os2|win32 {
   RESOURCES += data/ca-bundle.qrc
 }
 
