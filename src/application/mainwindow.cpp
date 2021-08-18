@@ -3089,7 +3089,7 @@ void MainWindow::slotUpdateFeed(int feedId, bool changed, int newCount, bool fin
   // Action after new news has arrived: tray, sound
   if (!isActiveWindow() && (newCount > 0) &&
       (behaviorIconTray_ == CHANGE_ICON_TRAY)) {
-    traySystem->setIcon(QIcon(":/images/quiterss128_NewNews"));
+    traySystem->setIcon(QIcon(":/images/NewNews"));
   }
   emit signalRefreshInfoTray();
   if (newCount > 0)
