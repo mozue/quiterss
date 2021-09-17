@@ -18,8 +18,7 @@ jobs:
       - uses: msys2/setup-msys2@v2
         with:
           install: git make mingw-w64-x86_64-toolchain mingw-w64-x86_64-qt5 mingw-w64-x86_64-qtwebkit
-      - run: gcc --version
       - run: qmake
       - run: sed 's/windres -i/windres --codepage=65001 -i/g' -i Makefile.Release
-      - run: make release -j32
+      - run: make release
 
