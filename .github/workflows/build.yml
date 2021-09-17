@@ -1,11 +1,9 @@
-name: Example CMake
+name: Build with gcc in windows
 
 on:
   push:
-  pull_request:
-  schedule:
-    - cron: '0 0 * * 3'
-  workflow_dispatch:
+    branches:
+      - GA
 
 jobs:
   build:
@@ -21,4 +19,7 @@ jobs:
       - run: qmake
       - run: sed 's/windres -i/windres --codepage=65001 -i/g' -i Makefile.Release
       - run: make release
-
+      - run: la -al release/target/
+      - run: bash -c 'path=$(dirname "release/target/QuiteRSS.exe"); list=$(ldd.exe $1 | grep mingw | awk '{split($0,a," "); print a[3]}'); IFS=$'\n' read -rd '' -a array <<< $list; for element in "${array[@]}";do cp "$element" $path/ done;'
+      - run: windeployqt --no-opengl-sw --no-angle --no-system-d3d-compiler --no-translations --force release/target/QuiteRSS.exe
+      - run: la -al release/target/
