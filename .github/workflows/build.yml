@@ -25,34 +25,27 @@ jobs:
       - name: Deploy Qt
         run: |
           windeployqt --no-opengl-sw --no-angle --no-system-d3d-compiler --no-translations --force ./release/target/QuiteRSS.exe
-          ls -al ./release/target/
-      - name: Deploy Mingw
+      - name: Deploy mingw
         run: |
           cp /mingw64/bin/libcrypto-1_1-x64.dll ./release/target/
           cp /mingw64/bin/libssl-1_1-x64.dll ./release/target/
           ldd ./release/target/QuiteRSS.exe | grep "=> /" | grep mingw | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./release/target/
-          ls -al ./release/target/
-      - name: Deploy Strip
+      - name: Deploy strip
         run: |
           for filename in ./release/target/*.exe; do strip "$filename"; done
           for filename in ./release/target/*.dll; do strip "$filename"; done
           for filename in ./release/target/**/*.dll; do strip "$filename"; done
-          ls -al ./release/target/
-      - name: Deploy Resource
+      - name: Deploy resource
         run: |
           cp -rvf ./sound ./release/target/
           cp -rvf ./style ./release/target/
           touch release/target/portable.dat
-          ls -al ./release/target/
-      - name: Deploy UPX
+      - name: Deploy upx
         run: |
            upx --best  --brute  --ultra-brute -v release/target/QuiteRSS.exe
-           ls -al ./release/target/
-      - name: Deploy 7z Archive
+      - name: Deploy 7z archive
         run: |
           7z a -mx=9 QuiteRss-gcc-x64.7z ./release/target/*
-          ls -al .
-
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
