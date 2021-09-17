@@ -2,8 +2,6 @@ name: Build with gcc in windows
 
 on:
   push:
-    branches:
-      - GA
 
 jobs:
   build:
@@ -17,23 +15,46 @@ jobs:
       - name: Install toolchain and Qt libraries
         uses: msys2/setup-msys2@v2
         with:
-          install: git make mingw-w64-x86_64-toolchain mingw-w64-x86_64-qt5 mingw-w64-x86_64-qtwebkit
+          install: git make mingw-w64-x86_64-toolchain mingw-w64-x86_64-qt5 mingw-w64-x86_64-qtwebkit upx p7zip
       - name: Configure
         run: |
           qmake
           sed 's/windres -i/windres --codepage=65001 -i/g' -i Makefile.Release
       - name: Build
         run: make release
-      - name: Deploy
+      - name: Deploy Qt
         run: |
-          ls -al ./release/target/
-          ldd ./release/target/QuiteRSS.exe | grep "=> /" | grep mingw | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./release/target/
-          ls -al ./release/target/
           windeployqt --no-opengl-sw --no-angle --no-system-d3d-compiler --no-translations --force ./release/target/QuiteRSS.exe
           ls -al ./release/target/
+      - name: Deploy Mingw
+        run: |
           cp /mingw64/bin/libcrypto-1_1-x64.dll ./release/target/
           cp /mingw64/bin/libssl-1_1-x64.dll ./release/target/
+          ldd ./release/target/QuiteRSS.exe | grep "=> /" | grep mingw | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./release/target/
+          ls -al ./release/target/
+      - name: Deploy Strip
+        run: |
           for filename in ./release/target/*.exe; do strip "$filename"; done
           for filename in ./release/target/*.dll; do strip "$filename"; done
           for filename in ./release/target/**/*.dll; do strip "$filename"; done
           ls -al ./release/target/
+      - name: Deploy Resource
+        run: |
+          cp -rvf ./sound ./release/target/
+          cp -rvf ./style ./release/target/
+          touch release/target/portable.dat
+          ls -al ./release/target/
+      - name: Deploy UPX
+        run: |
+           upx --best  --brute  --ultra-brute -v release/target/QuiteRSS.exe
+           ls -al ./release/target/
+      - name: Deploy 7z Archive
+        run: |
+          7z a -mx=9 QuiteRss-gcc-x64.7z ./release/target/*
+          ls -al .
+
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: QuiteRss-gcc-x64.7z
+          path: QuiteRss-gcc-x64.7z
