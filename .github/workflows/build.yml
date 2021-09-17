@@ -26,7 +26,14 @@ jobs:
         run: make release
       - name: Deploy
         run: |
-          ls -al release/target/
-          bash -c 'path=$(dirname "release/target/QuiteRSS.exe"); list=$(ldd.exe $1 | grep mingw | awk '{split($0,a," "); print a[3]}'); IFS=$'\n' read -rd '' -a array <<< $list; for element in "${array[@]}";do cp "$element" $path/ done;'
-          windeployqt --no-opengl-sw --no-angle --no-system-d3d-compiler --no-translations --force release/target/QuiteRSS.exe
-          ls -al release/target/
+          ls -al ./release/target/
+          ldd ./release/target/QuiteRSS.exe | grep "=> /" | grep mingw | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./release/target/
+          ls -al ./release/target/
+          windeployqt --no-opengl-sw --no-angle --no-system-d3d-compiler --no-translations --force ./release/target/QuiteRSS.exe
+          ls -al ./release/target/
+          cp /mingw64/bin/libcrypto-1_1-x64.dll ./release/target/
+          cp /mingw64/bin/libssl-1_1-x64.dll ./release/target/
+          for filename in ./release/target/*.exe; do strip "$filename"; done
+          for filename in ./release/target/*.dll; do strip "$filename"; done
+          for filename in ./release/target/**/*.dll; do strip "$filename"; done
+          ls -al ./release/target/
