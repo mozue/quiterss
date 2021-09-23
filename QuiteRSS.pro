@@ -248,6 +248,15 @@ win32-g++ {
           libpsapi
 }
 
+*-g++* {
+  CONFIG(debug, debug|release) {
+  } else {
+    QMAKE_CXXFLAGS += -pipe -flto
+    QMAKE_CFLAGS += -pipe
+    QMAKE_LFLAGS += -flto
+  }
+}
+
 win32-msvc* {
   LIBS += -lpsapi
   LIBS += -lShell32
@@ -291,7 +300,7 @@ unix:!mac {
 
   desktop.files = quiterss.desktop
   desktop.path =  $$quote($$PREFIX/share/applications)
-  
+
   appdata.files = quiterss.appdata.xml
   appdata.path =  $$quote($$PREFIX/share/metainfo)
 
