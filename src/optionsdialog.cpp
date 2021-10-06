@@ -303,7 +303,9 @@ void OptionsDialog::createGeneralWidget()
   showCloseButtonTab_ = new QCheckBox(tr("Show close button on tab"));
 
   updateCheckEnabled_ = new QCheckBox(tr("Automatically check for updates"));
+#ifdef USE_ANALYTICS
   statisticsEnabled_ = new QCheckBox(tr("Help improve QuiteRSS by sending usage information"));
+#endif
   storeDBMemory_ = new QCheckBox(tr("Store a DB in memory (requires program restart)"));
   storeDBMemory_->setChecked(false);
   saveDBMemFileInterval_ = new QSpinBox();
@@ -349,7 +351,9 @@ void OptionsDialog::createGeneralWidget()
 #endif
 
   generalLayout->addWidget(updateCheckEnabled_);
+#ifdef USE_ANALYTICS
   generalLayout->addWidget(statisticsEnabled_);
+#endif
   generalLayout->addWidget(storeDBMemory_);
   generalLayout->addWidget(saveDBMemFileWidget);
   generalLayout->addStretch(1);

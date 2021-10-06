@@ -66,8 +66,10 @@ MainWindow::MainWindow(QWidget *parent)
   setWindowTitle("QuiteRSS");
   setContextMenuPolicy(Qt::CustomContextMenu);
 
+#ifdef USE_ANALYTICS
   if (mainApp->analytics())
     mainApp->analytics()->sendScreenview("MainWindow");
+#endif
 
   db_ = QSqlDatabase::database();
 
@@ -3353,8 +3355,10 @@ void MainWindow::showOptionDlg(int index)
 
   bool updateCheckEnabled = settings.value("Settings/updateCheckEnabled", true).toBool();
   optionsDialog_->updateCheckEnabled_->setChecked(updateCheckEnabled);
+#ifdef USE_ANALYTICS
   bool statisticsEnabled = settings.value("Settings/statisticsEnabled2", true).toBool();
   optionsDialog_->statisticsEnabled_->setChecked(statisticsEnabled);
+#endif
 
   bool storeDBMemory_ = settings.value("Settings/storeDBMemory", true).toBool();
   optionsDialog_->storeDBMemory_->setChecked(storeDBMemory_);
@@ -3763,8 +3767,10 @@ void MainWindow::showOptionDlg(int index)
 
   updateCheckEnabled = optionsDialog_->updateCheckEnabled_->isChecked();
   settings.setValue("Settings/updateCheckEnabled", updateCheckEnabled);
+#ifdef USE_ANALYTICS
   statisticsEnabled = optionsDialog_->statisticsEnabled_->isChecked();
   settings.setValue("Settings/statisticsEnabled2", statisticsEnabled);
+#endif
 
   storeDBMemory_ = optionsDialog_->storeDBMemory_->isChecked();
   settings.setValue("Settings/storeDBMemory", storeDBMemory_);

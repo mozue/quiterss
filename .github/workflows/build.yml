@@ -18,7 +18,7 @@ jobs:
           install: git make mingw-w64-x86_64-toolchain mingw-w64-x86_64-qt5 mingw-w64-x86_64-qtwebkit upx p7zip
       - name: Configure
         run: |
-          qmake
+          qmake DISABLE_ANALYTICS=yes
           sed 's/windres -i/windres --codepage=65001 -i/g' -i Makefile.Release
       - name: Build
         run: make release
