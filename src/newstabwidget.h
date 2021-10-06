@@ -103,7 +103,9 @@ public:
 
   void setTextTab(const QString &text);
 
+#ifdef USE_SHARENEWS
   void slotShareNews(QAction *action);
+#endif
 
   /*! \brief Convert \a countString to unreadCount depending on \a type_
    * \param countString from categories tree

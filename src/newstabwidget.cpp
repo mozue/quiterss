@@ -322,7 +322,9 @@ void NewsTabWidget::showContextMenuNews(const QPoint &pos)
   menu.addSeparator();
   menu.addAction(mainWindow_->markStarAct_);
   menu.addAction(mainWindow_->newsLabelMenuAction_);
+#ifdef USE_SHARENEWS
   menu.addAction(mainWindow_->shareMenuAct_);
+#endif
   menu.addAction(mainWindow_->copyLinkAct_);
   menu.addSeparator();
   menu.addAction(mainWindow_->updateFeedAct_);
@@ -375,7 +377,9 @@ void NewsTabWidget::createWebWidget()
   webToolBar_->addAction(webAction);
   webToolBar_->addSeparator();
 
+#ifdef USE_SHARENEWS
   webToolBar_->addAction(mainApp->mainWindow()->shareMenuAct_);
+#endif
 
   webExternalBrowserAct_ = new QAction(this);
   webExternalBrowserAct_->setIcon(QIcon(":/images/openBrowser"));
@@ -1800,10 +1804,12 @@ void NewsTabWidget::loadNewspaper(int refresh)
                                    "<a href=\"quiterss://labels.menu.ui?#%1\" title='%2'>"
                                    "<img class='quiterss-img' id=\"labelsMenu%1\" src=\"qrc:/images/label_5\"/></a></div>").
           arg(newsId).arg(tr("Label"));
+#ifdef USE_SHARENEWS
       QString shareMenu = QString("<div class=\"share-menu\">"
                                   "<a href=\"quiterss://share.menu.ui?#%1\" title='%2'>"
                                   "<img class='quiterss-img' id=\"shareMenu%1\" src=\"qrc:/images/images/share.png\"/></a></div>").
           arg(newsId).arg(tr("Share"));
+#endif          
       QString openBrowserAction = QString("<div class=\"open-browser\">"
                                           "<a href=\"quiterss://open.browser.ui?#%1\" title='%2'>"
                                           "<img class='quiterss-img' id=\"openBrowser%1\" src=\"qrc:/images/openBrowser\"'/></a></div>").
@@ -1816,7 +1822,11 @@ void NewsTabWidget::loadNewspaper(int refresh)
                                      "<a href=\"quiterss://delete.action.ui?#%1\" title='%2'>"
                                      "<img class='quiterss-img' id=\"deleteAction%1\" src=\"qrc:/images/delete\"/></a></div>").
           arg(newsId).arg(tr("Delete"));
-      QString actionNews = starAction % labelsMenu % shareMenu % openBrowserAction %
+      QString actionNews = starAction % labelsMenu %
+#ifdef USE_SHARENEWS      
+          shareMenu % 
+#endif
+          openBrowserAction %
           openHomeAction % deleteAction;
 
       QString border = "1";
@@ -2590,6 +2600,7 @@ void NewsTabWidget::setTextTab(const QString &text)
 
 /** @brief Share news
  *----------------------------------------------------------------------------*/
+#ifdef USE_SHARENEWS
 void NewsTabWidget::slotShareNews(QAction *action)
 {
   bool externalApp = false;
@@ -2817,6 +2828,7 @@ void NewsTabWidget::slotShareNews(QAction *action)
     }
   }
 }
+#endif
 //-----------------------------------------------------------------------------
 int NewsTabWidget::getUnreadCount(QString countString)
 {
@@ -2934,12 +2946,14 @@ void NewsTabWidget::actionNewspaper(QUrl url)
             indexList.first(), QItemSelectionModel::Select|QItemSelectionModel::Rows);
       currentNewsIdOld = newsId.toInt();
       mainWindow_->newsLabelMenu_->popup(QCursor::pos());
+#ifdef USE_SHARENEWS
     } else if (url.host() == "share.menu.ui") {
       newsView_->selectionModel()->clearSelection();
       newsView_->selectionModel()->select(
             indexList.first(), QItemSelectionModel::Select|QItemSelectionModel::Rows);
       currentNewsIdOld = newsId.toInt();
       mainWindow_->shareMenu_->popup(QCursor::pos());
+#endif
     } else if (url.host() == "open.browser.ui") {
       QUrl url = QUrl::fromEncoded(getLinkNews(indexList.first().row()).toUtf8());
       if (url.host().isEmpty() || (QUrl(url).host().indexOf('.') == -1)) {
