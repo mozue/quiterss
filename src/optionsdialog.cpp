@@ -302,7 +302,9 @@ void OptionsDialog::createGeneralWidget()
   autocollapseFolder_ = new QCheckBox(tr("Automatically collapse folders"));
   showCloseButtonTab_ = new QCheckBox(tr("Show close button on tab"));
 
+#ifdef USE_UPDATECHECK
   updateCheckEnabled_ = new QCheckBox(tr("Automatically check for updates"));
+#endif
 #ifdef USE_ANALYTICS
   statisticsEnabled_ = new QCheckBox(tr("Help improve QuiteRSS by sending usage information"));
 #endif
@@ -350,7 +352,9 @@ void OptionsDialog::createGeneralWidget()
   generalLayout->addWidget(autoRunEnabled_);
 #endif
 
+#ifdef USE_UPDATECHECK
   generalLayout->addWidget(updateCheckEnabled_);
+#endif
 #ifdef USE_ANALYTICS
   generalLayout->addWidget(statisticsEnabled_);
 #endif

@@ -55,7 +55,9 @@ MainWindow::MainWindow(QWidget *parent)
 #if defined(HAVE_QT5) || defined(HAVE_PHONON)
   , mediaPlayer_(NULL)
 #endif
+#ifdef USE_UPDATECHECK
   , updateAppDialog_(NULL)
+#endif
   , notificationWidget(NULL)
   , feedIdOld_(-2)
   , isStartImportFeed_(false)
@@ -97,7 +99,9 @@ MainWindow::MainWindow(QWidget *parent)
 
   initUpdateFeeds();
 
+#ifdef USE_UPDATECHECK
   QTimer::singleShot(5000, this, SLOT(slotUpdateAppCheck()));
+#endif
 
   connect(this, SIGNAL(signalShowNotification(bool)),
           SLOT(showNotification(bool)), Qt::QueuedConnection);
@@ -153,10 +157,12 @@ void MainWindow::quitApp()
   mainApp->setClosing();
   isMinimizeToTray_ = true;
   disconnect(this);
+#ifdef USE_UPDATECHECK
   if (updateAppDialog_) {
     updateAppDialog_->disconnectObjects();
     updateAppDialog_->deleteLater();
   }
+#endif
   if (optionsDialog_) {
     optionsDialog_->close();
   }
@@ -1095,9 +1101,11 @@ void MainWindow::createActions()
   aboutAct_->setObjectName("AboutAct_");
   connect(aboutAct_, SIGNAL(triggered()), this, SLOT(slotShowAboutDlg()));
 
+#ifdef USE_UPDATECHECK
   updateAppAct_ = new QAction(this);
   updateAppAct_->setObjectName("UpdateApp_");
   connect(updateAppAct_, SIGNAL(triggered()), this, SLOT(slotShowUpdateAppDlg()));
+#endif
 
   reportProblemAct_ = new QAction(this);
   reportProblemAct_->setObjectName("reportProblemAct_");
@@ -1895,7 +1903,9 @@ void MainWindow::createMenu()
   toolsMenu_->addAction(optionsAct_);
 
   helpMenu_ = new QMenu(this);
+#ifdef USE_UPDATECHECK
   helpMenu_->addAction(updateAppAct_);
+#endif
   helpMenu_->addSeparator();
   helpMenu_->addAction(reportProblemAct_);
   helpMenu_->addAction(aboutAct_);
@@ -3362,8 +3372,10 @@ void MainWindow::showOptionDlg(int index)
   bool showCloseButtonTab = settings.value("Settings/showCloseButtonTab", true).toBool();
   optionsDialog_->showCloseButtonTab_->setChecked(showCloseButtonTab);
 
+#ifdef USE_UPDATECHECK
   bool updateCheckEnabled = settings.value("Settings/updateCheckEnabled", true).toBool();
   optionsDialog_->updateCheckEnabled_->setChecked(updateCheckEnabled);
+#endif
 #ifdef USE_ANALYTICS
   bool statisticsEnabled = settings.value("Settings/statisticsEnabled2", true).toBool();
   optionsDialog_->statisticsEnabled_->setChecked(statisticsEnabled);
@@ -3774,8 +3786,10 @@ void MainWindow::showOptionDlg(int index)
 
   pushButtonNull_->setVisible(showToggleFeedsTree_);
 
+#ifdef USE_UPDATECHECK
   updateCheckEnabled = optionsDialog_->updateCheckEnabled_->isChecked();
   settings.setValue("Settings/updateCheckEnabled", updateCheckEnabled);
+#endif
 #ifdef USE_ANALYTICS
   statisticsEnabled = optionsDialog_->statisticsEnabled_->isChecked();
   settings.setValue("Settings/statisticsEnabled2", statisticsEnabled);
@@ -4838,6 +4852,7 @@ void MainWindow::slotNewsFilter()
     }
   }
 }
+#ifdef USE_UPDATECHECK
 // ----------------------------------------------------------------------------
 void MainWindow::slotShowUpdateAppDlg()
 {
@@ -4846,6 +4861,7 @@ void MainWindow::slotShowUpdateAppDlg()
   updateAppDialog->exec();
   delete updateAppDialog;
 }
+#endif
 // ----------------------------------------------------------------------------
 void MainWindow::retranslateStrings()
 {
@@ -4940,7 +4956,9 @@ void MainWindow::retranslateStrings()
   aboutAct_ ->setText(tr("About..."));
   aboutAct_->setToolTip(tr("Show 'About' Dialog"));
 
+#ifdef USE_UPDATECHECK
   updateAppAct_->setText(tr("Check for Updates..."));
+#endif
   reportProblemAct_->setText(tr("Report a Problem..."));
 
   openDescriptionNewsAct_->setText(tr("Open News"));
@@ -6070,6 +6088,7 @@ void MainWindow::showFilterRulesDlg()
 
   showNewsFiltersDlg(true);
 }
+#ifdef USE_UPDATECHECK
 // ----------------------------------------------------------------------------
 void MainWindow::slotUpdateAppCheck()
 {
@@ -6091,6 +6110,7 @@ void MainWindow::slotNewVersion(const QString &newVersion)
             this, SLOT(slotShowUpdateAppDlg()));
   }
 }
+#endif
 
 /** @brief Process Key_Up in feeds tree
  *---------------------------------------------------------------------------*/

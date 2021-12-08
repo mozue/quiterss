@@ -53,6 +53,9 @@ isEmpty(DISABLE_ANALYTICS) {
 isEmpty(DISABLE_SHARENEWS) {
   DEFINES += USE_SHARENEWS
 }
+isEmpty(DISABLE_UPDATECHECK) {
+  DEFINES += USE_UPDATECHECK
+}
 
 unix:!mac:DEFINES += HAVE_X11
 
@@ -66,7 +69,6 @@ HEADERS += \
     src/newsview/newsmodel.h \
     src/newsview/newsheader.h \
     src/aboutdialog.h \
-    src/updateappdialog.h \
     src/feedpropertiesdialog.h \
     src/addfeedwizard.h \
     src/newstabwidget.h \
@@ -136,7 +138,6 @@ SOURCES += \
     src/newsview/newsmodel.cpp \
     src/newsview/newsheader.cpp \
     src/aboutdialog.cpp \
-    src/updateappdialog.cpp \
     src/feedpropertiesdialog.cpp \
     src/addfeedwizard.cpp \
     src/newstabwidget.cpp \
@@ -241,6 +242,10 @@ include(lang/lang.pri)
 include(3rdparty/qupzilla/qupzilla.pri)
 isEmpty(DISABLE_ANALYTICS) {
   include(3rdparty/ganalytics/ganalytics.pri)
+}
+isEmpty(DISABLE_UPDATECHECK) {
+  HEADERS += src/updateappdialog.h
+  SOURCES += src/updateappdialog.cpp
 }
 
 os2|win32|mac {
