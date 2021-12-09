@@ -49,8 +49,10 @@ WebPage::WebPage(QObject *parent)
           this, SLOT(handleUnsupportedContent(QNetworkReply*)));
   connect(this, SIGNAL(downloadRequested(QNetworkRequest)),
           this, SLOT(downloadRequested(QNetworkRequest)));
+#if defined(HAVE_PRINT)
   connect(this, SIGNAL(printRequested(QWebFrame*)),
           mainApp->mainWindow(), SLOT(slotPrint(QWebFrame*)));
+#endif
 #if QT_VERSION >= 0x050905
   connect(this, SIGNAL(fullScreenRequested(QWebFullScreenRequest)),
           this, SLOT(slotFullScreenRequested(QWebFullScreenRequest)));

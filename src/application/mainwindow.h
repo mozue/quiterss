@@ -31,9 +31,11 @@
 #endif
 #include <QtSql>
 #include <QtWebKit>
+#if defined(HAVE_PRINT)
 #include <QPrintDialog>
 #include <QPrintPreviewDialog>
 #include <QPrinter>
+#endif
 #include <QSound>
 
 #include "categoriestreewidget.h"
@@ -141,8 +143,10 @@ public:
   QAction *prevUnreadNewsAct_;
   QAction *nextUnreadNewsAct_;
   QAction *autoLoadImagesToggle_;
+#if defined(HAVE_PRINT)
   QAction *printAct_;
   QAction *printPreviewAct_;
+#endif
   QAction *savePageAsAct_;
   QAction *savePageAsDescriptAct_;
   QAction *restoreNewsAct_;
@@ -169,7 +173,7 @@ public:
   QAction *hackerNewsShareAct_;
   QAction *telegramShareAct_;
   QAction *viberShareAct_;
-#endif  
+#endif
   QAction *copyLinkAct_;
   QAction *pageUpWebViewAct_;
   QAction *pageDownWebViewAct_;
@@ -320,8 +324,10 @@ public slots:
   QWebPage *createWebTab(QUrl url = QUrl());
   void feedsModelReload(bool checkFilter = false);
   void setStatusFeed(int feedId, QString status);
+#if defined(HAVE_PRINT)
   void slotPrint(QWebFrame *frame = 0);
   void slotPrintPreview(QWebFrame* frame = 0);
+#endif
 
 signals:
   void signalQuitApp();
