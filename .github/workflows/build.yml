@@ -2,6 +2,9 @@ name: Build with gcc in windows
 
 on:
   push:
+  schedule:
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -9,15 +12,19 @@ jobs:
     defaults:
       run:
         shell: msys2 {0}
+    strategy:
+      matrix:
+        include:
+          - { sys: mingw64, env: x86_64 }
     steps:
       - name: Checkout branch
         uses: actions/checkout@v2
       - name: Install toolchain and Qt libraries
         uses: msys2/setup-msys2@v2
         with:
-          msystem: MINGW64
+          msystem: ${{matrix.sys}}
           update: true
-          install: git make mingw-w64-x86_64-toolchain mingw-w64-x86_64-qt5 mingw-w64-x86_64-qtwebkit upx p7zip
+          install: git make mingw-w64-${{matrix.env}}-toolchain mingw-w64-${{matrix.env}}-qt5 mingw-w64-${{matrix.env}}-qtwebkit upx p7zip
       - name: Configure
         run: |
           qmake DISABLE_ANALYTICS=yes DISABLE_SHARENEWS=yes DISABLE_UPDATECHECK=yes DISABLE_PRINT=yes
@@ -29,8 +36,8 @@ jobs:
           windeployqt --no-opengl-sw --no-angle --no-system-d3d-compiler --no-translations --force ./release/target/QuiteRSS.exe
       - name: Deploy mingw
         run: |
-          cp /mingw64/bin/libcrypto-1_1-x64.dll ./release/target/
-          cp /mingw64/bin/libssl-1_1-x64.dll ./release/target/
+          cp $MSYSTEM_PREFIX/bin/libcrypto-*.dll ./release/target/
+          cp $MSYSTEM_PREFIX/bin/libssl-*.dll ./release/target/
           ldd ./release/target/QuiteRSS.exe | grep "=> /" | grep mingw | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./release/target/
       - name: Deploy strip
         run: |
@@ -47,9 +54,9 @@ jobs:
            upx --best --brute --ultra-brute -v release/target/QuiteRSS.exe
       - name: Deploy 7z archive
         run: |
-          7z a -mx=9 QuiteRss-gcc-x64.7z ./release/target/*
+          7z a -mx=9 QuiteRss-gcc-${{matrix.env}}.7z ./release/target/*
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
-          name: QuiteRss-gcc-x64.7z
-          path: QuiteRss-gcc-x64.7z
+          name: QuiteRss-gcc-${{matrix.env}}.7z
+          path: QuiteRss-gcc-${{matrix.env}}.7z
