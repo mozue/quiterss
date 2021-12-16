@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout branch
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Install toolchain and Qt libraries
         uses: msys2/setup-msys2@v2
         with:
