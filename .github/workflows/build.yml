@@ -40,12 +40,11 @@ jobs:
         run: |
           cp $MSYSTEM_PREFIX/bin/libcrypto-*.dll ./release/target/
           cp $MSYSTEM_PREFIX/bin/libssl-*.dll ./release/target/
-          ldd ./release/target/QuiteRSS.exe | grep "=> /" | grep mingw | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./release/target/
+          ldd ./release/target/QuiteRSS.exe | grep "=> /" | grep ${{matrix.sys}} | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./release/target/
       - name: Deploy strip
         run: |
-          for filename in ./release/target/*.exe; do strip "$filename"; done
-          for filename in ./release/target/*.dll; do strip "$filename"; done
-          for filename in ./release/target/**/*.dll; do strip "$filename"; done
+          find ./release/target/ -name '*.dll' -exec strip {} \;
+          find ./release/target/ -name '*.exe' -exec strip {} \;
       - name: Deploy resource
         run: |
           cp -rvf ./sound ./release/target/
