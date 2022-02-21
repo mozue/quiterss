@@ -345,6 +345,8 @@ void ParseObject::parseAtom(const QString &feedUrl, const QDomDocument &doc)
     newsItem.updated = newsList.item(i).namedItem("published").toElement().text();
     if (newsItem.updated.isEmpty())
       newsItem.updated = newsList.item(i).namedItem("updated").toElement().text();
+    if (newsItem.updated.isEmpty())
+      newsItem.updated = newsList.item(i).namedItem("issued").toElement().text();
     newsItem.updated = parseDate(newsItem.updated, feedUrl);
     QDomElement authorElem = newsList.item(i).namedItem("author").toElement();
     if (!authorElem.isNull()) {
