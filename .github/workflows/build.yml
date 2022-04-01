@@ -31,6 +31,7 @@ jobs:
         run: |
           qmake DISABLE_ANALYTICS=yes DISABLE_SHARENEWS=yes DISABLE_UPDATECHECK=yes DISABLE_PRINT=yes
           sed 's/windres -i/windres --codepage=65001 -i/g' -i Makefile.Release
+          sed 's/-Wa,-mbig-obj//g' -i Makefile.Release
       - name: Build
         run: make release
       - name: Deploy Qt
