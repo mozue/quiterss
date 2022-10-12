@@ -18,7 +18,7 @@ jobs:
           - { sys: mingw64, env: x86_64 }
     steps:
       - name: Checkout branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Install toolchain and Qt libraries
@@ -58,7 +58,7 @@ jobs:
         run: |
           7z a -mx=9 QuiteRss-gcc-${{matrix.env}}.7z ./release/target/*
       - name: Upload
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: QuiteRss-gcc-${{matrix.env}}.7z
           path: QuiteRss-gcc-${{matrix.env}}.7z
