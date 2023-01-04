@@ -1,0 +1,25 @@
+name: Update certificate
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 1 * * 1'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Update certificate
+        run: bash ./scripts/update-certificate.sh
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: certificate-patch
+          commit-message: 'update ca-bundle.crt'
+          title: Update certificate
+          delete-branch: true
+          body: >-
+            update ca-bundle.crt
