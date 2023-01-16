@@ -3,7 +3,7 @@ name: Update certificate
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 1 * * 1'
+    - cron: '0 0 * * 1'
 
 jobs:
   build:
@@ -20,6 +20,8 @@ jobs:
           branch: certificate-patch
           commit-message: 'update ca-bundle.crt'
           title: Update certificate
+          author: ChiaYen Kan[bot] <noreply@github.com>
+          committer: ChiaYen Kan[bot] <noreply@github.com>
           delete-branch: true
           body: >-
             update ca-bundle.crt
