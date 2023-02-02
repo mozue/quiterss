@@ -31,7 +31,7 @@ jobs:
         with:
           msystem: ${{matrix.sys}}
           update: true
-          install: git make upx p7zip mingw-w64-${{matrix.env}}-toolchain mingw-w64-${{matrix.env}}-qt5 mingw-w64-${{matrix.env}}-qtwebkit mingw-w64-${{matrix.env}}-pkg-config
+          install: git make upx p7zip mingw-w64-${{matrix.env}}-toolchain mingw-w64-${{matrix.env}}-qt5 mingw-w64-${{matrix.env}}-qtwebkit mingw-w64-${{matrix.env}}-pkgconf
       - name: Configure
         run: |
           qmake DISABLE_ANALYTICS=yes DISABLE_SHARENEWS=yes DISABLE_UPDATECHECK=yes DISABLE_PRINT=yes
