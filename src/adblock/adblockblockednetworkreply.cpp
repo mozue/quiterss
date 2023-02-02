@@ -93,7 +93,7 @@ qint64 AdBlockBlockedNetworkReply::readData(char* data, qint64 maxSize)
 
 void AdBlockBlockedNetworkReply::delayedFinished()
 {
-  emit error(QNetworkReply::ContentAccessDenied);
+  emit errorOccurred(QNetworkReply::ContentAccessDenied);
   emit finished();
 }
 

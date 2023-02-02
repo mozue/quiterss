@@ -246,7 +246,7 @@ void CustomizeToolbarDialog::acceptDialog()
   }
 
   if (toolbar_->objectName() != "newsToolBar") {
-    foreach (QString actionStr, str.split(",", QString::SkipEmptyParts)) {
+    foreach (QString actionStr, str.split(",", Qt::SkipEmptyParts)) {
       if (actionStr == "Separator") {
         toolbar_->addSeparator();
       } else {
@@ -298,7 +298,7 @@ void CustomizeToolbarDialog::acceptDialog()
 
     for (int i = 0; i < mainWindow->stackedWidget_->count(); i++) {
       NewsTabWidget *widget = (NewsTabWidget*)mainWindow->stackedWidget_->widget(i);
-      foreach (QString actionStr, str.split(",", QString::SkipEmptyParts)) {
+      foreach (QString actionStr, str.split(",", Qt::SkipEmptyParts)) {
         if (actionStr == "Separator") {
           widget->newsToolBar_->addSeparator();
         } else {
@@ -455,7 +455,7 @@ void CustomizeToolbarDialog::defaultShortcut()
         "newsFilter,Separator,deleteNewsAct";
   }
 
-  foreach (QString actionStr, actionListStr.split(",", QString::SkipEmptyParts)) {
+  foreach (QString actionStr, actionListStr.split(",", Qt::SkipEmptyParts)) {
     QStringList treeItem;
     if (actionStr == "Separator") {
       QTreeWidgetItem *item = new QTreeWidgetItem(treeItem);

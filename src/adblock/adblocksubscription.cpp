@@ -219,8 +219,8 @@ bool AdBlockSubscription::saveDownloadedData(const QByteArray &data)
     // So we are ignoring it for keeping good performance
     // But we will use whitelist rules at the end of list
 
-    QByteArray part1 = data.left(data.indexOf(QLatin1String("!-----------------------------Third-party adverts-----------------------------!")));
-    QByteArray part2 = data.mid(data.indexOf(QLatin1String("!---------------------------------Whitelists----------------------------------!")));
+    QByteArray part1 = data.left(data.indexOf(QString("!-----------------------------Third-party adverts-----------------------------!").toLatin1()));
+    QByteArray part2 = data.mid(data.indexOf(QString("!---------------------------------Whitelists----------------------------------!").toLatin1()));
 
     file.write(part1);
     file.write(part2);
@@ -347,10 +347,10 @@ void AdBlockCustomList::loadSubscription(const QStringList &disabledRules)
     stream.setCodec("UTF-8");
 
     if (!rules.contains(ddg1 + QLatin1String("\n")))
-      stream << ddg1 << endl;
+      stream << ddg1 << Qt::endl;
 
     if (!rules.contains(QLatin1String("\n") + ddg2))
-      stream << ddg2 << endl;
+      stream << ddg2 << Qt::endl;
   }
   file.close();
 
@@ -368,12 +368,12 @@ void AdBlockCustomList::saveSubscription()
 
   QTextStream textStream(&file);
   textStream.setCodec("UTF-8");
-  textStream << "Title: " << title() << endl;
-  textStream << "Url: " << url().toString() << endl;
-  textStream << "[Adblock Plus 1.1.1]" << endl;
+  textStream << "Title: " << title() << Qt::endl;
+  textStream << "Url: " << url().toString() << Qt::endl;
+  textStream << "[Adblock Plus 1.1.1]" << Qt::endl;
 
   foreach (const AdBlockRule* rule, m_rules) {
-    textStream << rule->filter() << endl;
+    textStream << rule->filter() << Qt::endl;
   }
 
   file.close();

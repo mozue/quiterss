@@ -187,7 +187,7 @@ QVariant FeedsModel::data(const QModelIndex &index, int role) const
         return QVariant();
       }
     }
-  } else if (role == Qt::TextColorRole) {
+  } else if (role == Qt::ForegroundRole) {
     if (indexColumnOf("unread") == index.column()) {
       return QColor(countNewsUnreadColor_);
     }

@@ -186,7 +186,7 @@ void NewsTabWidget::createNewsList()
                           "newsFilter,Separator,deleteNewsAct";
   QString str = settings.value("Settings/newsToolBar", actionListStr).toString();
 
-  foreach (QString actionStr, str.split(",", QString::SkipEmptyParts)) {
+  foreach (QString actionStr, str.split(",", Qt::SkipEmptyParts)) {
     if (actionStr == "Separator") {
       newsToolBar_->addSeparator();
     } else {
@@ -2876,7 +2876,7 @@ void NewsTabWidget::savePageAsDescript()
 QString NewsTabWidget::getHtmlLabels(int row)
 {
   QStringList strLabelIdList = newsModel_->dataField(row, "label").toString().
-      split(",", QString::SkipEmptyParts);
+      split(",", Qt::SkipEmptyParts);
   QString labelsString;
   QList<QTreeWidgetItem *> labelListItems = mainWindow_->categoriesTree_->getLabelListItems();
   foreach (QTreeWidgetItem *item, labelListItems) {

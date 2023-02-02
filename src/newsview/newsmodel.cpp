@@ -191,7 +191,7 @@ QVariant NewsModel::data(const QModelIndex &index, int role) const
         }
       }
     }
-  } else if (role == Qt::TextColorRole) {
+  } else if (role == Qt::ForegroundRole) {
     if (index.row() == view_->currentIndex().row()) {
       return QColor(focusedNewsTextColor_);
     }

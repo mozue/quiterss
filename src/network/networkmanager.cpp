@@ -353,7 +353,7 @@ bool NetworkManager::containsRejectedCerts(const QList<QSslCertificate> &certs)
 void NetworkManager::addLocalCertificate(const QSslCertificate &cert)
 {
   localCerts_.append(cert);
-  QSslSocket::addDefaultCaCertificate(cert);
+  QSslConfiguration::defaultConfiguration().addCaCertificate(cert);
 
   QDir dir(mainApp->dataDir());
   if (!dir.exists("certificates")) {
