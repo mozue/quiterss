@@ -39,31 +39,34 @@ jobs:
           sed 's/-Wa,-mbig-obj//g' -i Makefile.Release
       - name: Build
         run: make release
-      - name: Deploy Qt
+      - name: Deploy - Qt
         run: |
           windeployqt --no-opengl-sw --no-angle --no-system-d3d-compiler --no-translations --force ./release/target/QuiteRSS.exe
-      - name: Deploy mingw
+      - name: Deploy - mingw
         run: |
           cp $MSYSTEM_PREFIX/bin/libcrypto-*.dll ./release/target/
           cp $MSYSTEM_PREFIX/bin/libssl-*.dll ./release/target/
           ldd ./release/target/QuiteRSS.exe | grep "=> /" | grep ${{matrix.sys}} | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./release/target/
-      - name: Deploy strip
+      - name: Deploy - strip
         run: |
           find ./release/target/ -name '*.dll' -exec strip {} \;
           find ./release/target/ -name '*.exe' -exec strip {} \;
-      - name: Deploy resource
+      - name: Deploy - resource
         run: |
           cp -rvf ./sound ./release/target/
           cp -rvf ./style ./release/target/
           touch release/target/portable.dat
-      - name: Deploy upx
+      - name: Deploy - upx
         run: |
-           upx --best --brute --ultra-brute -v release/target/QuiteRSS.exe
-      - name: Deploy 7z archive
+          upx --best --brute --ultra-brute -v release/target/QuiteRSS.exe
+      - name: Deploy - create file name
         run: |
-          7z a -mx=9 QuiteRss-gcc-${{matrix.env}}.7z ./release/target/*
+          echo "filename=QuiteRss-gcc-${{matrix.env}}-$(date +"%Y-%m-%d_%H-%M-%S")" >> $GITHUB_ENV
+      - name: Deploy - 7z archive
+        run: |
+          7z a -mx=9 ${{ env.filename }}.7z ./release/target/*
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
-          name: QuiteRss-gcc-${{matrix.env}}.7z
-          path: QuiteRss-gcc-${{matrix.env}}.7z
+          name: ${{ env.filename }}.7z
+          path: ${{ env.filename }}.7z
