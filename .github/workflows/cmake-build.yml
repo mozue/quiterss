@@ -1,0 +1,80 @@
+name: CMake with gcc in windows
+
+on:
+  push:
+    paths-ignore:
+      - '.github/**'
+      - 'data/ca-bundle.crt'
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+    strategy:
+      matrix:
+        include:
+          - { sys: mingw64, env: x86_64 }
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Install toolchain and Qt libraries
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: ${{matrix.sys}}
+          update: true
+          install: git make upx p7zip mingw-w64-${{matrix.env}}-toolchain mingw-w64-${{matrix.env}}-qt5 mingw-w64-${{matrix.env}}-qtwebkit mingw-w64-${{matrix.env}}-pkgconf mingw-w64-${{matrix.env}}-cmake
+      - name: Configure
+        run: |
+          mkdir build
+          cd build
+          cmake -DCMAKE_BUILD_TYPE=Release -G Ninja ../
+      - name: Build
+        run: |
+          cd build
+          cmake --build ./
+      - name: Deploy - copy to dist
+        run: |
+          mkdir -p dist
+          cp -rf build/QuiteRSS.exe ./dist/
+          cp -rf build/lang/ ./dist/
+      - name: Deploy - Qt
+        run: |
+          windeployqt --no-opengl-sw --no-angle --no-system-d3d-compiler --no-translations --force ./dist/QuiteRSS.exe
+      - name: Deploy - Qt language file
+        run: |
+          cp $MSYSTEM_PREFIX/share/qt5/translations/qtbase_* ./dist/lang
+      - name: Deploy - mingw
+        run: |
+          cp $MSYSTEM_PREFIX/bin/libcrypto-*.dll ./dist/
+          cp $MSYSTEM_PREFIX/bin/libssl-*.dll ./dist/
+          ldd ./dist/QuiteRSS.exe | grep "=> /" | grep ${{matrix.sys}} | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./dist/
+      - name: Deploy - strip
+        run: |
+          find ./dist/ -name '*.dll' -exec strip {} \;
+          find ./dist/ -name '*.exe' -exec strip {} \;
+      - name: Deploy - resource
+        run: |
+          cp -rvf ./sound ./dist/
+          cp -rvf ./style ./dist/
+          touch ./dist/portable.dat
+      - name: Deploy - upx
+        run: |
+          upx --best --brute --ultra-brute -v ./dist/QuiteRSS.exe
+      - name: Deploy - create file name
+        run: |
+          echo "filename=QuiteRss-gcc-${{matrix.env}}-$(date +"%Y%m%d_%H%M%S")" >> $GITHUB_ENV
+      - name: Deploy - 7z archive
+        run: |
+          7z a -mx=9 ${{ env.filename }}.7z ./dist/*
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.filename }}.7z
+          path: ${{ env.filename }}.7z
