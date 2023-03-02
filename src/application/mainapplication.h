@@ -20,11 +20,7 @@
 
 #define mainApp MainApplication::getInstance()
 
-#ifdef HAVE_QT5
 #include <QtWidgets>
-#else
-#include <QtGui>
-#endif
 #include <qtsingleapplication.h>
 #include <QNetworkDiskCache>
 #include <QLocale>

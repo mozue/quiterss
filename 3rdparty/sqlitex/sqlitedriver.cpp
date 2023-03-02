@@ -42,10 +42,8 @@
 
 #include <sqlite3.h>
 
-#ifdef HAVE_QT5
 Q_DECLARE_OPAQUE_POINTER(sqlite3*)
 Q_DECLARE_OPAQUE_POINTER(sqlite3_stmt*)
-#endif
 Q_DECLARE_METATYPE(sqlite3*)
 Q_DECLARE_METATYPE(sqlite3_stmt*)
 
@@ -80,15 +78,9 @@ static QVariant::Type qGetColumnType(const QString &tpName)
 static QSqlError qMakeError(sqlite3 *access, const QString &descr, QSqlError::ErrorType type,
                             int errorCode = -1)
 {
-#ifdef HAVE_QT5
   return QSqlError(descr,
                    QString(reinterpret_cast<const QChar *>(sqlite3_errmsg16(access))),
                    type, QString::number(errorCode));
-#else
-  return QSqlError(descr,
-                   QString(reinterpret_cast<const QChar *>(sqlite3_errmsg16(access))),
-                   type, errorCode);
-#endif
 
 }
 
@@ -326,18 +318,7 @@ SQLiteResult::~SQLiteResult()
 
 void SQLiteResult::virtual_hook(int id, void *data)
 {
-#ifdef HAVE_QT5
   SqlCachedResult::virtual_hook(id, data);
-#else
-  switch (id) {
-  case QSqlResult::DetachFromResultSet:
-    if (d->stmt)
-      sqlite3_reset(d->stmt);
-    break;
-  default:
-    SqlCachedResult::virtual_hook(id, data);
-  }
-#endif
 }
 
 
@@ -496,13 +477,11 @@ QSqlRecord SQLiteResult::record() const
   return d->rInf;
 }
 
-#ifdef HAVE_QT5
 void SQLiteResult::detachFromResultSet()
 {
   if (d->stmt)
     sqlite3_reset(d->stmt);
 }
-#endif
 
 QVariant SQLiteResult::handle() const
 {
@@ -559,9 +538,7 @@ bool SQLiteDriver::hasFeature(DriverFeature f) const
   case BatchOperations:
   case EventNotifications:
   case MultipleResultSets:
-#ifdef HAVE_QT5
   case CancelQuery:
-#endif
     return false;
   }
   return false;

@@ -25,11 +25,7 @@
 int main(int argc, char **argv)
 {
   if (globals.logFileOutput_) {
-#if defined(HAVE_QT5)
     qInstallMessageHandler(LogFile::msgHandler);
-#else
-    qInstallMsgHandler(LogFile::msgHandler);
-#endif
   }
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 13, 0)

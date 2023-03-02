@@ -18,17 +18,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#ifdef HAVE_QT5
 #include <QtWidgets>
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
-#else
-#include <QtGui>
-#ifdef HAVE_PHONON
-#include <phonon/audiooutput.h>
-#include <phonon/mediaobject.h>
-#endif
-#endif
 #include <QtSql>
 #include <QtWebKit>
 #if defined(HAVE_PRINT)
@@ -372,13 +364,8 @@ private slots:
   void slotFeedsViewportUpdate();
   void slotPlaySoundNewNews();
 
-#ifdef HAVE_QT5
   void mediaStatusChanged(QMediaPlayer::MediaStatus status);
   void mediaError(QMediaPlayer::Error error);
-#endif
- #ifdef HAVE_PHONON
-  void mediaStateChanged(Phonon::State newstate, Phonon::State oldstate);
-#endif
 
   void slotShowAboutDlg();
 
@@ -727,15 +714,8 @@ private:
   int openingFeedAction_;
   bool openNewsWebViewOn_;
 
-#ifdef HAVE_QT5
   QMediaPlayer *mediaPlayer_;
   QMediaPlaylist *playlist_;
-#else
-#ifdef HAVE_PHONON
-  Phonon::MediaObject *mediaPlayer_;
-  Phonon::AudioOutput *audioOutput_;
-#endif
-#endif
 
   bool soundNewNews_;
   QString soundNotifyPath_;

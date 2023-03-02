@@ -399,11 +399,8 @@ NotificationWidget::~NotificationWidget()
 
 void NotificationWidget::showEvent(QShowEvent*)
 {
-#ifdef HAVE_QT5
   const QRect screenGeometry = QGuiApplication::screens().at(screen_)->availableGeometry();
-#else
-  const QRect screenGeometry = QApplication::desktop()->availableGeometry(screen_);
-#endif
+
   QPoint point;
   switch (position_) {
   case 0:

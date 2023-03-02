@@ -32,27 +32,27 @@ exists(.git) {
 }
 
 isEqual(QT_MAJOR_VERSION, 5) {
-  QT += widgets webkitwidgets network xml sql multimedia
-  DEFINES += HAVE_QT5
-  equals(WEBKIT_ALPHA, true) {
-      DEFINES += WEBKIT_ALPHA
-  }
-
-  isEmpty(DISABLE_PRINT) {
-    QT += printsupport
-    DEFINES += HAVE_PRINT
-  }
-
-} else {
-  QT += core gui network xml webkit sql
-  os2 {
-    DISABLE_PHONON = 1
-  }
-  isEmpty(DISABLE_PHONON) {
-    QT += phonon
-    DEFINES += HAVE_PHONON
+  !versionAtLeast(QT_VERSION, 5.15.0) {
+    message("Cannot use Qt $${QT_VERSION}")
+    error("Use Qt 5.15")
   }
 }
+else {
+  message("Cannot use Qt $${QT_VERSION}")
+  error("Use Qt 5.15")
+}
+
+QT += widgets webkitwidgets network xml sql multimedia
+
+equals(WEBKIT_ALPHA, true) {
+    DEFINES += WEBKIT_ALPHA
+}
+
+isEmpty(DISABLE_PRINT) {
+  QT += printsupport
+  DEFINES += HAVE_PRINT
+}
+
 isEmpty(DISABLE_ANALYTICS) {
   DEFINES += USE_ANALYTICS
 }
@@ -240,9 +240,8 @@ isEmpty(SYSTEMQTSA) {
 } else {
   CONFIG += qtsingleapplication
 }
-isEqual(QT_MAJOR_VERSION, 5) {
-  include(3rdparty/qftp/qftp.pri)
-}
+
+include(3rdparty/qftp/qftp.pri)
 include(3rdparty/sqlite.pri)
 include(lang/lang.pri)
 include(3rdparty/qupzilla/qupzilla.pri)
