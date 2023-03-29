@@ -1,16 +1,20 @@
 #!/bin/bash
 
-URL="https://curl.se/ca/cacert.pem"
+perl <(curl -s https://raw.githubusercontent.com/curl/curl/master/scripts/mk-ca-bundle.pl)
 
-tempfile=$(mktemp)
+SCRIPT_DIR=$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)
 
-code=$(curl -s $URL --write-out '%{http_code}' -o $tempfile)
+if test -f "ca-bundle.crt"; then
+    echo "ca-bundle.crt exists."
 
-if [[ $code != 200  ]] ; then
-    echo "$URL SAID $code"
-    rm -f $tempfile
-    exit -1
+    diff=$(diff -rpuN -I '^##' ca-bundle.crt $SCRIPT_DIR/../data/ca-bundle.crt)
+    if [ -n "${diff}" ]; then
+        echo "ca-bundle.crt is changed"
+        cp ca-bundle.crt $SCRIPT_DIR/../data/ca-bundle.crt
+    else
+        echo "ca-bundle.crt no change"
+    fi
 else
-    echo "Download $URL is successful"
-    mv $tempfile "./data/ca-bundle.crt"
+    echo "Download fail"
+    exit -1
 fi
