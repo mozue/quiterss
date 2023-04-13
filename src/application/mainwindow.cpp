@@ -52,6 +52,7 @@ MainWindow::MainWindow(QWidget *parent)
   , newsFilterAction_(NULL)
   , newsView_(NULL)
   , updateTimeCount_(0)
+  , mediaPlayer_(NULL)
 #ifdef USE_UPDATECHECK
   , updateAppDialog_(NULL)
 #endif
