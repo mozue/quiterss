@@ -136,7 +136,16 @@ void MainApplication::receiveMessage(const QString &message)
       if (param == "--show") {
         if (isClosing_)
           return;
+
         mainWindow_->showWindows();
+        mainWindow_->setWindowState( (mainWindow_->windowState() & ~Qt::WindowMinimized) | Qt::WindowActive);
+        mainWindow_->raise(); // for MacOS
+        mainWindow_->activateWindow(); // for Windows
+
+#if defined(Q_OS_WIN)
+        SetWindowPos((HWND)mainWindow_->winId(), HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
+        SetWindowPos((HWND)mainWindow_->winId(), HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
+#endif
       }
       if (param == "--exit") mainWindow_->quitApp();
       if (param.contains("feed:", Qt::CaseInsensitive)) {
@@ -148,6 +157,17 @@ void MainApplication::receiveMessage(const QString &message)
           param.remove(0, 7);
           clipboard->setText("http://" + param);
         }
+
+        mainWindow_->showWindows();
+        mainWindow_->setWindowState( (mainWindow_->windowState() & ~Qt::WindowMinimized) | Qt::WindowActive);
+        mainWindow_->raise(); // for MacOS
+        mainWindow_->activateWindow(); // for Windows
+
+#if defined(Q_OS_WIN)
+        SetWindowPos((HWND)mainWindow_->winId(), HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
+        SetWindowPos((HWND)mainWindow_->winId(), HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
+#endif
+
         mainWindow_->addFeed();
       }
     }
