@@ -52,7 +52,7 @@ a {
   margin-%16: 5px;
 }
 
-.feed-icon, .star-action, .labels-menu, .share-menu, .open-browser {
+.feed-icon, .star-action, .labels-menu, .share-menu, .open-browser, .open-home {
   float: %14;
   margin-%16: 10px;
 }

@@ -1812,11 +1812,11 @@ void NewsTabWidget::loadNewspaper(int refresh)
 #endif          
       QString openBrowserAction = QString("<div class=\"open-browser\">"
                                           "<a href=\"quiterss://open.browser.ui?#%1\" title='%2'>"
-                                          "<img class='quiterss-img' id=\"openBrowser%1\" src=\"qrc:/images/openBrowser\"'/></a></div>").
+                                          "<img class='quiterss-img' id=\"openBrowser%1\" src=\"qrc:/images/openBrowser\"/></a></div>").
           arg(newsId).arg(tr("Open News in External Browser"));
       QString openHomeAction = QString("<div class=\"open-home\">"
                                        "<a href=\"quiterss://open.home.ui?#%1\" title='%2'>"
-                                       "<img class='quiterss-img' id=\"openHome%1\" src=\"qrc:/images/homePageNewspaper\"'/></a></div>").
+                                       "<img class='quiterss-img' id=\"openHome%1\" src=\"qrc:/images/homePageNewspaper\"/></a></div>").
           arg(newsId).arg(tr("Open Homepage Feed"));
       QString deleteAction = QString("<div class=\"delete-action\">"
                                      "<a href=\"quiterss://delete.action.ui?#%1\" title='%2'>"
