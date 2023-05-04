@@ -305,13 +305,25 @@ void OptionsDialog::createGeneralWidget()
   storeDBMemory_->setChecked(false);
   saveDBMemFileInterval_ = new QSpinBox();
   saveDBMemFileInterval_->setRange(1, 999);
+  saveDBMemFileMiniSystemTray_ = new QCheckBox(tr("Save DB stored in memory to file on minimize to tray"));
+  saveDBMemFileMiniSystemTray_->setChecked(false);
 
-  QHBoxLayout *saveDBMemFileLayout = new QHBoxLayout();
-  saveDBMemFileLayout->setContentsMargins(15, 0, 0, 0);
-  saveDBMemFileLayout->addWidget(new QLabel(tr("Save DB stored in memory to file every")));
-  saveDBMemFileLayout->addWidget(saveDBMemFileInterval_);
-  saveDBMemFileLayout->addWidget(new QLabel(tr("minutes")));
-  saveDBMemFileLayout->addStretch();
+  QVBoxLayout *saveDBMemFileLayout = new QVBoxLayout();
+
+  QHBoxLayout *dbMemFileIntervalLayout = new QHBoxLayout();
+  dbMemFileIntervalLayout->setContentsMargins(15, 0, 0, 0);
+  dbMemFileIntervalLayout->addWidget(new QLabel(tr("Save DB stored in memory to file every")));
+  dbMemFileIntervalLayout->addWidget(saveDBMemFileInterval_);
+  dbMemFileIntervalLayout->addWidget(new QLabel(tr("minutes")));
+  dbMemFileIntervalLayout->addStretch();
+
+  QHBoxLayout *dbMemFileMiniSysTrayLayout = new QHBoxLayout();
+  dbMemFileMiniSysTrayLayout->setContentsMargins(15, 0, 0, 0);
+  dbMemFileMiniSysTrayLayout->addWidget(saveDBMemFileMiniSystemTray_);
+  dbMemFileIntervalLayout->addStretch();
+
+  saveDBMemFileLayout->addLayout(dbMemFileIntervalLayout);
+  saveDBMemFileLayout->addLayout(dbMemFileMiniSysTrayLayout);
 
   QWidget *saveDBMemFileWidget = new QWidget();
   saveDBMemFileWidget->setEnabled(false);
@@ -319,6 +331,8 @@ void OptionsDialog::createGeneralWidget()
 
   connect(storeDBMemory_, SIGNAL(toggled(bool)),
           saveDBMemFileWidget, SLOT(setEnabled(bool)));
+  connect(storeDBMemory_, SIGNAL(toggled(bool)),
+          saveDBMemFileMiniSystemTray_, SLOT(setEnabled(bool)));
 
   QVBoxLayout *generalLayout = new QVBoxLayout();
   generalLayout->addWidget(showSplashScreen_);

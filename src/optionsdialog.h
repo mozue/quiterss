@@ -56,6 +56,7 @@ public:
 #endif  
   QCheckBox *storeDBMemory_;
   QSpinBox *saveDBMemFileInterval_;
+  QCheckBox *saveDBMemFileMiniSystemTray_;
 
   // systemTray
   void setBehaviorIconTray(int behavior);

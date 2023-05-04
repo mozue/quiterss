@@ -741,6 +741,8 @@ private:
   bool cleanUpDeleted_;
   bool optimizeDB_;
 
+  bool saveDBMemFileMiniSystemTray_;
+
   struct NewNewsData
   {
     QList<int> idFeedList_;

@@ -317,7 +317,8 @@ void MainWindow::slotPlaceToTray()
 
   saveSettings();
 
-  mainApp->updateFeeds()->saveMemoryDatabase();
+  if (saveDBMemFileMiniSystemTray_)
+    mainApp->updateFeeds()->saveMemoryDatabase();
 
   isMinimizeToTray_ = false;
 }
@@ -2109,6 +2110,8 @@ void MainWindow::loadSettings()
   cleanUpDeleted_ = settings.value("cleanUpDeleted", false).toBool();
   optimizeDB_ = settings.value("optimizeDB", false).toBool();
 
+  saveDBMemFileMiniSystemTray_ = settings.value("saveDBMemFileMiniSystemTray", true).toBool();
+
   externalBrowserOn_ = settings.value("externalBrowserOn", 0).toInt();
   externalBrowser_ = settings.value("externalBrowser", "").toString();
   javaScriptEnable_ = settings.value("javaScriptEnable", true).toBool();
@@ -3378,6 +3381,8 @@ void MainWindow::showOptionDlg(int index)
   optionsDialog_->storeDBMemory_->setChecked(storeDBMemory_);
   int saveDBMemFileInterval = settings.value("Settings/saveDBMemFileInterval", 30).toInt();
   optionsDialog_->saveDBMemFileInterval_->setValue(saveDBMemFileInterval);
+  bool saveDBMemFileMiniSystemTray = settings.value("Settings/saveDBMemFileMiniSystemTray", true).toBool();
+  optionsDialog_->saveDBMemFileMiniSystemTray_->setChecked(saveDBMemFileMiniSystemTray);
 
   optionsDialog_->showTrayIconBox_->setChecked(showTrayIcon_);
   optionsDialog_->startingTray_->setChecked(startingTray_);
@@ -3795,6 +3800,8 @@ void MainWindow::showOptionDlg(int index)
     settings.setValue("Settings/saveDBMemFileInterval", saveDBMemFileInterval);
     mainApp->updateFeeds()->startSaveTimer();
   }
+  saveDBMemFileMiniSystemTray = optionsDialog_->saveDBMemFileMiniSystemTray_->isChecked();
+  settings.setValue("Settings/saveDBMemFileMiniSystemTray", saveDBMemFileMiniSystemTray);
 
   showTrayIcon_ = optionsDialog_->showTrayIconBox_->isChecked();
   startingTray_ = optionsDialog_->startingTray_->isChecked();
@@ -3943,6 +3950,8 @@ void MainWindow::showOptionDlg(int index)
   neverLabelCleanUp_ = optionsDialog_->neverLabelCleanUp_->isChecked();
   cleanUpDeleted_ = optionsDialog_->cleanUpDeleted_->isChecked();
   optimizeDB_ = optionsDialog_->optimizeDB_->isChecked();
+
+  saveDBMemFileMiniSystemTray_ = optionsDialog_->saveDBMemFileMiniSystemTray_->isChecked();
 
   soundNewNews_ = optionsDialog_->soundNotifyBox_->isChecked();
   soundNotifyPath_ = optionsDialog_->editSoundNotifer_->text();
