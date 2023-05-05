@@ -376,13 +376,16 @@ void AddFeedWizard::addFeed()
     }
 
     // Insert feed
-    q.prepare("INSERT INTO feeds(xmlUrl, created, rowToParent, authentication) "
-              "VALUES (:feedUrl, :feedCreateTime, :rowToParent, :authentication)");
+    q.prepare("INSERT INTO feeds(xmlUrl, created, rowToParent, authentication, addSingleNewsAnyDateOn, avoidedOldSingleNewsDateOn, avoidedOldSingleNewsDate) "
+              "VALUES (:feedUrl, :feedCreateTime, :rowToParent, :authentication, :addSingleNewsAnyDateOn, :avoidedOldSingleNewsDateOn, :avoidedOldSingleNewsDate)");
     q.bindValue(":feedUrl", feedUrlString_);
     q.bindValue(":feedCreateTime",
         QLocale::c().toString(QDateTime::currentDateTimeUtc(), "yyyy-MM-ddTHH:mm:ss"));
     q.bindValue(":rowToParent", rowToParent);
     q.bindValue(":authentication", auth);
+    q.bindValue(":addSingleNewsAnyDateOn", mainApp->mainWindow()->avoidOldNews_ ? "0":"1");
+    q.bindValue(":avoidedOldSingleNewsDateOn", mainApp->mainWindow()->avoidOldNews_ ? "1":"0");
+    q.bindValue(":avoidedOldSingleNewsDate", mainApp->mainWindow()->avoidedOldNewsDate_);
     q.exec();
 
     feedId_ = q.lastInsertId().toInt();

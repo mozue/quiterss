@@ -463,8 +463,8 @@ void UpdateObject::slotImportFeeds(QByteArray xmlData)
                    arg(parentIdsStack.top()));
             if (q.next()) rowToParent = q.value(0).toInt();
 
-            q.prepare("INSERT INTO feeds(text, title, description, xmlUrl, htmlUrl, created, parentId, rowToParent) "
-                      "VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+            q.prepare("INSERT INTO feeds(text, title, description, xmlUrl, htmlUrl, created, parentId, rowToParent, addSingleNewsAnyDateOn, avoidedOldSingleNewsDateOn, avoidedOldSingleNewsDate) "
+                      "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             q.addBindValue(textString);
             q.addBindValue(xml.attributes().value("title").toString());
             q.addBindValue(xml.attributes().value("description").toString());
@@ -473,6 +473,9 @@ void UpdateObject::slotImportFeeds(QByteArray xmlData)
             q.addBindValue(QDateTime::currentDateTimeUtc().toString(Qt::ISODate));
             q.addBindValue(parentIdsStack.top());
             q.addBindValue(rowToParent);
+            q.addBindValue(mainApp->mainWindow()->avoidOldNews_ ? 0 : 1);
+            q.addBindValue(mainApp->mainWindow()->avoidOldNews_ ? 1 : 0);
+            q.addBindValue(mainApp->mainWindow()->avoidedOldNewsDate_);
             q.exec();
 
             idsList.append(q.lastInsertId().toInt());
