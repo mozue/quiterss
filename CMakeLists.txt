@@ -55,7 +55,7 @@ add_executable(${TARGET_NAME})
 
 set(CMAKE_CXX_FLAGS "-Wall")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -flto")
-set(LINK_FLAGS_RELEASE "-flto")
+set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -flto")
 set(CMAKE_CXX_FLAGS_DEBUG "-g3")
 
 # target_compile_definitions(${TARGET_NAME} PUBLIC

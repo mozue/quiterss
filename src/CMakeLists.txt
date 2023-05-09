@@ -36,7 +36,6 @@ qt5_wrap_cpp(
     ${CMAKE_CURRENT_SOURCE_DIR}/faviconobject.h
     ${CMAKE_CURRENT_SOURCE_DIR}/customizetoolbardialog.h
     ${CMAKE_CURRENT_SOURCE_DIR}/plugins/webpluginfactory.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/plugins/clicktoflash.h
     ${CMAKE_CURRENT_SOURCE_DIR}/downloads/downloadmanager.h
     ${CMAKE_CURRENT_SOURCE_DIR}/downloads/downloaditem.h
     ${CMAKE_CURRENT_SOURCE_DIR}/tabbar.h
@@ -105,7 +104,6 @@ target_sources(${TARGET_NAME} PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/faviconobject.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/customizetoolbardialog.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/plugins/webpluginfactory.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/plugins/clicktoflash.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/downloads/downloadmanager.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/downloads/downloaditem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tabbar.cpp

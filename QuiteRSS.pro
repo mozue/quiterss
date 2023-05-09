@@ -62,6 +62,9 @@ isEmpty(DISABLE_SHARENEWS) {
 isEmpty(DISABLE_UPDATECHECK) {
   DEFINES += USE_UPDATECHECK
 }
+isEmpty(DISABLE_CLICK2FLASH) {
+  DEFINES += USE_CLICK2FLASH
+}
 
 unix:!mac:DEFINES += HAVE_X11
 
@@ -88,7 +91,6 @@ HEADERS += \
     src/faviconobject.h \
     src/customizetoolbardialog.h \
     src/plugins/webpluginfactory.h \
-    src/plugins/clicktoflash.h \
     src/downloads/downloadmanager.h \
     src/downloads/downloaditem.h \
     src/tabbar.h \
@@ -156,7 +158,6 @@ SOURCES += \
     src/faviconobject.cpp \
     src/customizetoolbardialog.cpp \
     src/plugins/webpluginfactory.cpp \
-    src/plugins/clicktoflash.cpp \
     src/downloads/downloadmanager.cpp \
     src/downloads/downloaditem.cpp \
     src/tabbar.cpp \
@@ -251,6 +252,10 @@ isEmpty(DISABLE_ANALYTICS) {
 isEmpty(DISABLE_UPDATECHECK) {
   HEADERS += src/updateappdialog.h
   SOURCES += src/updateappdialog.cpp
+}
+isEmpty(DISABLE_CLICK2FLASH) {
+  HEADERS += src/plugins/clicktoflash.h
+  SOURCES += src/plugins/clicktoflash.cpp
 }
 
 os2|win32|mac {

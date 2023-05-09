@@ -76,6 +76,7 @@ public:
   void runUserFilter(int feedId, int filterId);
   DownloadManager *downloadManager();
 
+#ifdef USE_CLICK2FLASH
   void c2fLoadSettings();
   void c2fSaveSettings();
   bool c2fIsEnabled() const;
@@ -83,6 +84,7 @@ public:
   QStringList c2fGetWhitelist();
   void c2fSetWhitelist(QStringList whitelist);
   void c2fAddWhitelist(const QString &site);
+#endif
 
   void setTranslateApplication();
   QString language() const { return langFileName_; }
@@ -146,8 +148,10 @@ private:
   DownloadManager *downloadManager_;
   QWidget *closingWidget_;
 
+#ifdef USE_CLICK2FLASH
   QStringList c2fWhitelist_;
   bool c2fEnabled_;
+#endif
 
   QNetworkProxy networkProxy_;
 #ifdef USE_ANALYTICS

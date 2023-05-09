@@ -17,7 +17,9 @@
 * ============================================================ */
 #include "webpluginfactory.h"
 
+#ifdef USE_CLICK2FLASH
 #include "clicktoflash.h"
+#endif
 #include "mainapplication.h"
 #include "adblockmanager.h"
 #include "webpage.h"
@@ -48,6 +50,7 @@ QObject* WebPluginFactory::create(const QString &mimeType, const QUrl &url,
     return new QObject();
   }
 
+#ifdef USE_CLICK2FLASH
   QString mime = mimeType.trimmed();
   if (mime.isEmpty()) {
     if (url.toString().contains(QLatin1String(".swf"))) {
@@ -99,6 +102,9 @@ QObject* WebPluginFactory::create(const QString &mimeType, const QUrl &url,
 
   ClickToFlash* ctf = new ClickToFlash(url, argumentNames, argumentValues, page_);
   return ctf;
+#else
+  return 0;
+#endif
 }
 
 QList<QWebPluginFactory::Plugin> WebPluginFactory::plugins() const

@@ -2559,7 +2559,9 @@ void MainWindow::saveSettings()
                     newsFilterGroup_->checkedAction()->objectName());
 
   mainApp->cookieJar()->saveCookies();
+#ifdef USE_CLICK2FLASH
   mainApp->c2fSaveSettings();
+#endif
   AdBlockManager::instance()->save();
 }
 

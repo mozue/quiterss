@@ -201,7 +201,9 @@ void OptionsDialog::acceptDialog()
 #endif
 
   applyProxy();
+#ifdef USE_CLICK2FLASH
   applyWhitelist();
+#endif
   applyLabels();
   applyNotifier();
   applyPass();
@@ -679,7 +681,7 @@ void OptionsDialog::createBrowserWidget()
   QWidget *historyBrowserWidget_ = new QWidget();
   historyBrowserWidget_->setLayout(historyMainLayout);
 
-
+#ifdef USE_CLICK2FLASH
   //! tab "Click to Flash"
   QLabel *c2fInfo = new QLabel(tr("Click To Flash is a plugin which blocks auto loading of "
                                  "Flash content at page. You can always load it manually "
@@ -734,6 +736,7 @@ void OptionsDialog::createBrowserWidget()
     QTreeWidgetItem* item = new QTreeWidgetItem(c2fWhitelist_);
     item->setText(0, site);
   }
+#endif
 
   //! tab "Downloads"
   downloadLocationEdit_ = new LineEdit();
@@ -2335,6 +2338,7 @@ void OptionsDialog::selectionBrowser()
     otherExternalBrowserEdit_->setText(fileName);
 }
 //----------------------------------------------------------------------------
+#ifdef USE_CLICK2FLASH
 void OptionsDialog::applyWhitelist()
 {
   mainApp->c2fSetEnabled(c2fEnabled_->isChecked());
@@ -2344,6 +2348,7 @@ void OptionsDialog::applyWhitelist()
   }
   mainApp->c2fSetWhitelist(whitelist);
 }
+#endif
 //----------------------------------------------------------------------------
 void OptionsDialog::selectionUserStyleNews()
 {
@@ -2878,6 +2883,7 @@ void OptionsDialog::selectionDirDiskCache()
     dirDiskCacheEdit_->setText(dirStr);
 }
 //----------------------------------------------------------------------------
+#ifdef USE_CLICK2FLASH
 void OptionsDialog::addWhitelist()
 {
   QString site = QInputDialog::getText(this, tr("Add site to whitelist"),
@@ -2896,6 +2902,7 @@ void OptionsDialog::removeWhitelist()
 
   delete item;
 }
+#endif
 //----------------------------------------------------------------------------
 void OptionsDialog::selectionDownloadLocation()
 {
