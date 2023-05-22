@@ -88,6 +88,7 @@ target_link_libraries(${TARGET_NAME}
 
 # qt resource file
 target_sources(${TARGET_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/QuiteRSS.qrc)
+target_sources(${TARGET_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/data/ca-bundle.qrc)
 
 # windows resource file
 if (WIN32)
