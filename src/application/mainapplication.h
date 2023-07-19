@@ -73,16 +73,6 @@ public:
   void runUserFilter(int feedId, int filterId);
   DownloadManager *downloadManager();
 
-#ifdef USE_CLICK2FLASH
-  void c2fLoadSettings();
-  void c2fSaveSettings();
-  bool c2fIsEnabled() const;
-  void c2fSetEnabled(bool enabled);
-  QStringList c2fGetWhitelist();
-  void c2fSetWhitelist(QStringList whitelist);
-  void c2fAddWhitelist(const QString &site);
-#endif
-
   void setTranslateApplication();
   QString language() const { return langFileName_; }
   void setLanguage(const QString &lang) { langFileName_ = lang; }
@@ -137,11 +127,6 @@ private:
   UpdateFeeds *updateFeeds_;
   DownloadManager *downloadManager_;
   QWidget *closingWidget_;
-
-#ifdef USE_CLICK2FLASH
-  QStringList c2fWhitelist_;
-  bool c2fEnabled_;
-#endif
 
   QNetworkProxy networkProxy_;
 };

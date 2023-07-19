@@ -201,9 +201,6 @@ void OptionsDialog::acceptDialog()
 #endif
 
   applyProxy();
-#ifdef USE_CLICK2FLASH
-  applyWhitelist();
-#endif
   applyLabels();
   applyNotifier();
   applyPass();
@@ -675,63 +672,6 @@ void OptionsDialog::createBrowserWidget()
   QWidget *historyBrowserWidget_ = new QWidget();
   historyBrowserWidget_->setLayout(historyMainLayout);
 
-#ifdef USE_CLICK2FLASH
-  //! tab "Click to Flash"
-  QLabel *c2fInfo = new QLabel(tr("Click To Flash is a plugin which blocks auto loading of "
-                                 "Flash content at page. You can always load it manually "
-                                 "by clicking on the Flash play icon."));
-  c2fInfo->setWordWrap(true);
-
-  c2fEnabled_ = new QCheckBox(tr("Use Click to Flash"));
-  c2fEnabled_->setChecked(false);
-
-  c2fWhitelist_ = new QTreeWidget(this);
-  c2fWhitelist_->setObjectName("c2fWhiteList_");
-  c2fWhitelist_->setRootIsDecorated(false);
-  c2fWhitelist_->setColumnCount(1);
-
-  QStringList treeItem;
-  treeItem << "Whitelist";
-  c2fWhitelist_->setHeaderLabels(treeItem);
-
-  QPushButton *addButton = new QPushButton(tr("Add..."), this);
-  connect(addButton, SIGNAL(clicked()), this, SLOT(addWhitelist()));
-  QPushButton *removeButton = new QPushButton(tr("Remove..."), this);
-  connect(removeButton, SIGNAL(clicked()), this, SLOT(removeWhitelist()));
-
-  QVBoxLayout *click2FlashLayout1 = new QVBoxLayout();
-  click2FlashLayout1->addWidget(addButton);
-  click2FlashLayout1->addWidget(removeButton);
-  click2FlashLayout1->addStretch(1);
-
-  QHBoxLayout *click2FlashLayout2 = new QHBoxLayout();
-  click2FlashLayout2->setMargin(0);
-  click2FlashLayout2->addWidget(c2fWhitelist_, 1);
-  click2FlashLayout2->addLayout(click2FlashLayout1);
-
-  QWidget *c2fWhitelistWidget = new QWidget(this);
-  c2fWhitelistWidget->setLayout(click2FlashLayout2);
-  c2fWhitelistWidget->setEnabled(false);
-
-  connect(c2fEnabled_, SIGNAL(toggled(bool)),
-          c2fWhitelistWidget, SLOT(setEnabled(bool)));
-
-  QVBoxLayout *click2FlashLayout = new QVBoxLayout();
-  click2FlashLayout->setMargin(10);
-  click2FlashLayout->addWidget(c2fInfo);
-  click2FlashLayout->addWidget(c2fEnabled_);
-  click2FlashLayout->addWidget(c2fWhitelistWidget, 1);
-
-  QWidget *click2FlashWidget_ = new QWidget(this);
-  click2FlashWidget_->setLayout(click2FlashLayout);
-
-  c2fEnabled_->setChecked(mainApp->c2fIsEnabled());
-  foreach(const QString & site, mainApp->c2fGetWhitelist()) {
-    QTreeWidgetItem* item = new QTreeWidgetItem(c2fWhitelist_);
-    item->setText(0, site);
-  }
-#endif
-
   //! tab "Downloads"
   downloadLocationEdit_ = new LineEdit();
   QPushButton *downloadLocationButton = new QPushButton(tr("Browse..."));
@@ -758,9 +698,6 @@ void OptionsDialog::createBrowserWidget()
   browserWidget_ = new QTabWidget();
   browserWidget_->addTab(generalBrowserWidget, tr("General"));
   browserWidget_->addTab(historyBrowserWidget_, tr("History"));
-#if QT_VERSION < 0x050900
-  browserWidget_->addTab(click2FlashWidget_, tr("Click to Flash"));
-#endif
   browserWidget_->addTab(downloadsWidget, tr("Downloads"));
 }
 
@@ -2332,18 +2269,6 @@ void OptionsDialog::selectionBrowser()
     otherExternalBrowserEdit_->setText(fileName);
 }
 //----------------------------------------------------------------------------
-#ifdef USE_CLICK2FLASH
-void OptionsDialog::applyWhitelist()
-{
-  mainApp->c2fSetEnabled(c2fEnabled_->isChecked());
-  QStringList whitelist;
-  for (int i = 0; i < c2fWhitelist_->topLevelItemCount(); i++) {
-    whitelist.append(c2fWhitelist_->topLevelItem(i)->text(0));
-  }
-  mainApp->c2fSetWhitelist(whitelist);
-}
-#endif
-//----------------------------------------------------------------------------
 void OptionsDialog::selectionUserStyleNews()
 {
   QString path(mainApp->resourcesDir() % "/style");
@@ -2876,27 +2801,6 @@ void OptionsDialog::selectionDirDiskCache()
   if (!dirStr.isEmpty())
     dirDiskCacheEdit_->setText(dirStr);
 }
-//----------------------------------------------------------------------------
-#ifdef USE_CLICK2FLASH
-void OptionsDialog::addWhitelist()
-{
-  QString site = QInputDialog::getText(this, tr("Add site to whitelist"),
-                                       tr("Site without 'http://' (ex. youtube.com)"));
-  if (site.isEmpty())
-    return;
-
-  c2fWhitelist_->insertTopLevelItem(0, new QTreeWidgetItem(QStringList(site)));
-}
-//----------------------------------------------------------------------------
-void OptionsDialog::removeWhitelist()
-{
-  QTreeWidgetItem* item = c2fWhitelist_->currentItem();
-  if (!item)
-    return;
-
-  delete item;
-}
-#endif
 //----------------------------------------------------------------------------
 void OptionsDialog::selectionDownloadLocation()
 {

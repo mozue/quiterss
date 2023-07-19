@@ -240,9 +240,6 @@ void MainApplication::connectDatabase()
 
 void MainApplication::loadSettings()
 {
-#ifdef USE_CLICK2FLASH
-  c2fLoadSettings();
-#endif
   reloadUserStyleBrowser();
 }
 
@@ -525,56 +522,6 @@ void MainApplication::sqlQueryExec(const QString &query)
 {
   emit signalSqlQueryExec(query);
 }
-
-#ifdef USE_CLICK2FLASH
-/** @brief Click to Flash
- *---------------------------------------------------------------------------*/
-void MainApplication::c2fLoadSettings()
-{
-  Settings settings;
-  settings.beginGroup("ClickToFlash");
-  c2fWhitelist_ = settings.value("whitelist", QStringList()).toStringList();
-  c2fEnabled_ = settings.value("enabled", true).toBool();
-#if QT_VERSION >= 0x050900
-  c2fEnabled_ = false;
-#endif
-  settings.endGroup();
-}
-
-void MainApplication::c2fSaveSettings()
-{
-  Settings settings;
-  settings.beginGroup("ClickToFlash");
-  settings.setValue("whitelist", c2fWhitelist_);
-  settings.setValue("enabled", c2fEnabled_);
-  settings.endGroup();
-}
-
-bool MainApplication::c2fIsEnabled() const
-{
-  return c2fEnabled_;
-}
-
-void MainApplication::c2fSetEnabled(bool enabled)
-{
-  c2fEnabled_ = enabled;
-}
-
-QStringList MainApplication::c2fGetWhitelist()
-{
-  return c2fWhitelist_;
-}
-
-void MainApplication::c2fSetWhitelist(QStringList whitelist)
-{
-  c2fWhitelist_ = whitelist;
-}
-
-void MainApplication::c2fAddWhitelist(const QString &site)
-{
-  c2fWhitelist_.append(site);
-}
-#endif
 
 DownloadManager *MainApplication::downloadManager()
 {

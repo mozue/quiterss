@@ -17,9 +17,6 @@
 * ============================================================ */
 #include "webpluginfactory.h"
 
-#ifdef USE_CLICK2FLASH
-#include "clicktoflash.h"
-#endif
 #include "mainapplication.h"
 #include "adblockmanager.h"
 #include "webpage.h"
@@ -50,61 +47,7 @@ QObject* WebPluginFactory::create(const QString &mimeType, const QUrl &url,
     return new QObject();
   }
 
-#ifdef USE_CLICK2FLASH
-  QString mime = mimeType.trimmed();
-  if (mime.isEmpty()) {
-    if (url.toString().contains(QLatin1String(".swf"))) {
-      mime = "application/x-shockwave-flash";
-    } else {
-      return 0;
-    }
-  }
-
-  if (mime != QLatin1String("application/x-shockwave-flash")) {
-    if ((mime != QLatin1String("application/futuresplash")) &&
-        (mime != QLatin1String("application/x-java-applet"))) {
-      qDebug()  << "WebPluginFactory::create creating object of mimeType : "
-                << mime;
-    }
-    return 0;
-  }
-
-  if (!mainApp->c2fIsEnabled()) {
-    return 0;
-  }
-
-  // Click2Flash whitelist
-  QStringList whitelist = mainApp->c2fGetWhitelist();
-  if (whitelist.contains(url.host()) || whitelist.contains("www." + url.host()) || whitelist.contains(url.host().remove(QLatin1String("www.")))) {
-    return 0;
-  }
-
-  // Click2Flash already accepted
-  if (ClickToFlash::isAlreadyAccepted(url, argumentNames, argumentValues)) {
-    return 0;
-  }
-
-  int ctfWidth = 10;
-  int ctfHeight = 10;
-  for (int i = 0; i < argumentNames.count(); i++) {
-    if (argumentNames[i] == "width") {
-      if (!argumentValues[i].contains("%"))
-        ctfWidth = argumentValues[i].toInt();
-    }
-    if (argumentNames[i] == "height") {
-      if (!argumentValues[i].contains("%"))
-        ctfHeight = argumentValues[i].toInt();
-    }
-  }
-  if ((ctfWidth < 5) && (ctfHeight < 5)) {
-    return 0;
-  }
-
-  ClickToFlash* ctf = new ClickToFlash(url, argumentNames, argumentValues, page_);
-  return ctf;
-#else
   return 0;
-#endif
 }
 
 QList<QWebPluginFactory::Plugin> WebPluginFactory::plugins() const

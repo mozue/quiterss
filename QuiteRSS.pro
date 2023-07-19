@@ -54,9 +54,6 @@ isEmpty(DISABLE_SHARENEWS) {
 isEmpty(DISABLE_UPDATECHECK) {
   DEFINES += USE_UPDATECHECK
 }
-isEmpty(DISABLE_CLICK2FLASH) {
-  DEFINES += USE_CLICK2FLASH
-}
 
 unix:!mac:DEFINES += HAVE_X11
 
@@ -241,10 +238,6 @@ include(3rdparty/qupzilla/qupzilla.pri)
 isEmpty(DISABLE_UPDATECHECK) {
   HEADERS += src/updateappdialog.h
   SOURCES += src/updateappdialog.cpp
-}
-isEmpty(DISABLE_CLICK2FLASH) {
-  HEADERS += src/plugins/clicktoflash.h
-  SOURCES += src/plugins/clicktoflash.cpp
 }
 
 os2|win32|mac {

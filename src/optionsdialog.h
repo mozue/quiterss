@@ -256,10 +256,6 @@ private slots:
   void slotShowPass();
   void selectionUserStyleBrowser();
   void selectionDirDiskCache();
-#ifdef USE_CLICK2FLASH
-  void addWhitelist();
-  void removeWhitelist();
-#endif
   void selectionDownloadLocation();
 
 private:
@@ -313,14 +309,6 @@ private:
 
   // browser
   void createBrowserWidget();
-#ifdef USE_CLICK2FLASH
-  void applyWhitelist();
-#endif
-
-#ifdef USE_CLICK2FLASH
-  QCheckBox *c2fEnabled_;
-  QTreeWidget *c2fWhitelist_;
-#endif
 
   // feeds
   void createFeedsWidget();
