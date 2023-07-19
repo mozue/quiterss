@@ -894,19 +894,6 @@ void MainWindow::createActions()
   autoLoadImagesToggle_->setIcon(QIcon(":/images/imagesOn"));
   this->addAction(autoLoadImagesToggle_);
 
-#if defined(HAVE_PRINT)
-  printAct_ = new QAction(this);
-  printAct_->setObjectName("printAct");
-  printAct_->setIcon(QIcon(":/images/printer"));
-  this->addAction(printAct_);
-  connect(printAct_, SIGNAL(triggered()), this, SLOT(slotPrint()));
-  printPreviewAct_ = new QAction(this);
-  printPreviewAct_->setObjectName("printPreviewAct");
-  printPreviewAct_->setIcon(QIcon(":/images/printer"));
-  this->addAction(printPreviewAct_);
-  connect(printPreviewAct_, SIGNAL(triggered()), this, SLOT(slotPrintPreview()));
-#endif
-
   savePageAsAct_ = new QAction(this);
   savePageAsAct_->setObjectName("savePageAsAct");
   savePageAsAct_->setIcon(QIcon(":/images/save_as"));
@@ -1593,13 +1580,6 @@ void MainWindow::createShortcut()
   zoomTo100Act_->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_0));
   listActions_.append(zoomTo100Act_);
 
-#if defined(HAVE_PRINT)
-  printAct_->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_P));
-  listActions_.append(printAct_);
-  printPreviewAct_->setShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_P));
-  listActions_.append(printPreviewAct_);
-#endif
-
   savePageAsAct_->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_S));
   listActions_.append(savePageAsAct_);
   listActions_.append(savePageAsDescriptAct_);
@@ -1878,11 +1858,6 @@ void MainWindow::createMenu()
   browserMenu_ = new QMenu(this);
   browserMenu_->addAction(autoLoadImagesToggle_);
   browserMenu_->addMenu(browserZoomMenu_);
-  browserMenu_->addSeparator();
-#if defined(HAVE_PRINT)
-  browserMenu_->addAction(printAct_);
-  browserMenu_->addAction(printPreviewAct_);
-#endif
   browserMenu_->addSeparator();
   browserMenu_->addAction(savePageAsAct_);
   browserMenu_->addSeparator();
@@ -5063,13 +5038,6 @@ void MainWindow::retranslateStrings()
   zoomTo100Act_->setText(tr("100%"));
   zoomTo100Act_->setToolTip(tr("Reset browser zoom"));
 
-#if defined(HAVE_PRINT)
-  printAct_->setText(tr("Print..."));
-  printAct_->setToolTip(tr("Print Web Page"));
-  printPreviewAct_->setText(tr("Print Preview..."));
-  printPreviewAct_->setToolTip(tr("Preview Web Page"));
-#endif
-
   pageUpWebViewAct_->setText(tr("Page up (Browser)"));
   pageDownWebViewAct_->setText(tr("Page down (Browser)"));
 
@@ -7148,44 +7116,6 @@ void MainWindow::slotReportProblem()
 {
   QDesktopServices::openUrl(QUrl("https://github.com/QuiteRSS/quiterss/issues"));
 }
-
-/** @brief Print browser page
- *---------------------------------------------------------------------------*/
-#if defined(HAVE_PRINT)
-void MainWindow::slotPrint(QWebFrame *frame)
-{
-  if (currentNewsTab->type_ == NewsTabWidget::TabTypeDownloads) return;
-
-  QPrinter printer;
-  printer.setDocName(tr("Web Page"));
-  QPrintDialog *printDlg = new QPrintDialog(&printer);
-  if (!frame)
-    connect(printDlg, SIGNAL(accepted(QPrinter*)), currentNewsTab->webView_, SLOT(print(QPrinter*)));
-  else
-    connect(printDlg, SIGNAL(accepted(QPrinter*)), frame, SLOT(print(QPrinter*)));
-  printDlg->exec();
-  printDlg->deleteLater();
-}
-
-/** @brief Call print preview dialog
- *---------------------------------------------------------------------------*/
-void MainWindow::slotPrintPreview(QWebFrame *frame)
-{
-  if (currentNewsTab->type_ == NewsTabWidget::TabTypeDownloads) return;
-
-  QPrinter printer;
-  printer.setDocName(tr("Web Page"));
-  QPrintPreviewDialog *prevDlg = new QPrintPreviewDialog(&printer);
-  prevDlg->setWindowFlags(prevDlg->windowFlags() | Qt::WindowMaximizeButtonHint);
-  prevDlg->resize(650, 800);
-  if (!frame)
-    connect(prevDlg, SIGNAL(paintRequested(QPrinter*)), currentNewsTab->webView_, SLOT(print(QPrinter*)));
-  else
-    connect(prevDlg, SIGNAL(paintRequested(QPrinter*)), frame, SLOT(print(QPrinter*)));
-  prevDlg->exec();
-  prevDlg->deleteLater();
-}
-#endif
 
 // ----------------------------------------------------------------------------
 void MainWindow::setFullScreen()

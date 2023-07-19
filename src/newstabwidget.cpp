@@ -2349,11 +2349,6 @@ void NewsTabWidget::showContextWebPage(const QPoint &p)
       }
       menu.addAction(mainWindow_->autoLoadImagesToggle_);
       menu.addSeparator();
-#if defined(HAVE_PRINT)
-      menu.addAction(mainWindow_->printAct_);
-      menu.addAction(mainWindow_->printPreviewAct_);
-      menu.addSeparator();
-#endif
       menu.addAction(mainWindow_->savePageAsAct_);
     } else if (hitTest.isContentEditable()) {
       for (int i = 0; i < menu.actions().count(); i++) {

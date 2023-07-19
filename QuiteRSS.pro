@@ -48,11 +48,6 @@ equals(WEBKIT_ALPHA, true) {
     DEFINES += WEBKIT_ALPHA
 }
 
-isEmpty(DISABLE_PRINT) {
-  QT += printsupport
-  DEFINES += HAVE_PRINT
-}
-
 isEmpty(DISABLE_SHARENEWS) {
   DEFINES += USE_SHARENEWS
 }
