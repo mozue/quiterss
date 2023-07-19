@@ -2329,9 +2329,7 @@ void NewsTabWidget::showContextWebPage(const QPoint &p)
     webView_->page()->action(QWebPage::Stop)->setText(tr("Stop"));
     webView_->page()->action(QWebPage::Reload)->setText(tr("Reload"));
     webView_->page()->action(QWebPage::CopyImageToClipboard)->setText(tr("Copy Image"));
-#if QT_VERSION >= 0x040800
     webView_->page()->action(QWebPage::CopyImageUrlToClipboard)->setText(tr("Copy Image Address"));
-#endif
 
     const QWebHitTestResult &hitTest = webView_->page()->mainFrame()->hitTestContent(p);
     if (!hitTest.linkUrl().isEmpty() && hitTest.linkUrl().scheme() != "javascript") {

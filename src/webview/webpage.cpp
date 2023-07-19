@@ -49,10 +49,9 @@ WebPage::WebPage(QObject *parent)
           this, SLOT(handleUnsupportedContent(QNetworkReply*)));
   connect(this, SIGNAL(downloadRequested(QNetworkRequest)),
           this, SLOT(downloadRequested(QNetworkRequest)));
-#if QT_VERSION >= 0x050905
   connect(this, SIGNAL(fullScreenRequested(QWebFullScreenRequest)),
           this, SLOT(slotFullScreenRequested(QWebFullScreenRequest)));
-#endif
+
   livingPages_.append(this);
 }
 
@@ -290,10 +289,8 @@ void WebPage::cleanBlockedObjects()
   }
 }
 
-#if QT_VERSION >= 0x050905
 void WebPage::slotFullScreenRequested(QWebFullScreenRequest fullScreenRequest)
 {
   fullScreenRequest.accept();
   mainApp->mainWindow()->webViewFullScreen(fullScreenRequest.toggleOn());
 }
-#endif

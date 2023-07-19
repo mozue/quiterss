@@ -109,11 +109,7 @@ void NetworkManager::loadSettings()
   }
   QSslConfiguration::defaultConfiguration().setCaCertificates(QSslCertificate::fromPath(bundlePath));
 #else
-#if QT_VERSION >= QT_VERSION_CHECK(5,5,0)
   QSslConfiguration::defaultConfiguration().setCaCertificates(QSslConfiguration::systemCaCertificates());
-#else
-  QSslSocket::setDefaultCaCertificates(QSslSocket::systemCaCertificates());
-#endif
 #endif
 
   loadCertificates();

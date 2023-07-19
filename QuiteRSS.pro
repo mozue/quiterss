@@ -34,12 +34,12 @@ exists(.git) {
 isEqual(QT_MAJOR_VERSION, 5) {
   !versionAtLeast(QT_VERSION, 5.15.0) {
     message("Cannot use Qt $${QT_VERSION}")
-    error("Use Qt 5.15")
+    error("Please use Qt 5.15")
   }
 }
 else {
   message("Cannot use Qt $${QT_VERSION}")
-  error("Use Qt 5.15")
+  error("Please use Qt 5.15")
 }
 
 QT += widgets webkitwidgets network xml sql multimedia

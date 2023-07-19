@@ -270,11 +270,7 @@ QVariant FeedsModel::data(const QModelIndex &index, int role) const
       if (0 < indexSibling(index, "unread").data(Qt::EditRole).toInt())
         font.setBold(true);
       QFontMetrics fontMetrics(font);
-#if QT_VERSION >= QT_VERSION_CHECK(5,11,0)
       const int fontMetricsWidth = fontMetrics.horizontalAdvance(title);
-#else
-      const int fontMetricsWidth = fontMetrics.width(title);
-#endif
       if (width < fontMetricsWidth)
         return title;
     }
