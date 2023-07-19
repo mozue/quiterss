@@ -21,10 +21,6 @@
 #include <QString>
 #include <QDir>
 
-#ifdef USE_ANALYTICS
-#define TRACKING_ID "UA-99877778-1"
-#endif
-
 #define ADBLOCK_EASYLIST_URL "https://easylist-downloads.adblockplus.org/easylist.txt"
 
 #ifndef Q_UNLIKELY
@@ -63,12 +59,6 @@ namespace Common
   QByteArray readAllFileByteContents(const QString &filename);
 
   void sleep(int ms);
-
-#ifdef USE_ANALYTICS
-  QString operatingSystem();
-  QString cpuArchitecture();
-  QString operatingSystemLong();
-#endif
 }
 
 #endif // COMMON_H

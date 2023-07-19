@@ -36,8 +36,8 @@ jobs:
           cd build
           cmake -DCMAKE_BUILD_TYPE=Release -G Ninja ../
       - name: Build
+        working-directory: ./build
         run: |
-          cd build
           cmake --build ./
       - name: Deploy - copy to dist
         run: |

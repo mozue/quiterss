@@ -300,9 +300,6 @@ void OptionsDialog::createGeneralWidget()
 #ifdef USE_UPDATECHECK
   updateCheckEnabled_ = new QCheckBox(tr("Automatically check for updates"));
 #endif
-#ifdef USE_ANALYTICS
-  statisticsEnabled_ = new QCheckBox(tr("Help improve QuiteRSS by sending usage information"));
-#endif
   storeDBMemory_ = new QCheckBox(tr("Store a DB in memory (requires program restart)"));
   storeDBMemory_->setChecked(false);
   saveDBMemFileInterval_ = new QSpinBox();
@@ -363,9 +360,6 @@ void OptionsDialog::createGeneralWidget()
 
 #ifdef USE_UPDATECHECK
   generalLayout->addWidget(updateCheckEnabled_);
-#endif
-#ifdef USE_ANALYTICS
-  generalLayout->addWidget(statisticsEnabled_);
 #endif
   generalLayout->addWidget(storeDBMemory_);
   generalLayout->addWidget(saveDBMemFileWidget);

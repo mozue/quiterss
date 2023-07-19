@@ -90,25 +90,21 @@
     <name>AdBlockAddSubscriptionDialog</name>
     <message>
         <location filename="../src/adblock/adblockaddsubscriptiondialog.ui" line="14"/>
-        <location filename="../ui_adblockaddsubscriptiondialog.h" line="89"/>
         <source>Add Subscription</source>
         <translation>新增訂閱</translation>
     </message>
     <message>
         <location filename="../src/adblock/adblockaddsubscriptiondialog.ui" line="23"/>
-        <location filename="../ui_adblockaddsubscriptiondialog.h" line="90"/>
         <source>Title:</source>
         <translation>標題:</translation>
     </message>
     <message>
         <location filename="../src/adblock/adblockaddsubscriptiondialog.ui" line="33"/>
-        <location filename="../ui_adblockaddsubscriptiondialog.h" line="91"/>
         <source>Address:</source>
         <translation>地址:</translation>
     </message>
     <message>
         <location filename="../src/adblock/adblockaddsubscriptiondialog.ui" line="53"/>
-        <location filename="../ui_adblockaddsubscriptiondialog.h" line="92"/>
         <source>Add new subscription to AdBlock:</source>
         <translation>新增 AdBlock 訂閱:</translation>
     </message>
@@ -118,7 +114,7 @@
     <message>
         <location filename="../src/adblock/adblocksubscription.cpp" line="323"/>
         <location filename="../src/adblock/adblocksubscription.cpp" line="330"/>
-        <location filename="../src/application/mainwindow.cpp" line="5218"/>
+        <location filename="../src/application/mainwindow.cpp" line="5207"/>
         <source>Custom Rules</source>
         <translation>自訂規則</translation>
     </message>
@@ -127,37 +123,31 @@
     <name>AdBlockDialog</name>
     <message>
         <location filename="../src/adblock/adblockdialog.ui" line="14"/>
-        <location filename="../ui_adblockdialog.h" line="146"/>
         <source>AdBlock Configuration</source>
         <translation>AdBlock 設定</translation>
     </message>
     <message>
         <location filename="../src/adblock/adblockdialog.ui" line="20"/>
-        <location filename="../ui_adblockdialog.h" line="147"/>
         <source>Enable AdBlock</source>
         <translation>啟用 AdBlock</translation>
     </message>
     <message>
         <location filename="../src/adblock/adblockdialog.ui" line="32"/>
-        <location filename="../ui_adblockdialog.h" line="148"/>
         <source>Search...</source>
         <translation>搜尋…</translation>
     </message>
     <message>
         <location filename="../src/adblock/adblockdialog.ui" line="68"/>
-        <location filename="../ui_adblockdialog.h" line="149"/>
         <source>Options</source>
         <translation>選項</translation>
     </message>
     <message>
         <location filename="../src/adblock/adblockdialog.ui" line="98"/>
-        <location filename="../ui_adblockdialog.h" line="150"/>
         <source>AdBlock</source>
         <translation>AdBlock</translation>
     </message>
     <message>
         <location filename="../src/adblock/adblockdialog.ui" line="122"/>
-        <location filename="../ui_adblockdialog.h" line="151"/>
         <source>Use only essential part of EasyList (for performance reasons)</source>
         <translation>僅使用 EasyList 的重要部分 (以免降低效能)</translation>
     </message>
@@ -360,18 +350,18 @@
     </message>
     <message>
         <location filename="../src/addfeedwizard.cpp" line="357"/>
-        <location filename="../src/addfeedwizard.cpp" line="519"/>
+        <location filename="../src/addfeedwizard.cpp" line="522"/>
         <source>Duplicate feed!</source>
         <translation>新聞源重複！</translation>
     </message>
     <message>
-        <location filename="../src/addfeedwizard.cpp" line="521"/>
-        <location filename="../src/addfeedwizard.cpp" line="543"/>
+        <location filename="../src/addfeedwizard.cpp" line="524"/>
+        <location filename="../src/addfeedwizard.cpp" line="546"/>
         <source>Can&apos;t find feed URL!</source>
         <translation>找不到新聞源的網址！</translation>
     </message>
     <message>
-        <location filename="../src/addfeedwizard.cpp" line="562"/>
+        <location filename="../src/addfeedwizard.cpp" line="565"/>
         <source>Request failed!</source>
         <translation>請求失敗！</translation>
     </message>
@@ -1351,7 +1341,7 @@ Ancient news could reappear</source>
         <location filename="../src/newsfilters/itemcondition.cpp" line="107"/>
         <location filename="../src/newsfilters/itemcondition.cpp" line="113"/>
         <source>doesn&apos;t contain</source>
-        <translation type="unfinished"></translation>
+        <translation>不包含</translation>
     </message>
     <message>
         <location filename="../src/newsfilters/itemcondition.cpp" line="82"/>
@@ -1459,7 +1449,7 @@ Ancient news could reappear</source>
 <context>
     <name>MainApplication</name>
     <message>
-        <location filename="../src/application/mainapplication.cpp" line="301"/>
+        <location filename="../src/application/mainapplication.cpp" line="270"/>
         <source>Saving data...</source>
         <translation>儲存資料中…</translation>
     </message>
@@ -1467,1063 +1457,1063 @@ Ancient news could reappear</source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="1894"/>
+        <location filename="../src/application/mainwindow.cpp" line="1889"/>
         <source>&amp;AdBlock</source>
         <translation>AdBlock (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="2333"/>
-        <location filename="../src/application/mainwindow.cpp" line="5110"/>
-        <location filename="../src/application/mainwindow.cpp" line="7599"/>
-        <location filename="../src/application/mainwindow.cpp" line="7621"/>
+        <location filename="../src/application/mainwindow.cpp" line="2328"/>
+        <location filename="../src/application/mainwindow.cpp" line="5099"/>
+        <location filename="../src/application/mainwindow.cpp" line="7588"/>
+        <location filename="../src/application/mainwindow.cpp" line="7610"/>
         <source>Hide Categories</source>
         <translation>隱藏分類</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="2337"/>
-        <location filename="../src/application/mainwindow.cpp" line="5108"/>
-        <location filename="../src/application/mainwindow.cpp" line="7605"/>
+        <location filename="../src/application/mainwindow.cpp" line="2332"/>
+        <location filename="../src/application/mainwindow.cpp" line="5097"/>
+        <location filename="../src/application/mainwindow.cpp" line="7594"/>
         <source>Show Categories</source>
         <translation>顯示分類</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="2773"/>
-        <location filename="../src/application/mainwindow.cpp" line="2802"/>
+        <location filename="../src/application/mainwindow.cpp" line="2770"/>
+        <location filename="../src/application/mainwindow.cpp" line="2799"/>
         <source>Select OPML-File</source>
         <translation>選擇 OPML 檔</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="2775"/>
+        <location filename="../src/application/mainwindow.cpp" line="2772"/>
         <source>OPML-Files (*.%1 *.%2)</source>
         <translation>OPML 檔 (*.%1 *.%2)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="2779"/>
+        <location filename="../src/application/mainwindow.cpp" line="2776"/>
         <source>Import canceled</source>
         <translation>匯入已取消</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="2787"/>
+        <location filename="../src/application/mainwindow.cpp" line="2784"/>
         <source>Import: can&apos;t open a file</source>
         <translation>匯入時無法開啟檔案</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="2804"/>
+        <location filename="../src/application/mainwindow.cpp" line="2801"/>
         <source>OPML-Files (*.%1)</source>
         <translation>OPML 檔案 (*.%1)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="2808"/>
+        <location filename="../src/application/mainwindow.cpp" line="2805"/>
         <source>Export canceled</source>
         <translation>匯出已取消</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="2814"/>
+        <location filename="../src/application/mainwindow.cpp" line="2811"/>
         <source>Export: can&apos;t open a file</source>
         <translation>匯出時無法開啟檔案</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="3078"/>
-        <location filename="../src/application/mainwindow.cpp" line="4265"/>
-        <location filename="../src/application/mainwindow.cpp" line="4872"/>
-        <location filename="../src/application/mainwindow.cpp" line="6491"/>
-        <location filename="../src/application/mainwindow.cpp" line="7556"/>
+        <location filename="../src/application/mainwindow.cpp" line="3075"/>
+        <location filename="../src/application/mainwindow.cpp" line="4254"/>
+        <location filename="../src/application/mainwindow.cpp" line="4861"/>
+        <location filename="../src/application/mainwindow.cpp" line="6480"/>
+        <location filename="../src/application/mainwindow.cpp" line="7545"/>
         <source>Unread: %1</source>
         <translation>未讀: %1</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="3079"/>
-        <location filename="../src/application/mainwindow.cpp" line="4266"/>
-        <location filename="../src/application/mainwindow.cpp" line="4875"/>
-        <location filename="../src/application/mainwindow.cpp" line="6492"/>
-        <location filename="../src/application/mainwindow.cpp" line="7557"/>
+        <location filename="../src/application/mainwindow.cpp" line="3076"/>
+        <location filename="../src/application/mainwindow.cpp" line="4255"/>
+        <location filename="../src/application/mainwindow.cpp" line="4864"/>
+        <location filename="../src/application/mainwindow.cpp" line="6481"/>
+        <location filename="../src/application/mainwindow.cpp" line="7546"/>
         <source>All: %1</source>
         <translation>總共: %1</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="3670"/>
-        <location filename="../src/application/mainwindow.cpp" line="3675"/>
-        <location filename="../src/application/mainwindow.cpp" line="3680"/>
+        <location filename="../src/application/mainwindow.cpp" line="3663"/>
+        <location filename="../src/application/mainwindow.cpp" line="3668"/>
+        <location filename="../src/application/mainwindow.cpp" line="3673"/>
         <source>(Browser)</source>
         <translation>(瀏覽器)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4880"/>
-        <location filename="../src/application/mainwindow.cpp" line="5839"/>
+        <location filename="../src/application/mainwindow.cpp" line="4869"/>
+        <location filename="../src/application/mainwindow.cpp" line="5828"/>
         <source>New News: %1</source>
         <translation>新進新聞: %1</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4882"/>
-        <location filename="../src/application/mainwindow.cpp" line="5841"/>
+        <location filename="../src/application/mainwindow.cpp" line="4871"/>
+        <location filename="../src/application/mainwindow.cpp" line="5830"/>
         <source>Unread News: %1</source>
         <translation>未讀新聞: %1</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4887"/>
+        <location filename="../src/application/mainwindow.cpp" line="4876"/>
         <source>&amp;Add</source>
         <translation>新增(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4888"/>
-        <location filename="../src/application/mainwindow.cpp" line="4891"/>
+        <location filename="../src/application/mainwindow.cpp" line="4877"/>
+        <location filename="../src/application/mainwindow.cpp" line="4880"/>
         <source>Add New Feed</source>
         <translation>新增新聞源</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4890"/>
+        <location filename="../src/application/mainwindow.cpp" line="4879"/>
         <source>&amp;Feed...</source>
         <translation>新聞源(&amp;F)...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4895"/>
+        <location filename="../src/application/mainwindow.cpp" line="4884"/>
         <source>F&amp;older...</source>
         <translation>資料夾(&amp;O)...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4896"/>
+        <location filename="../src/application/mainwindow.cpp" line="4885"/>
         <source>Add New Folder</source>
         <translation>新增資料夾</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4898"/>
-        <location filename="../src/application/mainwindow.cpp" line="4971"/>
+        <location filename="../src/application/mainwindow.cpp" line="4887"/>
+        <location filename="../src/application/mainwindow.cpp" line="4960"/>
         <source>Open in New Tab</source>
         <translation>在新分頁開啟</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4900"/>
+        <location filename="../src/application/mainwindow.cpp" line="4889"/>
         <source>&amp;Delete...</source>
         <translation>刪除(&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4901"/>
+        <location filename="../src/application/mainwindow.cpp" line="4890"/>
         <source>Delete Selected Feed</source>
         <translation>刪除所選的新聞源</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4903"/>
+        <location filename="../src/application/mainwindow.cpp" line="4892"/>
         <source>&amp;Import Feeds...</source>
         <translation>匯入新聞源(&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4904"/>
+        <location filename="../src/application/mainwindow.cpp" line="4893"/>
         <source>Import Feeds from OPML File</source>
         <translation>從 OPML 檔匯入新聞源</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4906"/>
+        <location filename="../src/application/mainwindow.cpp" line="4895"/>
         <source>&amp;Export Feeds...</source>
         <translation>匯出新聞源(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4907"/>
+        <location filename="../src/application/mainwindow.cpp" line="4896"/>
         <source>Export Feeds to OPML File</source>
         <translation>匯出新聞源成 OPML 檔</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4912"/>
+        <location filename="../src/application/mainwindow.cpp" line="4901"/>
         <source>E&amp;xit</source>
         <translation>退出(&amp;X)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4914"/>
+        <location filename="../src/application/mainwindow.cpp" line="4903"/>
         <source>Update Feed</source>
         <translation>更新此源的新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4915"/>
+        <location filename="../src/application/mainwindow.cpp" line="4904"/>
         <source>Update Current Feed</source>
         <translation>更新此新聞源的新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4917"/>
+        <location filename="../src/application/mainwindow.cpp" line="4906"/>
         <source>Update All</source>
         <translation>全部更新</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4918"/>
+        <location filename="../src/application/mainwindow.cpp" line="4907"/>
         <source>Update All Feeds</source>
         <translation>更新所有新聞源</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4923"/>
+        <location filename="../src/application/mainwindow.cpp" line="4912"/>
         <source>Mark All Feeds Read</source>
         <translation>標示所有新聞源成已讀</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4925"/>
+        <location filename="../src/application/mainwindow.cpp" line="4914"/>
         <source>Mark Read/Unread</source>
         <translation>標示成已讀/未讀</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4926"/>
+        <location filename="../src/application/mainwindow.cpp" line="4915"/>
         <source>Mark Current News Read/Unread</source>
         <translation>標示目前新聞成已讀/未讀</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4928"/>
-        <location filename="../src/application/mainwindow.cpp" line="4929"/>
+        <location filename="../src/application/mainwindow.cpp" line="4917"/>
+        <location filename="../src/application/mainwindow.cpp" line="4918"/>
         <source>Mark All News Read</source>
         <translation>標示所有新聞成已讀</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4931"/>
-        <location filename="../src/application/mainwindow.cpp" line="8184"/>
-        <location filename="../src/application/mainwindow.cpp" line="8190"/>
-        <location filename="../src/application/mainwindow.cpp" line="8200"/>
+        <location filename="../src/application/mainwindow.cpp" line="4920"/>
+        <location filename="../src/application/mainwindow.cpp" line="8173"/>
+        <location filename="../src/application/mainwindow.cpp" line="8179"/>
+        <location filename="../src/application/mainwindow.cpp" line="8189"/>
         <source>Downloads</source>
         <translation>下載</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4933"/>
+        <location filename="../src/application/mainwindow.cpp" line="4922"/>
         <source>Clean Up...</source>
         <translation>清除...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4935"/>
+        <location filename="../src/application/mainwindow.cpp" line="4924"/>
         <source>News Filters...</source>
         <translation>新聞篩選規則...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4936"/>
+        <location filename="../src/application/mainwindow.cpp" line="4925"/>
         <source>Filter News...</source>
         <translation>篩選新聞...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4938"/>
+        <location filename="../src/application/mainwindow.cpp" line="4927"/>
         <source>Options...</source>
         <translation>選項​​...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4939"/>
+        <location filename="../src/application/mainwindow.cpp" line="4928"/>
         <source>Open Options Dialog</source>
         <translation>開啟選項對話框</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4941"/>
+        <location filename="../src/application/mainwindow.cpp" line="4930"/>
         <source>Filter Feeds</source>
         <translation>篩選新聞源</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4942"/>
-        <location filename="../src/application/mainwindow.cpp" line="4949"/>
+        <location filename="../src/application/mainwindow.cpp" line="4931"/>
+        <location filename="../src/application/mainwindow.cpp" line="4938"/>
         <source>Show All</source>
         <translation>全部</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4943"/>
-        <location filename="../src/application/mainwindow.cpp" line="4950"/>
+        <location filename="../src/application/mainwindow.cpp" line="4932"/>
+        <location filename="../src/application/mainwindow.cpp" line="4939"/>
         <source>Show New</source>
         <translation>新進的新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4944"/>
-        <location filename="../src/application/mainwindow.cpp" line="4951"/>
+        <location filename="../src/application/mainwindow.cpp" line="4933"/>
+        <location filename="../src/application/mainwindow.cpp" line="4940"/>
         <source>Show Unread</source>
         <translation>未讀的新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4945"/>
+        <location filename="../src/application/mainwindow.cpp" line="4934"/>
         <source>Show Starred Feeds</source>
         <translation>標星的新聞源</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4946"/>
+        <location filename="../src/application/mainwindow.cpp" line="4935"/>
         <source>Show Not Working Feeds</source>
         <translation>沒有活動的新聞源</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4948"/>
+        <location filename="../src/application/mainwindow.cpp" line="4937"/>
         <source>Filter News</source>
         <translation>篩選新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4952"/>
+        <location filename="../src/application/mainwindow.cpp" line="4941"/>
         <source>Show Starred</source>
         <translation>標星的新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4953"/>
+        <location filename="../src/application/mainwindow.cpp" line="4942"/>
         <source>Show Not Starred</source>
         <translation>未標星的新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4954"/>
+        <location filename="../src/application/mainwindow.cpp" line="4943"/>
         <source>Show Unread or Starred</source>
         <translation>未讀的或標星的新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4955"/>
+        <location filename="../src/application/mainwindow.cpp" line="4944"/>
         <source>Show Last Day</source>
         <translation>最近一天的新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4956"/>
+        <location filename="../src/application/mainwindow.cpp" line="4945"/>
         <source>Show Last 7 Days</source>
         <translation>最近七天的新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4958"/>
+        <location filename="../src/application/mainwindow.cpp" line="4947"/>
         <source>About...</source>
         <translation>關於...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4959"/>
+        <location filename="../src/application/mainwindow.cpp" line="4948"/>
         <source>Show &apos;About&apos; Dialog</source>
         <translation>顯示「關於」對話框</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4962"/>
+        <location filename="../src/application/mainwindow.cpp" line="4951"/>
         <source>Check for Updates...</source>
         <translation>檢查更新...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4964"/>
+        <location filename="../src/application/mainwindow.cpp" line="4953"/>
         <source>Report a Problem...</source>
         <translation>提報問題...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4966"/>
+        <location filename="../src/application/mainwindow.cpp" line="4955"/>
         <source>Open News</source>
         <translation>開啟新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4968"/>
+        <location filename="../src/application/mainwindow.cpp" line="4957"/>
         <source>Open in Browser</source>
         <translation>於瀏覽器開啟</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4969"/>
+        <location filename="../src/application/mainwindow.cpp" line="4958"/>
         <source>Open in External Browser</source>
         <translation>於外部瀏覽器開啟</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4970"/>
+        <location filename="../src/application/mainwindow.cpp" line="4959"/>
         <source>Open News in External Browser</source>
         <translation>於外部瀏覽器開啟新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4972"/>
+        <location filename="../src/application/mainwindow.cpp" line="4961"/>
         <source>Open News in New Tab</source>
         <translation>於新分頁開啟新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4973"/>
+        <location filename="../src/application/mainwindow.cpp" line="4962"/>
         <source>Open in Background Tab</source>
         <translation>在背景開啟分頁</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4974"/>
+        <location filename="../src/application/mainwindow.cpp" line="4963"/>
         <source>Open News in Background Tab</source>
         <translation>在背景分頁開啟新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4975"/>
+        <location filename="../src/application/mainwindow.cpp" line="4964"/>
         <source>Star</source>
         <translation>加星</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4976"/>
+        <location filename="../src/application/mainwindow.cpp" line="4965"/>
         <source>Mark News Star</source>
         <translation>將新聞標星</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4977"/>
+        <location filename="../src/application/mainwindow.cpp" line="4966"/>
         <source>Delete</source>
         <translation>刪除</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4978"/>
+        <location filename="../src/application/mainwindow.cpp" line="4967"/>
         <source>Delete Selected News</source>
         <translation>刪除選取的新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4979"/>
+        <location filename="../src/application/mainwindow.cpp" line="4968"/>
         <source>Delete All News</source>
         <translation>刪除所有新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4980"/>
+        <location filename="../src/application/mainwindow.cpp" line="4969"/>
         <source>Delete All News from List</source>
         <translation>從列表中刪除所有新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4981"/>
+        <location filename="../src/application/mainwindow.cpp" line="4970"/>
         <source>Restore</source>
         <translation>恢復</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4982"/>
+        <location filename="../src/application/mainwindow.cpp" line="4971"/>
         <source>Restore News</source>
         <translation>恢復新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4983"/>
+        <location filename="../src/application/mainwindow.cpp" line="4972"/>
         <source>Copy Link</source>
         <translation>複製連結</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4986"/>
+        <location filename="../src/application/mainwindow.cpp" line="4975"/>
         <source>Restore last deleted news</source>
         <translation>恢復最近刪除的新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4988"/>
+        <location filename="../src/application/mainwindow.cpp" line="4977"/>
         <source>Mark Read</source>
         <translation>標示成已讀</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4989"/>
+        <location filename="../src/application/mainwindow.cpp" line="4978"/>
         <source>Mark Feed Read</source>
         <translation>標示新聞源成已讀</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4990"/>
-        <location filename="../src/application/mainwindow.cpp" line="4991"/>
+        <location filename="../src/application/mainwindow.cpp" line="4979"/>
+        <location filename="../src/application/mainwindow.cpp" line="4980"/>
         <source>Properties</source>
         <translation>屬性</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4993"/>
+        <location filename="../src/application/mainwindow.cpp" line="4982"/>
         <source>&amp;File</source>
         <translation>檔案(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5060"/>
+        <location filename="../src/application/mainwindow.cpp" line="5049"/>
         <source>Count Unread News</source>
         <translation>未讀新聞數量</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5061"/>
+        <location filename="../src/application/mainwindow.cpp" line="5050"/>
         <source>Count All News</source>
         <translation>所有新聞數量</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5062"/>
+        <location filename="../src/application/mainwindow.cpp" line="5051"/>
         <source>Last Update</source>
         <translation>最近更新</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5075"/>
+        <location filename="../src/application/mainwindow.cpp" line="5064"/>
         <source>Reset browser zoom</source>
         <translation>重設瀏覽器的縮放大小</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5079"/>
+        <location filename="../src/application/mainwindow.cpp" line="5068"/>
         <source>Print Web Page</source>
         <translation>列印網頁</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5081"/>
+        <location filename="../src/application/mainwindow.cpp" line="5070"/>
         <source>Preview Web Page</source>
         <translation>預覽網頁</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5089"/>
+        <location filename="../src/application/mainwindow.cpp" line="5078"/>
         <source>Save page in database</source>
         <translation>將網頁儲存於資料庫</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5090"/>
+        <location filename="../src/application/mainwindow.cpp" line="5079"/>
         <source>Save page in database instead of news description</source>
         <translation>將網頁儲存於資料庫，而非只存新聞描述</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="2668"/>
+        <location filename="../src/application/mainwindow.cpp" line="2665"/>
         <source>Confirm Delete</source>
         <translation>確認刪除</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="2669"/>
+        <location filename="../src/application/mainwindow.cpp" line="2666"/>
         <source>Are you sure to delete selected elements?</source>
         <translation>您確定要刪除所選的？</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4885"/>
+        <location filename="../src/application/mainwindow.cpp" line="4874"/>
         <source>Menu</source>
         <translation>選單</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4893"/>
+        <location filename="../src/application/mainwindow.cpp" line="4882"/>
         <source>Add Feed...</source>
         <translation>新增新聞源...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4909"/>
+        <location filename="../src/application/mainwindow.cpp" line="4898"/>
         <source>&amp;Create Backup...</source>
         <translation>建立備份(&amp;C)…</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4910"/>
+        <location filename="../src/application/mainwindow.cpp" line="4899"/>
         <source>S&amp;how Menu Bar</source>
         <translation>顯示選單列(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4920"/>
-        <location filename="../src/application/mainwindow.cpp" line="4921"/>
+        <location filename="../src/application/mainwindow.cpp" line="4909"/>
+        <location filename="../src/application/mainwindow.cpp" line="4910"/>
         <source>Stop Update Feeds</source>
         <translation>停止更新新聞源的新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4967"/>
+        <location filename="../src/application/mainwindow.cpp" line="4956"/>
         <source>Open News Description</source>
         <translation>開啟新聞描述</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4984"/>
+        <location filename="../src/application/mainwindow.cpp" line="4973"/>
         <source>Copy News Link</source>
         <translation>複製新聞連結</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4994"/>
+        <location filename="../src/application/mainwindow.cpp" line="4983"/>
         <source>&amp;View</source>
         <translation>檢視(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4995"/>
+        <location filename="../src/application/mainwindow.cpp" line="4984"/>
         <source>Fee&amp;ds</source>
         <translation>新聞源(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4996"/>
+        <location filename="../src/application/mainwindow.cpp" line="4985"/>
         <source>&amp;News</source>
         <translation>新聞(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4997"/>
+        <location filename="../src/application/mainwindow.cpp" line="4986"/>
         <source>&amp;Browser</source>
         <translation>瀏覽器(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4998"/>
+        <location filename="../src/application/mainwindow.cpp" line="4987"/>
         <source>&amp;Tools</source>
         <translation>工具(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="4999"/>
+        <location filename="../src/application/mainwindow.cpp" line="4988"/>
         <source>&amp;Help</source>
         <translation>說明(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5001"/>
-        <location filename="../src/application/mainwindow.cpp" line="5093"/>
+        <location filename="../src/application/mainwindow.cpp" line="4990"/>
+        <location filename="../src/application/mainwindow.cpp" line="5082"/>
         <source>Main Toolbar</source>
         <translation>主工具列</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5002"/>
+        <location filename="../src/application/mainwindow.cpp" line="4991"/>
         <source>Customize Toolbar</source>
         <translation>自訂工具列</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5003"/>
+        <location filename="../src/application/mainwindow.cpp" line="4992"/>
         <source>Main Toolbar...</source>
         <translation>主工具列...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5004"/>
+        <location filename="../src/application/mainwindow.cpp" line="4993"/>
         <source>Customize Toolbar...</source>
         <translation>自訂工具列...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5005"/>
+        <location filename="../src/application/mainwindow.cpp" line="4994"/>
         <source>Feeds Toolbar...</source>
         <translation>新聞源工具列...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5006"/>
+        <location filename="../src/application/mainwindow.cpp" line="4995"/>
         <source>News Toolbar...</source>
         <translation>新聞工具列...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5008"/>
+        <location filename="../src/application/mainwindow.cpp" line="4997"/>
         <source>Lock Toolbar</source>
         <translation>鎖定工具列</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5009"/>
+        <location filename="../src/application/mainwindow.cpp" line="4998"/>
         <source>Hide Toolbar</source>
         <translation>隱藏工具列</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5011"/>
-        <location filename="../src/application/mainwindow.cpp" line="5014"/>
+        <location filename="../src/application/mainwindow.cpp" line="5000"/>
+        <location filename="../src/application/mainwindow.cpp" line="5003"/>
         <source>Layout</source>
         <translation>版面</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5012"/>
+        <location filename="../src/application/mainwindow.cpp" line="5001"/>
         <source>Classic</source>
         <translation>經典</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5013"/>
+        <location filename="../src/application/mainwindow.cpp" line="5002"/>
         <source>Newspaper</source>
         <translation>報紙</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5016"/>
+        <location filename="../src/application/mainwindow.cpp" line="5005"/>
         <source>Application Style</source>
         <translation>應用程式樣式</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5017"/>
+        <location filename="../src/application/mainwindow.cpp" line="5006"/>
         <source>System</source>
         <translation>系統</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5018"/>
+        <location filename="../src/application/mainwindow.cpp" line="5007"/>
         <source>System2</source>
         <translation>系統2</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5019"/>
+        <location filename="../src/application/mainwindow.cpp" line="5008"/>
         <source>Dark</source>
         <translation>暗色</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5020"/>
+        <location filename="../src/application/mainwindow.cpp" line="5009"/>
         <source>Green</source>
         <translation>綠色</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5021"/>
+        <location filename="../src/application/mainwindow.cpp" line="5010"/>
         <source>Orange</source>
         <translation>橙色</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5022"/>
+        <location filename="../src/application/mainwindow.cpp" line="5011"/>
         <source>Purple</source>
         <translation>紫色</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5023"/>
+        <location filename="../src/application/mainwindow.cpp" line="5012"/>
         <source>Pink</source>
         <translation>粉紅色</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5024"/>
+        <location filename="../src/application/mainwindow.cpp" line="5013"/>
         <source>Gray</source>
         <translation>灰色</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5026"/>
+        <location filename="../src/application/mainwindow.cpp" line="5015"/>
         <source>Browser Position</source>
         <translation>瀏覽器位置</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5027"/>
+        <location filename="../src/application/mainwindow.cpp" line="5016"/>
         <source>Top</source>
         <translation>上方</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5028"/>
+        <location filename="../src/application/mainwindow.cpp" line="5017"/>
         <source>Bottom</source>
         <translation>下方</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5029"/>
+        <location filename="../src/application/mainwindow.cpp" line="5018"/>
         <source>Right</source>
         <translation>右方</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5030"/>
+        <location filename="../src/application/mainwindow.cpp" line="5019"/>
         <source>Left</source>
         <translation>左方</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5032"/>
+        <location filename="../src/application/mainwindow.cpp" line="5021"/>
         <source>Show Window</source>
         <translation>顯示視窗</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5034"/>
+        <location filename="../src/application/mainwindow.cpp" line="5023"/>
         <source>Previous Feed</source>
         <translation>上一個新聞源</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5035"/>
+        <location filename="../src/application/mainwindow.cpp" line="5024"/>
         <source>Next Feed</source>
         <translation>下一個新聞源</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5036"/>
+        <location filename="../src/application/mainwindow.cpp" line="5025"/>
         <source>Previous News</source>
         <translation>上一個新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5037"/>
+        <location filename="../src/application/mainwindow.cpp" line="5026"/>
         <source>Next News</source>
         <translation>下一個新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5038"/>
+        <location filename="../src/application/mainwindow.cpp" line="5027"/>
         <source>News Page Up</source>
         <translation>新聞向上翻頁</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5039"/>
+        <location filename="../src/application/mainwindow.cpp" line="5028"/>
         <source>News Page Down</source>
         <translation>新聞向下翻頁</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5041"/>
+        <location filename="../src/application/mainwindow.cpp" line="5030"/>
         <source>Next Unread News</source>
         <translation>下一未讀的新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5042"/>
+        <location filename="../src/application/mainwindow.cpp" line="5031"/>
         <source>Previous Unread News</source>
         <translation>上一未讀的新聞</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5044"/>
+        <location filename="../src/application/mainwindow.cpp" line="5033"/>
         <source>Switch Focus to Next Panel</source>
         <translation>焦點換到下一窗格</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5046"/>
+        <location filename="../src/application/mainwindow.cpp" line="5035"/>
         <source>Switch Focus to Next Panel (Tree Feeds, List News, Browser)</source>
         <translation>焦點換到下一窗格 (新聞源樹，或新聞列表，或瀏覽器)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5047"/>
+        <location filename="../src/application/mainwindow.cpp" line="5036"/>
         <source>Switch Focus to Previous Panel</source>
         <translation>焦點換到上一窗格</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5049"/>
+        <location filename="../src/application/mainwindow.cpp" line="5038"/>
         <source>Switch Focus to Previous Panel (Tree Feeds, Browser, List News)</source>
         <translation>焦點換到上一窗格 (新聞源樹，或新聞列表，或瀏覽器)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5051"/>
+        <location filename="../src/application/mainwindow.cpp" line="5040"/>
         <source>Tree Feeds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5052"/>
+        <location filename="../src/application/mainwindow.cpp" line="5041"/>
         <source>Show/Hide Tree Feeds</source>
         <translation>顯示/隱藏新聞源樹</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5053"/>
+        <location filename="../src/application/mainwindow.cpp" line="5042"/>
         <source>Browser</source>
         <translation type="unfinished">瀏覽器</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5054"/>
+        <location filename="../src/application/mainwindow.cpp" line="5043"/>
         <source>Show/Hide Browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5056"/>
+        <location filename="../src/application/mainwindow.cpp" line="5045"/>
         <source>Minimize to Tray</source>
         <translation>最小化到系統匣</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5057"/>
+        <location filename="../src/application/mainwindow.cpp" line="5046"/>
         <source>Minimize Application to Tray</source>
         <translation>最小化應用程式到系統匣</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5059"/>
+        <location filename="../src/application/mainwindow.cpp" line="5048"/>
         <source>Columns</source>
         <translation>欄</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5064"/>
+        <location filename="../src/application/mainwindow.cpp" line="5053"/>
         <source>Show Indentation</source>
         <translation>顯示縮排</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5066"/>
-        <location filename="../src/application/mainwindow.cpp" line="5067"/>
+        <location filename="../src/application/mainwindow.cpp" line="5055"/>
+        <location filename="../src/application/mainwindow.cpp" line="5056"/>
         <source>Search Feed</source>
         <translation>搜尋新聞源</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5069"/>
+        <location filename="../src/application/mainwindow.cpp" line="5058"/>
         <source>Zoom</source>
         <translation>縮放</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5070"/>
+        <location filename="../src/application/mainwindow.cpp" line="5059"/>
         <source>Zoom In</source>
         <translation>放大</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5071"/>
+        <location filename="../src/application/mainwindow.cpp" line="5060"/>
         <source>Zoom in in browser</source>
         <translation>瀏覽器的網頁放大</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5072"/>
+        <location filename="../src/application/mainwindow.cpp" line="5061"/>
         <source>Zoom Out</source>
         <translation>縮小</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5073"/>
+        <location filename="../src/application/mainwindow.cpp" line="5062"/>
         <source>Zoom out in browser</source>
         <translation>瀏覽器的網頁縮小</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5074"/>
+        <location filename="../src/application/mainwindow.cpp" line="5063"/>
         <source>100%</source>
         <translation>100%</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5078"/>
+        <location filename="../src/application/mainwindow.cpp" line="5067"/>
         <source>Print...</source>
         <translation>列印...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5080"/>
+        <location filename="../src/application/mainwindow.cpp" line="5069"/>
         <source>Print Preview...</source>
         <translation>列印預覽...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5084"/>
+        <location filename="../src/application/mainwindow.cpp" line="5073"/>
         <source>Page up (Browser)</source>
         <translation>上一頁（瀏覽器）</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5085"/>
+        <location filename="../src/application/mainwindow.cpp" line="5074"/>
         <source>Page down (Browser)</source>
         <translation>下一頁（瀏覽器）</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5087"/>
+        <location filename="../src/application/mainwindow.cpp" line="5076"/>
         <source>Save As...</source>
         <translation>另存為...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5088"/>
+        <location filename="../src/application/mainwindow.cpp" line="5077"/>
         <source>Save Page As...</source>
         <translation>頁面另存為...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5092"/>
+        <location filename="../src/application/mainwindow.cpp" line="5081"/>
         <source>Show/Hide</source>
         <translation>顯示/隱藏</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5094"/>
+        <location filename="../src/application/mainwindow.cpp" line="5083"/>
         <source>Feeds Toolbar</source>
         <translation>新聞源工具列</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5095"/>
+        <location filename="../src/application/mainwindow.cpp" line="5084"/>
         <source>News Toolbar</source>
         <translation>新聞工具列</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5096"/>
+        <location filename="../src/application/mainwindow.cpp" line="5085"/>
         <source>Browser Toolbar</source>
         <translation>瀏覽器工具列</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5097"/>
+        <location filename="../src/application/mainwindow.cpp" line="5086"/>
         <source>Panel Categories</source>
         <translation>分類窗格</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5098"/>
+        <location filename="../src/application/mainwindow.cpp" line="5087"/>
         <source>Status Bar</source>
         <translation>狀態列</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5100"/>
-        <location filename="../src/application/mainwindow.cpp" line="5101"/>
+        <location filename="../src/application/mainwindow.cpp" line="5089"/>
+        <location filename="../src/application/mainwindow.cpp" line="5090"/>
         <source>Full Screen</source>
         <translation>全螢幕</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5103"/>
-        <location filename="../src/application/mainwindow.cpp" line="5104"/>
+        <location filename="../src/application/mainwindow.cpp" line="5092"/>
+        <location filename="../src/application/mainwindow.cpp" line="5093"/>
         <source>Stay On Top</source>
         <translation>維持在最上層</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5106"/>
+        <location filename="../src/application/mainwindow.cpp" line="5095"/>
         <source>Categories</source>
         <translation>分類</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5112"/>
-        <location filename="../src/application/mainwindow.cpp" line="5113"/>
+        <location filename="../src/application/mainwindow.cpp" line="5101"/>
+        <location filename="../src/application/mainwindow.cpp" line="5102"/>
         <source>Label</source>
         <translation>標籤</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5114"/>
+        <location filename="../src/application/mainwindow.cpp" line="5103"/>
         <source>Show labels menu</source>
         <translation>顯示標籤選單</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5116"/>
+        <location filename="../src/application/mainwindow.cpp" line="5105"/>
         <source>Close Tab</source>
         <translation>關閉分頁</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5117"/>
+        <location filename="../src/application/mainwindow.cpp" line="5106"/>
         <source>Close Other Tabs</source>
         <translation>關閉其他分頁</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5118"/>
+        <location filename="../src/application/mainwindow.cpp" line="5107"/>
         <source>Close All Tabs</source>
         <translation>關閉所有分頁</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5119"/>
+        <location filename="../src/application/mainwindow.cpp" line="5108"/>
         <source>Switch to next tab</source>
         <translation>切換到下一分頁</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5120"/>
+        <location filename="../src/application/mainwindow.cpp" line="5109"/>
         <source>Switch to previous tab</source>
         <translation>切換到上一分頁</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5122"/>
+        <location filename="../src/application/mainwindow.cpp" line="5111"/>
         <source>Unread</source>
         <translation>未讀</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5123"/>
+        <location filename="../src/application/mainwindow.cpp" line="5112"/>
         <source>Starred</source>
         <translation>已標星</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5124"/>
+        <location filename="../src/application/mainwindow.cpp" line="5113"/>
         <source>Deleted</source>
         <translation>已刪除</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5125"/>
+        <location filename="../src/application/mainwindow.cpp" line="5114"/>
         <source>Labels</source>
         <translation>標籤</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5127"/>
+        <location filename="../src/application/mainwindow.cpp" line="5116"/>
         <source>Decrease news list/increase browser</source>
         <translation>縮減新聞列表/加大瀏覽器窗格</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5128"/>
+        <location filename="../src/application/mainwindow.cpp" line="5117"/>
         <source>Increase news list/decrease browser</source>
         <translation>加大新聞列表/縮減瀏覽器窗格</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5130"/>
+        <location filename="../src/application/mainwindow.cpp" line="5119"/>
         <source>Find</source>
         <translation>尋找</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5132"/>
+        <location filename="../src/application/mainwindow.cpp" line="5121"/>
         <source>Open Homepage Feed</source>
         <translation>開啟新聞源網站首頁</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5133"/>
+        <location filename="../src/application/mainwindow.cpp" line="5122"/>
         <source>Sort by Name</source>
         <translation>依照名稱排序</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5134"/>
+        <location filename="../src/application/mainwindow.cpp" line="5123"/>
         <source>Collapse All Folders</source>
         <translation>折疊所有資料夾</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5135"/>
+        <location filename="../src/application/mainwindow.cpp" line="5124"/>
         <source>Expand All Folders</source>
         <translation>展開所有資料夾</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5136"/>
+        <location filename="../src/application/mainwindow.cpp" line="5125"/>
         <source>Next Folder</source>
         <translation>下一個資料夾</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5137"/>
+        <location filename="../src/application/mainwindow.cpp" line="5126"/>
         <source>Previous Folder</source>
         <translation>上一個資料夾</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5138"/>
+        <location filename="../src/application/mainwindow.cpp" line="5127"/>
         <source>Expand Folder</source>
         <translation>展開資料夾</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5140"/>
+        <location filename="../src/application/mainwindow.cpp" line="5129"/>
         <source>Setting Page: Labels</source>
         <translation>設定頁面: 標籤</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5143"/>
+        <location filename="../src/application/mainwindow.cpp" line="5132"/>
         <source>Share</source>
         <translation>分享</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5146"/>
+        <location filename="../src/application/mainwindow.cpp" line="5135"/>
         <source>Sort By</source>
         <translation>排序依</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5147"/>
+        <location filename="../src/application/mainwindow.cpp" line="5136"/>
         <source>Ascending</source>
         <translation>遞增</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5148"/>
+        <location filename="../src/application/mainwindow.cpp" line="5137"/>
         <source>Descending</source>
         <translation>遞減</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="6071"/>
+        <location filename="../src/application/mainwindow.cpp" line="6060"/>
         <source>Check for updates</source>
         <translation>檢查更新</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="6072"/>
+        <location filename="../src/application/mainwindow.cpp" line="6061"/>
         <source>A new version of QuiteRSS...</source>
         <translation>有新版的 QuiteRSS 可以下載…</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="6555"/>
+        <location filename="../src/application/mainwindow.cpp" line="6544"/>
         <source>Loading...</source>
         <translation>載入...</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="7171"/>
-        <location filename="../src/application/mainwindow.cpp" line="7188"/>
+        <location filename="../src/application/mainwindow.cpp" line="7160"/>
+        <location filename="../src/application/mainwindow.cpp" line="7177"/>
         <source>Web Page</source>
         <translation>網頁</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="7748"/>
+        <location filename="../src/application/mainwindow.cpp" line="7737"/>
         <source>Save As</source>
         <translation>另存為</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="7750"/>
+        <location filename="../src/application/mainwindow.cpp" line="7739"/>
         <source>HTML-Files (*.%1)</source>
         <translation>HTML 檔案 (*.%1)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="7750"/>
+        <location filename="../src/application/mainwindow.cpp" line="7739"/>
         <source>Text files (*.%2)</source>
         <translation>文字檔案 (*.%2)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="7756"/>
+        <location filename="../src/application/mainwindow.cpp" line="7745"/>
         <source>Save As: can&apos;t open a file</source>
         <translation>另存時不能開啟檔案</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="8252"/>
+        <location filename="../src/application/mainwindow.cpp" line="8241"/>
         <source>Choose Directory</source>
         <translation>選擇資料夾</translation>
     </message>
@@ -2972,8 +2962,8 @@ Ancient news could reappear</source>
     </message>
     <message>
         <location filename="../src/optionsdialog.cpp" line="61"/>
-        <location filename="../src/optionsdialog.cpp" line="762"/>
-        <location filename="../src/optionsdialog.cpp" line="1055"/>
+        <location filename="../src/optionsdialog.cpp" line="759"/>
+        <location filename="../src/optionsdialog.cpp" line="1052"/>
         <source>General</source>
         <translation>一般</translation>
     </message>
@@ -2994,19 +2984,19 @@ Ancient news could reappear</source>
     </message>
     <message>
         <location filename="../src/optionsdialog.cpp" line="73"/>
-        <location filename="../src/optionsdialog.cpp" line="1199"/>
+        <location filename="../src/optionsdialog.cpp" line="1196"/>
         <source>Feeds</source>
         <translation>新聞源</translation>
     </message>
     <message>
         <location filename="../src/optionsdialog.cpp" line="76"/>
-        <location filename="../src/optionsdialog.cpp" line="1945"/>
+        <location filename="../src/optionsdialog.cpp" line="1942"/>
         <source>Labels</source>
         <translation>標籤</translation>
     </message>
     <message>
         <location filename="../src/optionsdialog.cpp" line="79"/>
-        <location filename="../src/optionsdialog.cpp" line="1947"/>
+        <location filename="../src/optionsdialog.cpp" line="1944"/>
         <source>Notifications</source>
         <translation>通知</translation>
     </message>
@@ -3017,7 +3007,7 @@ Ancient news could reappear</source>
     </message>
     <message>
         <location filename="../src/optionsdialog.cpp" line="85"/>
-        <location filename="../src/optionsdialog.cpp" line="1372"/>
+        <location filename="../src/optionsdialog.cpp" line="1369"/>
         <source>Language</source>
         <translation>語言</translation>
     </message>
@@ -3032,1148 +3022,1143 @@ Ancient news could reappear</source>
         <translation>鍵盤快鍵</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="265"/>
-        <location filename="../src/optionsdialog.cpp" line="2277"/>
+        <location filename="../src/optionsdialog.cpp" line="267"/>
+        <location filename="../src/optionsdialog.cpp" line="2274"/>
         <source>Warning: key is already assigned to</source>
         <translation>警告，因為按鍵已經分配給</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="289"/>
+        <location filename="../src/optionsdialog.cpp" line="291"/>
         <source>Show splash screen on startup</source>
         <translation>啟動時顯示啟動畫面</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="290"/>
+        <location filename="../src/optionsdialog.cpp" line="292"/>
         <source>Reopen last opened feeds on startup</source>
         <translation>啟動時開啟上次最後開啟的新聞源</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="291"/>
+        <location filename="../src/optionsdialog.cpp" line="293"/>
         <source>Open new tab next to active</source>
         <translation>在目前分頁旁開一新分頁</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="292"/>
+        <location filename="../src/optionsdialog.cpp" line="294"/>
         <source>Hide feeds tree when opening tabs</source>
         <translation>開啟分頁時，隱藏新聞源樹</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="294"/>
+        <location filename="../src/optionsdialog.cpp" line="296"/>
         <source>Show default rss-icon instead of favourite one</source>
         <translation>顯示預設的 RSS 圖示，而不是最喜歡的</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="295"/>
+        <location filename="../src/optionsdialog.cpp" line="297"/>
         <source>Automatically collapse folders</source>
         <translation>自動收合資料夾</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="296"/>
+        <location filename="../src/optionsdialog.cpp" line="298"/>
         <source>Show close button on tab</source>
         <translation>在分頁上顯示關閉按鈕</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="299"/>
+        <location filename="../src/optionsdialog.cpp" line="301"/>
         <source>Automatically check for updates</source>
         <translation>自動檢查更新</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="302"/>
-        <source>Help improve QuiteRSS by sending usage information</source>
-        <translation>傳送使用資訊來幫助改善 QuiteRSS</translation>
-    </message>
-    <message>
-        <location filename="../src/optionsdialog.cpp" line="304"/>
+        <location filename="../src/optionsdialog.cpp" line="303"/>
         <source>Store a DB in memory (requires program restart)</source>
         <translation>在記憶體中存一個資料庫 (需要重新啟動程式)</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="308"/>
+        <location filename="../src/optionsdialog.cpp" line="307"/>
         <source>Save DB stored in memory to file on minimize to tray</source>
         <translation>最小化時將記憶體中的資料庫儲存到檔案</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="315"/>
+        <location filename="../src/optionsdialog.cpp" line="314"/>
         <source>Save DB stored in memory to file every</source>
         <translation>將記憶體中的資料庫儲存到檔案，每</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="317"/>
-        <location filename="../src/optionsdialog.cpp" line="787"/>
+        <location filename="../src/optionsdialog.cpp" line="316"/>
+        <location filename="../src/optionsdialog.cpp" line="784"/>
         <source>minutes</source>
         <translation>分鐘</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="349"/>
+        <location filename="../src/optionsdialog.cpp" line="348"/>
         <source>Run QuiteRSS at Windows startup</source>
         <translation>在 Windows 啟動時執行 QuiteRSS</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="381"/>
+        <location filename="../src/optionsdialog.cpp" line="377"/>
         <source>Show system tray icon</source>
         <translation>顯示系統匣圖示</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="384"/>
+        <location filename="../src/optionsdialog.cpp" line="380"/>
         <source>starting QuiteRSS</source>
         <translation>啟動 QuiteRSS</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="385"/>
+        <location filename="../src/optionsdialog.cpp" line="381"/>
         <source>minimizing QuiteRSS</source>
         <translation>最小化 QuiteRSS</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="386"/>
+        <location filename="../src/optionsdialog.cpp" line="382"/>
         <source>closing QuiteRSS</source>
         <translation>關閉 QuiteRSS</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="393"/>
+        <location filename="../src/optionsdialog.cpp" line="389"/>
         <source>Show static icon</source>
         <translation>顯示靜態圖示</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="394"/>
+        <location filename="../src/optionsdialog.cpp" line="390"/>
         <source>Change icon for incoming new news</source>
         <translation>新進新聞時變更圖示</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="395"/>
+        <location filename="../src/optionsdialog.cpp" line="391"/>
         <source>Show count of new news</source>
         <translation>顯示新進新聞數</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="396"/>
+        <location filename="../src/optionsdialog.cpp" line="392"/>
         <source>Show count of unread news</source>
         <translation>顯示未讀新聞數</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="405"/>
+        <location filename="../src/optionsdialog.cpp" line="401"/>
         <source>Single click instead of double click for show window</source>
         <translation>單按就顯示視窗</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="407"/>
+        <location filename="../src/optionsdialog.cpp" line="403"/>
         <source>Empty working set on minimize to tray</source>
         <translation>最小化到系統匣時，清理記憶體內工作集</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="411"/>
+        <location filename="../src/optionsdialog.cpp" line="407"/>
         <source>Move to the system tray when:</source>
         <translation>移動到系統匣: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="414"/>
+        <location filename="../src/optionsdialog.cpp" line="410"/>
         <source>Tray icon behavior:</source>
         <translation>系統匣圖示行為: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="438"/>
+        <location filename="../src/optionsdialog.cpp" line="434"/>
         <source>Direct connection to the Internet</source>
         <translation>直接連線至網際網路</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="440"/>
+        <location filename="../src/optionsdialog.cpp" line="436"/>
         <source>System proxy configuration (if available)</source>
         <translation>系統的代理伺服器組態 (如果有)</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="441"/>
+        <location filename="../src/optionsdialog.cpp" line="437"/>
         <source>Manual proxy configuration:</source>
         <translation>手工設定代理伺服器: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="460"/>
+        <location filename="../src/optionsdialog.cpp" line="456"/>
         <source>Proxy server:</source>
         <translation>代理伺服器: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="462"/>
+        <location filename="../src/optionsdialog.cpp" line="458"/>
         <source>Port:</source>
         <translation>埠號：</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="470"/>
+        <location filename="../src/optionsdialog.cpp" line="466"/>
         <source>Username:</source>
         <translation>使用者名稱: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="472"/>
+        <location filename="../src/optionsdialog.cpp" line="468"/>
         <source>Password:</source>
         <translation>密碼: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="501"/>
+        <location filename="../src/optionsdialog.cpp" line="497"/>
         <source>Request timeout:</source>
         <translation>請求逾時: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="503"/>
+        <location filename="../src/optionsdialog.cpp" line="499"/>
         <source>Number of requests:</source>
         <translation>請求次數: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="505"/>
+        <location filename="../src/optionsdialog.cpp" line="501"/>
         <source>Number of retries:</source>
         <translation>重試次數: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="508"/>
+        <location filename="../src/optionsdialog.cpp" line="504"/>
         <source>Options network requests when updating feeds (requires program restart):</source>
         <translation>更新新聞源時 (需要重新啟動程式)，網路請求之選項:</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="525"/>
+        <location filename="../src/optionsdialog.cpp" line="521"/>
         <source>Use embedded browser</source>
         <translation>使用嵌入的瀏覽器</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="526"/>
+        <location filename="../src/optionsdialog.cpp" line="522"/>
         <source>Use external browser</source>
         <translation>使用外部的瀏覽器</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="527"/>
+        <location filename="../src/optionsdialog.cpp" line="523"/>
         <source>Default external browser</source>
         <translation>預設的外部瀏覽器</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="528"/>
+        <location filename="../src/optionsdialog.cpp" line="524"/>
         <source>Following external browser:</source>
         <translation>下面的外部瀏覽器: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="531"/>
-        <location filename="../src/optionsdialog.cpp" line="545"/>
-        <location filename="../src/optionsdialog.cpp" line="626"/>
-        <location filename="../src/optionsdialog.cpp" line="740"/>
-        <location filename="../src/optionsdialog.cpp" line="907"/>
-        <location filename="../src/optionsdialog.cpp" line="1240"/>
+        <location filename="../src/optionsdialog.cpp" line="527"/>
+        <location filename="../src/optionsdialog.cpp" line="541"/>
+        <location filename="../src/optionsdialog.cpp" line="622"/>
+        <location filename="../src/optionsdialog.cpp" line="737"/>
+        <location filename="../src/optionsdialog.cpp" line="904"/>
+        <location filename="../src/optionsdialog.cpp" line="1237"/>
         <source>Browse...</source>
         <translation>瀏覽...</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="533"/>
-        <location filename="../src/optionsdialog.cpp" line="2163"/>
+        <location filename="../src/optionsdialog.cpp" line="529"/>
+        <location filename="../src/optionsdialog.cpp" line="2160"/>
         <source>Load images</source>
         <translation>載入圖片</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="534"/>
+        <location filename="../src/optionsdialog.cpp" line="530"/>
         <source>Enable JavaScript</source>
         <translation>啟用 JavaScript</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="535"/>
+        <location filename="../src/optionsdialog.cpp" line="531"/>
         <source>Enable plug-ins</source>
         <translation>啟用外掛</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="541"/>
+        <location filename="../src/optionsdialog.cpp" line="537"/>
         <source>Open links in embedded browser in background</source>
         <translation>在背景於嵌入瀏覽器開啟連結</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="542"/>
+        <location filename="../src/optionsdialog.cpp" line="538"/>
         <source>Open links in external browser in background (experimental)</source>
         <translation>在背景於外部瀏覽器開啟連結 (實驗性)</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="568"/>
+        <location filename="../src/optionsdialog.cpp" line="564"/>
         <source>Default zoom on pages:</source>
         <translation>網頁的預設縮放: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="586"/>
+        <location filename="../src/optionsdialog.cpp" line="582"/>
         <source>Browser selection:</source>
         <translation>瀏覽器的選擇: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="588"/>
+        <location filename="../src/optionsdialog.cpp" line="584"/>
         <source>External browser:</source>
         <translation>外部瀏覽器: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="590"/>
+        <location filename="../src/optionsdialog.cpp" line="586"/>
         <source>Content:</source>
         <translation>內容: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="592"/>
+        <location filename="../src/optionsdialog.cpp" line="588"/>
         <source>User style sheet:</source>
         <translation>使用者樣式表: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="621"/>
+        <location filename="../src/optionsdialog.cpp" line="617"/>
         <source>Maximum pages in cache</source>
         <translation>快取中的頁數上限</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="632"/>
+        <location filename="../src/optionsdialog.cpp" line="628"/>
         <source>Store cache in:</source>
         <translation>儲存快取於: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="640"/>
+        <location filename="../src/optionsdialog.cpp" line="636"/>
         <source>Maximum size of disk cache</source>
         <translation>磁碟快取的上限量</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="642"/>
+        <location filename="../src/optionsdialog.cpp" line="638"/>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="648"/>
+        <location filename="../src/optionsdialog.cpp" line="644"/>
         <source>Use disk cache</source>
         <translation>使用磁碟快取</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="653"/>
+        <location filename="../src/optionsdialog.cpp" line="649"/>
         <source>Allow local data to be set</source>
         <translation>允許在本機設定資料</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="654"/>
+        <location filename="../src/optionsdialog.cpp" line="650"/>
         <source>Keep local data only until quit application</source>
         <translation>僅在退出應用程式之前保留本機資料</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="655"/>
+        <location filename="../src/optionsdialog.cpp" line="651"/>
         <source>Block sites from setting any data</source>
         <translation>不允許任何網站設定資料</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="656"/>
+        <location filename="../src/optionsdialog.cpp" line="652"/>
         <source>Clear</source>
         <translation>清除</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="675"/>
+        <location filename="../src/optionsdialog.cpp" line="671"/>
         <source>Cookies:</source>
         <translation>Cookies: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="684"/>
+        <location filename="../src/optionsdialog.cpp" line="680"/>
         <source>Click To Flash is a plugin which blocks auto loading of Flash content at page. You can always load it manually by clicking on the Flash play icon.</source>
         <translation>Click To Flash 是一個阻止網頁中的 Flash 內容自動載入的外掛程式。您總是可以按一下 Flash 播放圖示去載入 Flash 內容。</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="689"/>
+        <location filename="../src/optionsdialog.cpp" line="685"/>
         <source>Use Click to Flash</source>
         <translation>使用 Click to Flash 外掛</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="701"/>
+        <location filename="../src/optionsdialog.cpp" line="697"/>
         <source>Add...</source>
         <translation>新增...</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="703"/>
+        <location filename="../src/optionsdialog.cpp" line="699"/>
         <source>Remove...</source>
         <translation>移除...</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="744"/>
+        <location filename="../src/optionsdialog.cpp" line="741"/>
         <source>Ask where to save each file before downloading</source>
         <translation>下載檔案前詢問儲存位置</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="754"/>
+        <location filename="../src/optionsdialog.cpp" line="751"/>
         <source>Download location:</source>
         <translation>下載位置: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="763"/>
+        <location filename="../src/optionsdialog.cpp" line="760"/>
         <source>History</source>
         <translation>歷史</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="765"/>
+        <location filename="../src/optionsdialog.cpp" line="762"/>
         <source>Click to Flash</source>
         <translation>Click to Flash 外掛</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="767"/>
+        <location filename="../src/optionsdialog.cpp" line="764"/>
         <source>Downloads</source>
         <translation>下載</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="776"/>
+        <location filename="../src/optionsdialog.cpp" line="773"/>
         <source>Automatically update the feeds on startup</source>
         <translation>啟動時自動更新新聞</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="777"/>
+        <location filename="../src/optionsdialog.cpp" line="774"/>
         <source>Automatically update the feeds every</source>
         <translation>自動更新新聞源，每</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="787"/>
-        <location filename="../src/optionsdialog.cpp" line="960"/>
-        <location filename="../src/optionsdialog.cpp" line="1180"/>
+        <location filename="../src/optionsdialog.cpp" line="784"/>
+        <location filename="../src/optionsdialog.cpp" line="957"/>
+        <location filename="../src/optionsdialog.cpp" line="1177"/>
         <source>seconds</source>
         <translation>秒</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="787"/>
+        <location filename="../src/optionsdialog.cpp" line="784"/>
         <source>hours</source>
         <translation>小時</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="803"/>
+        <location filename="../src/optionsdialog.cpp" line="800"/>
         <source>Nothing to do</source>
         <translation>不做任何事</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="827"/>
+        <location filename="../src/optionsdialog.cpp" line="824"/>
         <source>Avoid adding news before this date into the database:</source>
         <translation>不要將早於此日期的新聞加入資料庫:</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="850"/>
+        <location filename="../src/optionsdialog.cpp" line="847"/>
         <source>Dec</source>
         <translation>Dec</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="851"/>
+        <location filename="../src/optionsdialog.cpp" line="848"/>
         <source>December</source>
         <translation>十二月</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="874"/>
+        <location filename="../src/optionsdialog.cpp" line="871"/>
         <source>Display format for date:</source>
         <translation>顯示日期格式: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="877"/>
+        <location filename="../src/optionsdialog.cpp" line="874"/>
         <source>time:</source>
         <translation>時間: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="881"/>
+        <location filename="../src/optionsdialog.cpp" line="878"/>
         <source>Alternating row background colors</source>
         <translation>交替變換橫列背景色</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="882"/>
+        <location filename="../src/optionsdialog.cpp" line="879"/>
         <source>Simplified representation of date and time</source>
         <translation>簡化表示的日期和時間</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="885"/>
+        <location filename="../src/optionsdialog.cpp" line="882"/>
         <source>Show All</source>
         <translation>顯示全部</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="885"/>
+        <location filename="../src/optionsdialog.cpp" line="882"/>
         <source>Show New</source>
         <translation>顯示新進的新聞</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="885"/>
+        <location filename="../src/optionsdialog.cpp" line="882"/>
         <source>Show Unread</source>
         <translation>顯示未讀的新聞</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="886"/>
+        <location filename="../src/optionsdialog.cpp" line="883"/>
         <source>Show Starred</source>
         <translation>顯示標星的新聞</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="886"/>
+        <location filename="../src/optionsdialog.cpp" line="883"/>
         <source>Show Not Starred</source>
         <translation>顯示未標星的新聞</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="887"/>
+        <location filename="../src/optionsdialog.cpp" line="884"/>
         <source>Show Unread or Starred</source>
         <translation>顯示未讀或標星的新聞</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="887"/>
+        <location filename="../src/optionsdialog.cpp" line="884"/>
         <source>Show Last Day</source>
         <translation>顯示最近一天的新聞</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="888"/>
+        <location filename="../src/optionsdialog.cpp" line="885"/>
         <source>Show Last 7 Days</source>
         <translation>顯示最近七天的新聞</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="926"/>
+        <location filename="../src/optionsdialog.cpp" line="923"/>
         <source>Style sheet for news:</source>
         <translation>新聞樣式表: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="939"/>
+        <location filename="../src/optionsdialog.cpp" line="936"/>
         <source>Mark news as read:</source>
         <translation>標示新聞成已讀: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="949"/>
+        <location filename="../src/optionsdialog.cpp" line="946"/>
         <source>on selecting. With timeout</source>
         <translation>閱讀訊息超過</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="966"/>
+        <location filename="../src/optionsdialog.cpp" line="963"/>
         <source>after switching to another news</source>
         <translation>切換到另一條新聞後</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="972"/>
+        <location filename="../src/optionsdialog.cpp" line="969"/>
         <source>Mark displayed news as read when switching feeds</source>
         <translation>切換新聞源時，將已閱讀的文章標示成已讀</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="973"/>
+        <location filename="../src/optionsdialog.cpp" line="970"/>
         <source>Mark displayed news as read when closing tab</source>
         <translation>關閉分頁時，將已閱讀的文章標示成已讀</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="974"/>
+        <location filename="../src/optionsdialog.cpp" line="971"/>
         <source>Mark displayed news as read on minimize</source>
         <translation>最小化時，將已閱讀的文章標示成已讀</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="985"/>
+        <location filename="../src/optionsdialog.cpp" line="982"/>
         <source>Change behavior of action &apos;Next Unread News&apos;</source>
         <translation>變更操作「下一個未讀訊息」的行為</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="978"/>
+        <location filename="../src/optionsdialog.cpp" line="975"/>
         <source>starred news</source>
         <translation>標星的新聞</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="979"/>
+        <location filename="../src/optionsdialog.cpp" line="976"/>
         <source>labeled news</source>
         <translation>有標籤的新聞</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="816"/>
+        <location filename="../src/optionsdialog.cpp" line="813"/>
         <source>Automatically mark identical news as read</source>
         <translation>自動將相同的新聞標示成已讀</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="992"/>
+        <location filename="../src/optionsdialog.cpp" line="989"/>
         <source>Prevent accidental deletion of:</source>
         <translation>防止意外刪除: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1005"/>
+        <location filename="../src/optionsdialog.cpp" line="1002"/>
         <source>Enable cleanup on shutdown</source>
         <translation>啟用關閉時的清理</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1008"/>
+        <location filename="../src/optionsdialog.cpp" line="1005"/>
         <source>Maximum age of news in days to keep:</source>
         <translation>保留的最大天數: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1015"/>
+        <location filename="../src/optionsdialog.cpp" line="1012"/>
         <source>Maximum number of news to keep:</source>
         <translation>保留的最大訊息數: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1022"/>
+        <location filename="../src/optionsdialog.cpp" line="1019"/>
         <source>Delete read news</source>
         <translation>刪除已讀新聞</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1023"/>
+        <location filename="../src/optionsdialog.cpp" line="1020"/>
         <source>Never delete unread news</source>
         <translation>不刪除未讀新聞</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1024"/>
+        <location filename="../src/optionsdialog.cpp" line="1021"/>
         <source>Never delete starred news</source>
         <translation>不刪除標星的新聞</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1025"/>
+        <location filename="../src/optionsdialog.cpp" line="1022"/>
         <source>Never delete labeled news</source>
         <translation>不刪除有標籤的新聞</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1027"/>
+        <location filename="../src/optionsdialog.cpp" line="1024"/>
         <source>Clean up &apos;Deleted&apos;</source>
         <translation>清除「已刪除」</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1028"/>
+        <location filename="../src/optionsdialog.cpp" line="1025"/>
         <source>Enable DB optimization (slower shutdown)</source>
         <translation>啟用資料庫最佳化 (關閉速度較慢)</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1057"/>
+        <location filename="../src/optionsdialog.cpp" line="1054"/>
         <source>Reading</source>
         <translation>閱讀</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1058"/>
+        <location filename="../src/optionsdialog.cpp" line="1055"/>
         <source>Clean Up</source>
         <translation>清除</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1075"/>
+        <location filename="../src/optionsdialog.cpp" line="1072"/>
         <source>New...</source>
         <translation>新增...</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1077"/>
+        <location filename="../src/optionsdialog.cpp" line="1074"/>
         <source>Edit...</source>
         <translation>編輯...</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1080"/>
+        <location filename="../src/optionsdialog.cpp" line="1077"/>
         <source>Delete...</source>
         <translation>刪除...</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1084"/>
+        <location filename="../src/optionsdialog.cpp" line="1081"/>
         <source>Move up</source>
         <translation>上移</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1087"/>
+        <location filename="../src/optionsdialog.cpp" line="1084"/>
         <source>Move down</source>
         <translation>下移</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1143"/>
+        <location filename="../src/optionsdialog.cpp" line="1140"/>
         <source>Show when inactive main window</source>
         <translation>當主視窗不在最上層時顯示</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1159"/>
+        <location filename="../src/optionsdialog.cpp" line="1156"/>
         <source>Screen</source>
         <translation>畫面</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1169"/>
+        <location filename="../src/optionsdialog.cpp" line="1166"/>
         <source>Transparency</source>
         <translation>透明度</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1183"/>
+        <location filename="../src/optionsdialog.cpp" line="1180"/>
         <source>Show titles feeds</source>
         <translation>顯示新聞源標題</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1184"/>
+        <location filename="../src/optionsdialog.cpp" line="1181"/>
         <source>Show icon feed</source>
         <translation>顯示圖示</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1185"/>
+        <location filename="../src/optionsdialog.cpp" line="1182"/>
         <source>Show button &apos;Mark All News Read&apos;</source>
         <translation>顯示「標示所有新聞成已讀」按鈕</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1186"/>
+        <location filename="../src/optionsdialog.cpp" line="1183"/>
         <source>Show button &apos;Mark Read/Unread&apos;</source>
         <translation>顯示「標示成 已讀/未讀」按鈕</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1187"/>
+        <location filename="../src/optionsdialog.cpp" line="1184"/>
         <source>Show button &apos;Open in External Browser&apos;</source>
         <translation>顯示「於外部瀏覽器開啟」按鈕</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1188"/>
+        <location filename="../src/optionsdialog.cpp" line="1185"/>
         <source>Show button &apos;Delete News&apos;</source>
         <translation>顯示「刪除新聞」按鈕</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1235"/>
+        <location filename="../src/optionsdialog.cpp" line="1232"/>
         <source>Play sound for incoming new news</source>
         <translation>新進新聞時播放音效</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1241"/>
+        <location filename="../src/optionsdialog.cpp" line="1238"/>
         <source>Play</source>
         <translation>播放</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1120"/>
+        <location filename="../src/optionsdialog.cpp" line="1117"/>
         <source>Display notification for incoming news</source>
         <translation>收到新聞時顯示通知</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1135"/>
+        <location filename="../src/optionsdialog.cpp" line="1132"/>
         <source>Top Left</source>
         <translation>左上</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1135"/>
+        <location filename="../src/optionsdialog.cpp" line="1132"/>
         <source>Top Right</source>
         <translation>右上</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1136"/>
+        <location filename="../src/optionsdialog.cpp" line="1133"/>
         <source>Bottom Left</source>
         <translation>左下</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1136"/>
+        <location filename="../src/optionsdialog.cpp" line="1133"/>
         <source>Bottom Right</source>
         <translation>右下</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1155"/>
+        <location filename="../src/optionsdialog.cpp" line="1152"/>
         <source>Review</source>
         <translation>評估</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1162"/>
+        <location filename="../src/optionsdialog.cpp" line="1159"/>
         <source>Position</source>
         <translation>位置</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1172"/>
+        <location filename="../src/optionsdialog.cpp" line="1169"/>
         <source>Show maximum of</source>
         <translation>通知頁最多顯示</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1174"/>
+        <location filename="../src/optionsdialog.cpp" line="1171"/>
         <source>item on page notification</source>
         <translation>個項目</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1175"/>
+        <location filename="../src/optionsdialog.cpp" line="1172"/>
         <source>Width list items</source>
         <translation>項目列表寬度</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1177"/>
+        <location filename="../src/optionsdialog.cpp" line="1174"/>
         <source>pixels</source>
         <translation>像素</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1178"/>
+        <location filename="../src/optionsdialog.cpp" line="1175"/>
         <source>Close notification after</source>
         <translation>關閉通知於</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1139"/>
+        <location filename="../src/optionsdialog.cpp" line="1136"/>
         <source>Do not show notification in fullscreen mode</source>
         <translation>在全螢幕模式不顯示通知</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1056"/>
+        <location filename="../src/optionsdialog.cpp" line="1053"/>
         <source>Display</source>
         <translation>顯示</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1144"/>
+        <location filename="../src/optionsdialog.cpp" line="1141"/>
         <source>Close notification after opening news</source>
         <translation>開啟新聞後關閉通知</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1198"/>
+        <location filename="../src/optionsdialog.cpp" line="1195"/>
         <source>Only show selected feeds:</source>
         <translation>只顯示選取的新聞源: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1264"/>
+        <location filename="../src/optionsdialog.cpp" line="1261"/>
         <source>Notification</source>
         <translation>通知</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1265"/>
+        <location filename="../src/optionsdialog.cpp" line="1262"/>
         <source>Sound</source>
         <translation>音效</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1276"/>
+        <location filename="../src/optionsdialog.cpp" line="1273"/>
         <source>Selection of feeds</source>
         <translation>選擇新聞源</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1292"/>
+        <location filename="../src/optionsdialog.cpp" line="1289"/>
         <source>All Feeds</source>
         <translation>所有新聞源</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1319"/>
+        <location filename="../src/optionsdialog.cpp" line="1316"/>
         <source>Site</source>
         <translation>網站</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1319"/>
+        <location filename="../src/optionsdialog.cpp" line="1316"/>
         <source>User</source>
         <translation>使用者</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1319"/>
+        <location filename="../src/optionsdialog.cpp" line="1316"/>
         <source>Password</source>
         <translation>密碼</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1336"/>
+        <location filename="../src/optionsdialog.cpp" line="1333"/>
         <source>Delete</source>
         <translation>刪除</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1338"/>
+        <location filename="../src/optionsdialog.cpp" line="1335"/>
         <source>Delete All</source>
         <translation>刪除全部</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1340"/>
+        <location filename="../src/optionsdialog.cpp" line="1337"/>
         <source>Show Passwords</source>
         <translation>顯示密碼</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1372"/>
+        <location filename="../src/optionsdialog.cpp" line="1369"/>
         <source>Version</source>
         <translation>版本</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1373"/>
+        <location filename="../src/optionsdialog.cpp" line="1370"/>
         <source>Author</source>
         <translation>作者</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1373"/>
+        <location filename="../src/optionsdialog.cpp" line="1370"/>
         <source>Contact</source>
         <translation>聯絡</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1639"/>
+        <location filename="../src/optionsdialog.cpp" line="1636"/>
         <source>Choose language:</source>
         <translation>選擇語言: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1660"/>
+        <location filename="../src/optionsdialog.cpp" line="1657"/>
         <source>Type</source>
         <translation>類型</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1660"/>
+        <location filename="../src/optionsdialog.cpp" line="1657"/>
         <source>Font</source>
         <translation>字型</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1664"/>
+        <location filename="../src/optionsdialog.cpp" line="1661"/>
         <source>Feeds list font</source>
         <translation>新聞源列表字型</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1667"/>
+        <location filename="../src/optionsdialog.cpp" line="1664"/>
         <source>News list font</source>
         <translation>新聞列表字型</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1670"/>
+        <location filename="../src/optionsdialog.cpp" line="1667"/>
         <source>News title font</source>
         <translation>新聞標題字型</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1673"/>
+        <location filename="../src/optionsdialog.cpp" line="1670"/>
         <source>News text font</source>
         <translation>新聞文字字型</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1676"/>
+        <location filename="../src/optionsdialog.cpp" line="1673"/>
         <source>Notification font</source>
         <translation>通知字型</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1683"/>
-        <location filename="../src/optionsdialog.cpp" line="1784"/>
+        <location filename="../src/optionsdialog.cpp" line="1680"/>
+        <location filename="../src/optionsdialog.cpp" line="1781"/>
         <source>Change...</source>
         <translation>變更...</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1685"/>
-        <location filename="../src/optionsdialog.cpp" line="1786"/>
-        <location filename="../src/optionsdialog.cpp" line="1898"/>
+        <location filename="../src/optionsdialog.cpp" line="1682"/>
+        <location filename="../src/optionsdialog.cpp" line="1783"/>
+        <location filename="../src/optionsdialog.cpp" line="1895"/>
         <source>Reset</source>
         <translation>重設</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1710"/>
+        <location filename="../src/optionsdialog.cpp" line="1707"/>
         <source>Feeds list color</source>
         <translation>新聞源列表色</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1713"/>
+        <location filename="../src/optionsdialog.cpp" line="1710"/>
         <source>Feeds list background</source>
         <translation>新聞源列表背景</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1716"/>
+        <location filename="../src/optionsdialog.cpp" line="1713"/>
         <source>News list color</source>
         <translation>新聞列表色</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1719"/>
+        <location filename="../src/optionsdialog.cpp" line="1716"/>
         <source>News list background</source>
         <translation>新聞列表背景</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1722"/>
+        <location filename="../src/optionsdialog.cpp" line="1719"/>
         <source>Focused news color</source>
         <translation>焦點新聞色</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1725"/>
+        <location filename="../src/optionsdialog.cpp" line="1722"/>
         <source>Focused news background color</source>
         <translation>焦點新聞背景色</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1728"/>
+        <location filename="../src/optionsdialog.cpp" line="1725"/>
         <source>Link color</source>
         <translation>連結色</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1731"/>
+        <location filename="../src/optionsdialog.cpp" line="1728"/>
         <source>Title color</source>
         <translation>標題色</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1734"/>
+        <location filename="../src/optionsdialog.cpp" line="1731"/>
         <source>Date color</source>
         <translation>日期色</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1737"/>
+        <location filename="../src/optionsdialog.cpp" line="1734"/>
         <source>Author color</source>
         <translation>作者色</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1740"/>
+        <location filename="../src/optionsdialog.cpp" line="1737"/>
         <source>News text color</source>
         <translation>新聞文字色</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1743"/>
+        <location filename="../src/optionsdialog.cpp" line="1740"/>
         <source>News title background</source>
         <translation>新聞標題背景</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1746"/>
+        <location filename="../src/optionsdialog.cpp" line="1743"/>
         <source>News background</source>
         <translation>新聞背景</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1749"/>
+        <location filename="../src/optionsdialog.cpp" line="1746"/>
         <source>Feed with new news</source>
         <translation>有新進消息的新聞源</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1752"/>
+        <location filename="../src/optionsdialog.cpp" line="1749"/>
         <source>Count of unread news in feeds tree</source>
         <translation>新聞源樹中的未讀新聞數</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1767"/>
+        <location filename="../src/optionsdialog.cpp" line="1764"/>
         <source>Disabled feed</source>
         <translation>已停用的新聞源</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1770"/>
+        <location filename="../src/optionsdialog.cpp" line="1767"/>
         <source>Alternating row colors</source>
         <translation>交替變換每列顏色</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1773"/>
+        <location filename="../src/optionsdialog.cpp" line="1770"/>
         <source>Notification text color</source>
         <translation>通知文字色</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1776"/>
+        <location filename="../src/optionsdialog.cpp" line="1773"/>
         <source>Notification background color</source>
         <translation>通知背景色</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="2168"/>
+        <location filename="../src/optionsdialog.cpp" line="2165"/>
         <source>Auto load images in news view</source>
         <translation>檢視新聞時自動載入圖片</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1755"/>
+        <location filename="../src/optionsdialog.cpp" line="1752"/>
         <source>Text color of new news</source>
         <translation>新進新聞的文字色</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="293"/>
+        <location filename="../src/optionsdialog.cpp" line="295"/>
         <source>Show feeds tree toggle</source>
         <translation>顯示新聞源樹切換開關</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="406"/>
+        <location filename="../src/optionsdialog.cpp" line="402"/>
         <source>Clear new status when minimize to tray</source>
         <translation>縮小到工具列時清除新消息狀態</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="799"/>
+        <location filename="../src/optionsdialog.cpp" line="796"/>
         <source>Set focus on the last opened news</source>
         <translation>焦點設到最後開啟的新聞</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="800"/>
+        <location filename="../src/optionsdialog.cpp" line="797"/>
         <source>Set focus at the top of news list</source>
         <translation>焦點設到新聞列表頂端</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="801"/>
+        <location filename="../src/optionsdialog.cpp" line="798"/>
         <source>Set focus on the unread news</source>
         <translation>焦點設到未讀新聞</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="802"/>
+        <location filename="../src/optionsdialog.cpp" line="799"/>
         <source>Open the news</source>
         <translation>開啟新聞</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="902"/>
+        <location filename="../src/optionsdialog.cpp" line="899"/>
         <source>Default news filter:</source>
         <translation>新聞篩選的預設規則: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="836"/>
+        <location filename="../src/optionsdialog.cpp" line="833"/>
         <source>Action on feed opening:</source>
         <translation>新聞源開啟時: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="916"/>
+        <location filename="../src/optionsdialog.cpp" line="913"/>
         <source>Show news description instead of loading web page</source>
         <translation>顯示新聞描述，而不載入網頁</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1758"/>
+        <location filename="../src/optionsdialog.cpp" line="1755"/>
         <source>Text color of unread news</source>
         <translation>未讀新聞的文字色</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1761"/>
+        <location filename="../src/optionsdialog.cpp" line="1758"/>
         <source>Focused feed color</source>
         <translation>焦點所在的新聞源文字色</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1764"/>
+        <location filename="../src/optionsdialog.cpp" line="1761"/>
         <source>Focused feed background color</source>
         <translation>焦點所在的新聞源背景色</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1812"/>
+        <location filename="../src/optionsdialog.cpp" line="1809"/>
         <source>Standard</source>
         <translation>標準</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1814"/>
+        <location filename="../src/optionsdialog.cpp" line="1811"/>
         <source>Fixed</source>
         <translation>等寬</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1816"/>
+        <location filename="../src/optionsdialog.cpp" line="1813"/>
         <source>Serif</source>
         <translation>有襯線字型</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1818"/>
+        <location filename="../src/optionsdialog.cpp" line="1815"/>
         <source>Sans Serif</source>
         <translation>無襯線字型</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1820"/>
+        <location filename="../src/optionsdialog.cpp" line="1817"/>
         <source>Cursive</source>
         <translation>斜體</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1822"/>
+        <location filename="../src/optionsdialog.cpp" line="1819"/>
         <source>Fantasy</source>
         <translation>創意體</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1837"/>
+        <location filename="../src/optionsdialog.cpp" line="1834"/>
         <source>Default font size</source>
         <translation>預設字型大小</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1839"/>
+        <location filename="../src/optionsdialog.cpp" line="1836"/>
         <source>Fixed font size</source>
         <translation>等寬字型大小</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1841"/>
+        <location filename="../src/optionsdialog.cpp" line="1838"/>
         <source>Minimum font size</source>
         <translation>最小字型大小</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1843"/>
+        <location filename="../src/optionsdialog.cpp" line="1840"/>
         <source>Minimum logical font size</source>
         <translation>最小邏輯字型大小</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1847"/>
+        <location filename="../src/optionsdialog.cpp" line="1844"/>
         <source>Font families:</source>
         <translation>字型家族: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1849"/>
+        <location filename="../src/optionsdialog.cpp" line="1846"/>
         <source>Font sizes:</source>
         <translation>字型大小: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1858"/>
+        <location filename="../src/optionsdialog.cpp" line="1855"/>
         <source>Fonts</source>
         <translation>字型</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1859"/>
+        <location filename="../src/optionsdialog.cpp" line="1856"/>
         <source>Fonts Browser</source>
         <translation>字型瀏覽器</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1860"/>
+        <location filename="../src/optionsdialog.cpp" line="1857"/>
         <source>Colors</source>
         <translation>顏色</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1867"/>
+        <location filename="../src/optionsdialog.cpp" line="1864"/>
         <source>Filter</source>
         <translation>篩選規則</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1893"/>
+        <location filename="../src/optionsdialog.cpp" line="1890"/>
         <source>Action</source>
         <translation>操作</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1893"/>
+        <location filename="../src/optionsdialog.cpp" line="1890"/>
         <source>Description</source>
         <translation>描述</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1893"/>
+        <location filename="../src/optionsdialog.cpp" line="1890"/>
         <source>Shortcut</source>
         <translation>快鍵</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="1901"/>
+        <location filename="../src/optionsdialog.cpp" line="1898"/>
         <source>Shortcut:</source>
         <translation>快鍵: </translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="2332"/>
-        <location filename="../src/optionsdialog.cpp" line="2367"/>
+        <location filename="../src/optionsdialog.cpp" line="2329"/>
+        <location filename="../src/optionsdialog.cpp" line="2366"/>
         <source>Open File...</source>
         <translation>開啟檔案...</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="2352"/>
-        <location filename="../src/optionsdialog.cpp" line="2864"/>
+        <location filename="../src/optionsdialog.cpp" line="2351"/>
+        <location filename="../src/optionsdialog.cpp" line="2863"/>
         <source>Select Style Sheet File</source>
         <translation>選取樣式表檔案</translation>
     </message>
     <message>
-        <location filename="../src/optionsdialog.cpp" line="2873"/>
-        <location filename="../src/optionsdialog.cpp" line="2902"/>
+        <location filename="../src/optionsdialog.cpp" line="2872"/>
+        <location filename="../src/optionsdialog.cpp" line="2903"/>
         <source>Open Directory...</source>
         <translation>開啟目錄...</translation>
     </message>
@@ -4191,17 +4176,17 @@ Ancient news could reappear</source>
 <context>
     <name>QAbstractSpinBox</name>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5172"/>
+        <location filename="../src/application/mainwindow.cpp" line="5161"/>
         <source>&amp;Step up</source>
         <translation>向上(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5173"/>
+        <location filename="../src/application/mainwindow.cpp" line="5162"/>
         <source>Step &amp;down</source>
         <translation>向下(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5174"/>
+        <location filename="../src/application/mainwindow.cpp" line="5163"/>
         <source>&amp;Select All</source>
         <translation>全選(&amp;S)</translation>
     </message>
@@ -4209,22 +4194,22 @@ Ancient news could reappear</source>
 <context>
     <name>QDialogButtonBox</name>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5150"/>
+        <location filename="../src/application/mainwindow.cpp" line="5139"/>
         <source>Close</source>
         <translation>關閉</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5151"/>
+        <location filename="../src/application/mainwindow.cpp" line="5140"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5152"/>
+        <location filename="../src/application/mainwindow.cpp" line="5141"/>
         <source>&amp;Yes</source>
         <translation>是(&amp;Y)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5153"/>
+        <location filename="../src/application/mainwindow.cpp" line="5142"/>
         <source>&amp;No</source>
         <translation>否(&amp;N)</translation>
     </message>
@@ -4338,37 +4323,37 @@ Ancient news could reappear</source>
 <context>
     <name>QLineEdit</name>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5155"/>
+        <location filename="../src/application/mainwindow.cpp" line="5144"/>
         <source>&amp;Undo</source>
         <translation>還原(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5156"/>
+        <location filename="../src/application/mainwindow.cpp" line="5145"/>
         <source>&amp;Redo</source>
         <translation>重做(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5157"/>
+        <location filename="../src/application/mainwindow.cpp" line="5146"/>
         <source>Cu&amp;t</source>
         <translation>剪下(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5158"/>
+        <location filename="../src/application/mainwindow.cpp" line="5147"/>
         <source>&amp;Copy</source>
         <translation>複製(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5159"/>
+        <location filename="../src/application/mainwindow.cpp" line="5148"/>
         <source>&amp;Paste</source>
         <translation>貼上(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5160"/>
+        <location filename="../src/application/mainwindow.cpp" line="5149"/>
         <source>Delete</source>
         <translation>刪除</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5161"/>
+        <location filename="../src/application/mainwindow.cpp" line="5150"/>
         <source>Select All</source>
         <translation>全選</translation>
     </message>
@@ -4376,7 +4361,7 @@ Ancient news could reappear</source>
 <context>
     <name>QMultiInputContext</name>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5176"/>
+        <location filename="../src/application/mainwindow.cpp" line="5165"/>
         <source>Select IM</source>
         <translation>選擇 IM</translation>
     </message>
@@ -4402,42 +4387,42 @@ Ancient news could reappear</source>
 <context>
     <name>QTextControl</name>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5163"/>
+        <location filename="../src/application/mainwindow.cpp" line="5152"/>
         <source>&amp;Undo</source>
         <translation>還原(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5164"/>
+        <location filename="../src/application/mainwindow.cpp" line="5153"/>
         <source>&amp;Redo</source>
         <translation>重做(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5165"/>
+        <location filename="../src/application/mainwindow.cpp" line="5154"/>
         <source>Cu&amp;t</source>
         <translation>剪下(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5166"/>
+        <location filename="../src/application/mainwindow.cpp" line="5155"/>
         <source>&amp;Copy</source>
         <translation>複製(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5167"/>
+        <location filename="../src/application/mainwindow.cpp" line="5156"/>
         <source>&amp;Paste</source>
         <translation>貼上(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5168"/>
+        <location filename="../src/application/mainwindow.cpp" line="5157"/>
         <source>Delete</source>
         <translation>刪除</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5169"/>
+        <location filename="../src/application/mainwindow.cpp" line="5158"/>
         <source>Select All</source>
         <translation>全選</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5170"/>
+        <location filename="../src/application/mainwindow.cpp" line="5159"/>
         <source>Copy &amp;Link Location</source>
         <translation>複製連結位址(&amp;L)</translation>
     </message>
@@ -4445,22 +4430,22 @@ Ancient news could reappear</source>
 <context>
     <name>QWizard</name>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5178"/>
+        <location filename="../src/application/mainwindow.cpp" line="5167"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5179"/>
+        <location filename="../src/application/mainwindow.cpp" line="5168"/>
         <source>&lt; &amp;Back</source>
         <translation>&lt; 返回(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5180"/>
+        <location filename="../src/application/mainwindow.cpp" line="5169"/>
         <source>&amp;Finish</source>
         <translation>完成(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../src/application/mainwindow.cpp" line="5181"/>
+        <location filename="../src/application/mainwindow.cpp" line="5170"/>
         <source>&amp;Next &gt;</source>
         <translation>下一步(&amp;N) &gt;</translation>
     </message>

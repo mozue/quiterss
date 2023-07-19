@@ -53,9 +53,6 @@ isEmpty(DISABLE_PRINT) {
   DEFINES += HAVE_PRINT
 }
 
-isEmpty(DISABLE_ANALYTICS) {
-  DEFINES += USE_ANALYTICS
-}
 isEmpty(DISABLE_SHARENEWS) {
   DEFINES += USE_SHARENEWS
 }
@@ -246,9 +243,6 @@ include(3rdparty/qftp/qftp.pri)
 include(3rdparty/sqlite.pri)
 include(lang/lang.pri)
 include(3rdparty/qupzilla/qupzilla.pri)
-isEmpty(DISABLE_ANALYTICS) {
-  include(3rdparty/ganalytics/ganalytics.pri)
-}
 isEmpty(DISABLE_UPDATECHECK) {
   HEADERS += src/updateappdialog.h
   SOURCES += src/updateappdialog.cpp
