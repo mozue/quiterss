@@ -53,9 +53,6 @@ MainWindow::MainWindow(QWidget *parent)
   , newsView_(NULL)
   , updateTimeCount_(0)
   , mediaPlayer_(NULL)
-#ifdef USE_UPDATECHECK
-  , updateAppDialog_(NULL)
-#endif
   , notificationWidget(NULL)
   , feedIdOld_(-2)
   , isStartImportFeed_(false)
@@ -91,10 +88,6 @@ MainWindow::MainWindow(QWidget *parent)
   addOurFeed();
 
   initUpdateFeeds();
-
-#ifdef USE_UPDATECHECK
-  QTimer::singleShot(5000, this, SLOT(slotUpdateAppCheck()));
-#endif
 
   connect(this, SIGNAL(signalShowNotification(bool)),
           SLOT(showNotification(bool)), Qt::QueuedConnection);
@@ -150,12 +143,7 @@ void MainWindow::quitApp()
   mainApp->setClosing();
   isMinimizeToTray_ = true;
   disconnect(this);
-#ifdef USE_UPDATECHECK
-  if (updateAppDialog_) {
-    updateAppDialog_->disconnectObjects();
-    updateAppDialog_->deleteLater();
-  }
-#endif
+
   if (optionsDialog_) {
     optionsDialog_->close();
   }
@@ -1078,12 +1066,6 @@ void MainWindow::createActions()
   aboutAct_->setObjectName("AboutAct_");
   connect(aboutAct_, SIGNAL(triggered()), this, SLOT(slotShowAboutDlg()));
 
-#ifdef USE_UPDATECHECK
-  updateAppAct_ = new QAction(this);
-  updateAppAct_->setObjectName("UpdateApp_");
-  connect(updateAppAct_, SIGNAL(triggered()), this, SLOT(slotShowUpdateAppDlg()));
-#endif
-
   reportProblemAct_ = new QAction(this);
   reportProblemAct_->setObjectName("reportProblemAct_");
   connect(reportProblemAct_, SIGNAL(triggered()), this, SLOT(slotReportProblem()));
@@ -1872,9 +1854,6 @@ void MainWindow::createMenu()
   toolsMenu_->addAction(optionsAct_);
 
   helpMenu_ = new QMenu(this);
-#ifdef USE_UPDATECHECK
-  helpMenu_->addAction(updateAppAct_);
-#endif
   helpMenu_->addSeparator();
   helpMenu_->addAction(reportProblemAct_);
   helpMenu_->addAction(aboutAct_);
@@ -3337,11 +3316,6 @@ void MainWindow::showOptionDlg(int index)
   bool showCloseButtonTab = settings.value("Settings/showCloseButtonTab", true).toBool();
   optionsDialog_->showCloseButtonTab_->setChecked(showCloseButtonTab);
 
-#ifdef USE_UPDATECHECK
-  bool updateCheckEnabled = settings.value("Settings/updateCheckEnabled", true).toBool();
-  optionsDialog_->updateCheckEnabled_->setChecked(updateCheckEnabled);
-#endif
-
   bool storeDBMemory_ = settings.value("Settings/storeDBMemory", true).toBool();
   optionsDialog_->storeDBMemory_->setChecked(storeDBMemory_);
   int saveDBMemFileInterval = settings.value("Settings/saveDBMemFileInterval", 30).toInt();
@@ -3748,11 +3722,6 @@ void MainWindow::showOptionDlg(int index)
   settings.setValue("Settings/showCloseButtonTab", showCloseButtonTab);
 
   pushButtonNull_->setVisible(showToggleFeedsTree_);
-
-#ifdef USE_UPDATECHECK
-  updateCheckEnabled = optionsDialog_->updateCheckEnabled_->isChecked();
-  settings.setValue("Settings/updateCheckEnabled", updateCheckEnabled);
-#endif
 
   storeDBMemory_ = optionsDialog_->storeDBMemory_->isChecked();
   settings.setValue("Settings/storeDBMemory", storeDBMemory_);
@@ -4815,16 +4784,7 @@ void MainWindow::slotNewsFilter()
     }
   }
 }
-#ifdef USE_UPDATECHECK
-// ----------------------------------------------------------------------------
-void MainWindow::slotShowUpdateAppDlg()
-{
-  UpdateAppDialog *updateAppDialog = new UpdateAppDialog(mainApp->language(), this);
-  updateAppDialog->activateWindow();
-  updateAppDialog->exec();
-  delete updateAppDialog;
-}
-#endif
+
 // ----------------------------------------------------------------------------
 void MainWindow::retranslateStrings()
 {
@@ -4919,9 +4879,6 @@ void MainWindow::retranslateStrings()
   aboutAct_ ->setText(tr("About..."));
   aboutAct_->setToolTip(tr("Show 'About' Dialog"));
 
-#ifdef USE_UPDATECHECK
-  updateAppAct_->setText(tr("Check for Updates..."));
-#endif
   reportProblemAct_->setText(tr("Report a Problem..."));
 
   openDescriptionNewsAct_->setText(tr("Open News"));
@@ -6006,29 +5963,6 @@ void MainWindow::showFilterRulesDlg()
 
   showNewsFiltersDlg(true);
 }
-#ifdef USE_UPDATECHECK
-// ----------------------------------------------------------------------------
-void MainWindow::slotUpdateAppCheck()
-{
-  updateAppDialog_ = new UpdateAppDialog(mainApp->language(), this, false);
-  connect(updateAppDialog_, SIGNAL(signalNewVersion(QString)),
-          this, SLOT(slotNewVersion(QString)), Qt::QueuedConnection);
-}
-// ----------------------------------------------------------------------------
-void MainWindow::slotNewVersion(const QString &newVersion)
-{
-  updateAppDialog_->disconnectObjects();
-  delete updateAppDialog_;
-  updateAppDialog_ = NULL;
-
-  if (!newVersion.isEmpty()) {
-    traySystem->showMessage(tr("Check for updates"),
-                            tr("A new version of QuiteRSS..."));
-    connect(traySystem, SIGNAL(messageClicked()),
-            this, SLOT(slotShowUpdateAppDlg()));
-  }
-}
-#endif
 
 /** @brief Process Key_Up in feeds tree
  *---------------------------------------------------------------------------*/

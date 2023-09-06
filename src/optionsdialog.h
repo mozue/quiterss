@@ -48,9 +48,6 @@ public:
   QCheckBox *showToggleFeedsTree_;
   QCheckBox *defaultIconFeeds_;
   QCheckBox *autocollapseFolder_;
-#ifdef USE_UPDATECHECK
-  QCheckBox *updateCheckEnabled_;
-#endif
   QCheckBox *storeDBMemory_;
   QSpinBox *saveDBMemFileInterval_;
   QCheckBox *saveDBMemFileMiniSystemTray_;

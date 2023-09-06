@@ -36,9 +36,6 @@
 #include "notificationswidget.h"
 #include "tabbar.h"
 #include "optionsdialog.h"
-#ifdef USE_UPDATECHECK
-#include "updateappdialog.h"
-#endif
 #include "webview.h"
 #include "parseobject.h"
 #include "toolbutton.h"
@@ -360,9 +357,6 @@ private slots:
   void slotFeedsFilter();
   void slotNewsFilter();
   void slotGetFeedsTimer();
-#ifdef USE_UPDATECHECK
-  void slotShowUpdateAppDlg();
-#endif
   void showContextMenuToolBar(const QPoint &pos);
   void showFeedPropertiesDlg();
   void slotFeedMenuShow();
@@ -371,10 +365,6 @@ private slots:
   void slotIconFeedUpdate(int feedId, QByteArray faviconData);
   void showNewsFiltersDlg(bool newFilter = false);
   void showFilterRulesDlg();
-#ifdef USE_UPDATECHECK
-  void slotUpdateAppCheck();
-  void slotNewVersion(const QString &newVersion);
-#endif
   void slotFeedUpPressed();
   void slotFeedDownPressed();
   void slotFeedHomePressed();
@@ -599,9 +589,6 @@ private:
   QAction *filterNewsLastDay_;
   QAction *filterNewsLastWeek_;
   QAction *aboutAct_;
-#ifdef USE_UPDATECHECK
-  QAction *updateAppAct_;
-#endif
   QAction *reportProblemAct_;
 
   QAction *markFeedRead_;
@@ -711,10 +698,6 @@ private:
   bool fullscreenModeNotify_;
   bool showNotifyInactiveApp_;
   bool onlySelectedFeeds_;
-
-#ifdef USE_UPDATECHECK
-  UpdateAppDialog *updateAppDialog_;
-#endif
 
   bool cleanupOnShutdown_;
   int maxDayCleanUp_;

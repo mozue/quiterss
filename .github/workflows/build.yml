@@ -34,7 +34,7 @@ jobs:
           install: git make upx p7zip mingw-w64-${{matrix.env}}-toolchain mingw-w64-${{matrix.env}}-qt5 mingw-w64-${{matrix.env}}-qtwebkit mingw-w64-${{matrix.env}}-pkgconf
       - name: Configure
         run: |
-          qmake DISABLE_SHARENEWS=yes DISABLE_UPDATECHECK=yes
+          qmake DISABLE_SHARENEWS=yes
           sed 's/windres -i/windres --codepage=65001 -i/g' -i Makefile.Release
           sed 's/-Wa,-mbig-obj//g' -i Makefile.Release
       - name: Build

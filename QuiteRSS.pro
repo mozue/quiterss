@@ -51,9 +51,6 @@ equals(WEBKIT_ALPHA, true) {
 isEmpty(DISABLE_SHARENEWS) {
   DEFINES += USE_SHARENEWS
 }
-isEmpty(DISABLE_UPDATECHECK) {
-  DEFINES += USE_UPDATECHECK
-}
 
 unix:!mac:DEFINES += HAVE_X11
 
@@ -235,10 +232,6 @@ include(3rdparty/qftp/qftp.pri)
 include(3rdparty/sqlite.pri)
 include(lang/lang.pri)
 include(3rdparty/qupzilla/qupzilla.pri)
-isEmpty(DISABLE_UPDATECHECK) {
-  HEADERS += src/updateappdialog.h
-  SOURCES += src/updateappdialog.cpp
-}
 
 os2|win32|mac {
   TARGET = QuiteRSS

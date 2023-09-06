@@ -294,9 +294,6 @@ void OptionsDialog::createGeneralWidget()
   autocollapseFolder_ = new QCheckBox(tr("Automatically collapse folders"));
   showCloseButtonTab_ = new QCheckBox(tr("Show close button on tab"));
 
-#ifdef USE_UPDATECHECK
-  updateCheckEnabled_ = new QCheckBox(tr("Automatically check for updates"));
-#endif
   storeDBMemory_ = new QCheckBox(tr("Store a DB in memory (requires program restart)"));
   storeDBMemory_->setChecked(false);
   saveDBMemFileInterval_ = new QSpinBox();
@@ -355,9 +352,6 @@ void OptionsDialog::createGeneralWidget()
   generalLayout->addWidget(autoRunEnabled_);
 #endif
 
-#ifdef USE_UPDATECHECK
-  generalLayout->addWidget(updateCheckEnabled_);
-#endif
   generalLayout->addWidget(storeDBMemory_);
   generalLayout->addWidget(saveDBMemFileWidget);
   generalLayout->addStretch(1);
