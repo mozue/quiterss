@@ -1344,105 +1344,6 @@ void MainWindow::createActions()
   reloadWebPageAct_ = new QAction(this);
   reloadWebPageAct_->setObjectName("reloadWebPageAct");
 
-#ifdef USE_SHARENEWS
-  shareGroup_ = new QActionGroup(this);
-  shareGroup_->setExclusive(false);
-
-  emailShareAct_ = new QAction(this);
-  emailShareAct_->setObjectName("emailShareAct");
-  emailShareAct_->setText("Email");
-  emailShareAct_->setIcon(QIcon(":/images/images/email.png"));
-  shareGroup_->addAction(emailShareAct_);
-
-  evernoteShareAct_ = new QAction(this);
-  evernoteShareAct_->setObjectName("evernoteShareAct");
-  evernoteShareAct_->setText("Evernote");
-  evernoteShareAct_->setIcon(QIcon(":/share/images/share/evernote.png"));
-  shareGroup_->addAction(evernoteShareAct_);
-
-  facebookShareAct_ = new QAction(this);
-  facebookShareAct_->setObjectName("facebookShareAct");
-  facebookShareAct_->setText("Facebook");
-  facebookShareAct_->setIcon(QIcon(":/share/images/share/facebook.png"));
-  shareGroup_->addAction(facebookShareAct_);
-
-  livejournalShareAct_ = new QAction(this);
-  livejournalShareAct_->setObjectName("livejournalShareAct");
-  livejournalShareAct_->setText("LiveJournal");
-  livejournalShareAct_->setIcon(QIcon(":/share/images/share/livejournal.png"));
-  shareGroup_->addAction(livejournalShareAct_);
-
-  pocketShareAct_ = new QAction(this);
-  pocketShareAct_->setObjectName("pocketShareAct");
-  pocketShareAct_->setText("Pocket");
-  pocketShareAct_->setIcon(QIcon(":/share/images/share/pocket.png"));
-  shareGroup_->addAction(pocketShareAct_);
-
-  twitterShareAct_ = new QAction(this);
-  twitterShareAct_->setObjectName("twitterShareAct");
-  twitterShareAct_->setText("Twitter");
-  twitterShareAct_->setIcon(QIcon(":/share/images/share/twitter.png"));
-  shareGroup_->addAction(twitterShareAct_);
-
-  vkShareAct_ = new QAction(this);
-  vkShareAct_->setObjectName("vkShareAct");
-  vkShareAct_->setText("VK");
-  vkShareAct_->setIcon(QIcon(":/share/images/share/vk.png"));
-  shareGroup_->addAction(vkShareAct_);
-
-  linkedinShareAct_ = new QAction(this);
-  linkedinShareAct_->setObjectName("linkedinShareAct");
-  linkedinShareAct_->setText("LinkedIn");
-  linkedinShareAct_->setIcon(QIcon(":/share/images/share/linkedin.png"));
-  shareGroup_->addAction(linkedinShareAct_);
-
-  bloggerShareAct_ = new QAction(this);
-  bloggerShareAct_->setObjectName("bloggerShareAct");
-  bloggerShareAct_->setText("Blogger");
-  bloggerShareAct_->setIcon(QIcon(":/share/images/share/blogger.png"));
-  shareGroup_->addAction(bloggerShareAct_);
-
-  printfriendlyShareAct_ = new QAction(this);
-  printfriendlyShareAct_->setObjectName("printfriendlyShareAct");
-  printfriendlyShareAct_->setText("PrintFriendly");
-  printfriendlyShareAct_->setIcon(QIcon(":/share/images/share/printfriendly.png"));
-  shareGroup_->addAction(printfriendlyShareAct_);
-
-  instapaperShareAct_ = new QAction(this);
-  instapaperShareAct_->setObjectName("instapaperShareAct");
-  instapaperShareAct_->setText("Instapaper");
-  instapaperShareAct_->setIcon(QIcon(":/share/images/share/instapaper.png"));
-  shareGroup_->addAction(instapaperShareAct_);
-
-  redditShareAct_ = new QAction(this);
-  redditShareAct_->setObjectName("redditShareAct");
-  redditShareAct_->setText("Reddit");
-  redditShareAct_->setIcon(QIcon(":/share/images/share/reddit.ico"));
-  shareGroup_->addAction(redditShareAct_);
-
-  hackerNewsShareAct_ = new QAction(this);
-  hackerNewsShareAct_->setObjectName("hackerNewsShareAct");
-  hackerNewsShareAct_->setText("HackerNews");
-  hackerNewsShareAct_->setIcon(QIcon(":/share/images/share/hackernews.png"));
-  shareGroup_->addAction(hackerNewsShareAct_);
-
-  telegramShareAct_ = new QAction(this);
-  telegramShareAct_->setObjectName("telegramShareAct");
-  telegramShareAct_->setText("Telegram");
-  telegramShareAct_->setIcon(QIcon(":/share/images/share/telegram.png"));
-  shareGroup_->addAction(telegramShareAct_);
-
-  viberShareAct_ = new QAction(this);
-  viberShareAct_->setObjectName("viberShareAct");
-  viberShareAct_->setText("Viber");
-  viberShareAct_->setIcon(QIcon(":/share/images/share/viber.png"));
-  shareGroup_->addAction(viberShareAct_);
-
-  this->addActions(shareGroup_->actions());
-  connect(shareGroup_, SIGNAL(triggered(QAction*)),
-          this, SLOT(slotShareNews(QAction*)));
-#endif
-
   connect(markNewsRead_, SIGNAL(triggered()),
           this, SLOT(markNewsRead()));
   connect(markAllNewsRead_, SIGNAL(triggered()),
@@ -1601,10 +1502,6 @@ void MainWindow::createShortcut()
   listActions_.append(reloadWebPageAct_);
   listActions_.append(pageUpWebViewAct_);
   listActions_.append(pageDownWebViewAct_);
-
-#ifdef USE_SHARENEWS
-  listActions_.append(shareGroup_->actions());
-#endif
 
   // Actions for labels do add at the end
   listActions_.append(settingPageLabelsAct_);
@@ -1779,16 +1676,6 @@ void MainWindow::createMenu()
   newsLabelAction_->setMenu(newsLabelMenu_);
   newsLabelMenuAction_->setMenu(newsLabelMenu_);
 
-#ifdef USE_SHARENEWS
-  shareMenu_ = new QMenu(this);
-  shareMenu_->addActions(shareGroup_->actions());
-  shareMenuAct_ = new QAction(this);
-  shareMenuAct_->setObjectName("shareMenuAct");
-  shareMenuAct_->setIcon(QIcon(":/images/images/share.png"));
-  shareMenuAct_->setMenu(shareMenu_);
-  this->addAction(shareMenuAct_);
-#endif
-
   newsFilterGroup_ = new QActionGroup(this);
   newsFilterGroup_->setExclusive(true);
   newsFilterGroup_->addAction(filterNewsAll_);
@@ -1817,9 +1704,6 @@ void MainWindow::createMenu()
   newsMenu_->addSeparator();
   newsMenu_->addAction(markStarAct_);
   newsMenu_->addAction(newsLabelMenuAction_);
-#ifdef USE_SHARENEWS
-  newsMenu_->addAction(shareMenuAct_);
-#endif
   newsMenu_->addSeparator();
   newsMenu_->addAction(newsFilter_);
   newsMenu_->addMenu(newsSortByMenu_);
@@ -1902,9 +1786,6 @@ void MainWindow::createMenu()
           this, SLOT(feedsColumnVisible(QAction*)));
   connect(feedMenu_, SIGNAL(aboutToShow()), this, SLOT(slotFeedMenuShow()));
   connect(newsLabelMenu_, SIGNAL(aboutToShow()), this, SLOT(getLabelNews()));
-#ifdef USE_SHARENEWS
-  connect(shareMenuAct_, SIGNAL(triggered()), this, SLOT(showMenuShareNews()));
-#endif
   connect(newsFilterGroup_, SIGNAL(triggered(QAction*)),
           this, SLOT(setNewsFilter(QAction*)));
   connect(newsFilter_, SIGNAL(triggered()), this, SLOT(slotNewsFilter()));
@@ -5050,10 +4931,6 @@ void MainWindow::retranslateStrings()
 
   settingPageLabelsAct_->setText(tr("Setting Page: Labels"));
 
-#ifdef USE_SHARENEWS
-  shareMenuAct_->setText(tr("Share"));
-#endif
-
   newsSortByMenu_->setTitle(tr("Sort By"));
   newsSortOrderGroup_->actions().at(0)->setText(tr("Ascending"));
   newsSortOrderGroup_->actions().at(1)->setText(tr("Descending"));
@@ -7817,45 +7694,6 @@ void MainWindow::showCustomizeToolbarDlg(QAction *action)
 
   delete toolbarDlg;
 }
-
-#ifdef USE_SHARENEWS
-/** @brief Process news sharing
- *---------------------------------------------------------------------------*/
-void MainWindow::slotShareNews(QAction *action)
-{
-  currentNewsTab->slotShareNews(action);
-}
-// ----------------------------------------------------------------------------
-void MainWindow::showMenuShareNews()
-{
-  if (mainToolbar_->widgetForAction(shareMenuAct_)) {
-    QWidget *widget = mainToolbar_->widgetForAction(shareMenuAct_);
-    if (widget->underMouse()) {
-      shareMenu_->popup(widget->mapToGlobal(QPoint(0, mainToolbar_->height()-1)));
-    }
-  }
-  if (feedsToolBar_->widgetForAction(shareMenuAct_)) {
-    QWidget *widget = feedsToolBar_->widgetForAction(shareMenuAct_);
-    if (widget->underMouse()) {
-      shareMenu_->popup(widget->mapToGlobal(QPoint(0, feedsToolBar_->height()-1)));
-    }
-  }
-  if (currentNewsTab->type_ < NewsTabWidget::TabTypeWeb) {
-    if (currentNewsTab->newsToolBar_->widgetForAction(shareMenuAct_)) {
-      QWidget *widget = currentNewsTab->newsToolBar_->widgetForAction(shareMenuAct_);
-      if (widget->underMouse()) {
-        shareMenu_->popup(widget->mapToGlobal(QPoint(0, currentNewsTab->newsToolBar_->height()-1)));
-      }
-    }
-  }
-  if (currentNewsTab->webToolBar_->widgetForAction(shareMenuAct_)) {
-    QWidget *widget = currentNewsTab->webToolBar_->widgetForAction(shareMenuAct_);
-    if (widget->underMouse()) {
-      shareMenu_->popup(widget->mapToGlobal(QPoint(0, currentNewsTab->webToolBar_->height()-1)));
-    }
-  }
-}
-#endif
 
 /** @brief Open feed home page in external browser
  *---------------------------------------------------------------------------*/

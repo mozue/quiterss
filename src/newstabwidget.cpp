@@ -322,9 +322,6 @@ void NewsTabWidget::showContextMenuNews(const QPoint &pos)
   menu.addSeparator();
   menu.addAction(mainWindow_->markStarAct_);
   menu.addAction(mainWindow_->newsLabelMenuAction_);
-#ifdef USE_SHARENEWS
-  menu.addAction(mainWindow_->shareMenuAct_);
-#endif
   menu.addAction(mainWindow_->copyLinkAct_);
   menu.addSeparator();
   menu.addAction(mainWindow_->updateFeedAct_);
@@ -376,10 +373,6 @@ void NewsTabWidget::createWebWidget()
   webAction = webView_->pageAction(QWebPage::Stop);
   webToolBar_->addAction(webAction);
   webToolBar_->addSeparator();
-
-#ifdef USE_SHARENEWS
-  webToolBar_->addAction(mainApp->mainWindow()->shareMenuAct_);
-#endif
 
   webExternalBrowserAct_ = new QAction(this);
   webExternalBrowserAct_->setIcon(QIcon(":/images/openBrowser"));
@@ -1804,12 +1797,6 @@ void NewsTabWidget::loadNewspaper(int refresh)
                                    "<a href=\"quiterss://labels.menu.ui?#%1\" title='%2'>"
                                    "<img class='quiterss-img' id=\"labelsMenu%1\" src=\"qrc:/images/label_5\"/></a></div>").
           arg(newsId).arg(tr("Label"));
-#ifdef USE_SHARENEWS
-      QString shareMenu = QString("<div class=\"share-menu\">"
-                                  "<a href=\"quiterss://share.menu.ui?#%1\" title='%2'>"
-                                  "<img class='quiterss-img' id=\"shareMenu%1\" src=\"qrc:/images/images/share.png\"/></a></div>").
-          arg(newsId).arg(tr("Share"));
-#endif          
       QString openBrowserAction = QString("<div class=\"open-browser\">"
                                           "<a href=\"quiterss://open.browser.ui?#%1\" title='%2'>"
                                           "<img class='quiterss-img' id=\"openBrowser%1\" src=\"qrc:/images/openBrowser\"/></a></div>").
@@ -1823,9 +1810,6 @@ void NewsTabWidget::loadNewspaper(int refresh)
                                      "<img class='quiterss-img' id=\"deleteAction%1\" src=\"qrc:/images/delete\"/></a></div>").
           arg(newsId).arg(tr("Delete"));
       QString actionNews = starAction % labelsMenu %
-#ifdef USE_SHARENEWS      
-          shareMenu % 
-#endif
           openBrowserAction %
           openHomeAction % deleteAction;
 
@@ -2593,158 +2577,6 @@ void NewsTabWidget::setTextTab(const QString &text)
   emit signalSetTextTab(text, this);
 }
 
-/** @brief Share news
- *----------------------------------------------------------------------------*/
-#ifdef USE_SHARENEWS
-void NewsTabWidget::slotShareNews(QAction *action)
-{
-  bool externalApp = false;
-
-  QList<QModelIndex> indexes;
-  int cnt = 0;
-  if (type_ < TabTypeWeb) {
-    indexes = newsView_->selectionModel()->selectedRows(0);
-    cnt = indexes.count();
-  } else if (type_ == TabTypeWeb) {
-    cnt = 1;
-  }
-  if (cnt == 0) return;
-
-  for (int i = cnt-1; i >= 0; --i) {
-    QString title;
-    QString linkString;
-    QString content;
-    if (type_ < TabTypeWeb) {
-      title = newsModel_->dataField(indexes.at(i).row(), "title").toString();
-      linkString = getLinkNews(indexes.at(i).row());
-
-      content = newsModel_->dataField(indexes.at(i).row(), "content").toString();
-      QString description = newsModel_->dataField(indexes.at(i).row(), "description").toString();
-      if (content.isEmpty() || (description.length() > content.length())) {
-        content = description;
-      }
-      QTextDocumentFragment textDocument = QTextDocumentFragment::fromHtml(content);
-      content = textDocument.toPlainText();
-    } else {
-      title = webView_->title();
-      linkString = webView_->url().toString();
-      content = webView_->page()->mainFrame()->toPlainText();
-    }
-#if defined(Q_OS_WIN) || defined(Q_OS_OS2) || defined(Q_OS_MAC)
-    content = content.replace("\n", "%0A");
-    content = content.replace("\"", "%22");
-#endif
-
-    QUrl url;
-    if (action->objectName() == "emailShareAct") {
-      url.setUrl("mailto:");
-      QUrlQuery urlQuery;
-      urlQuery.addQueryItem("subject", title);
-      urlQuery.addQueryItem("body", linkString);
-      //#if defined(Q_OS_WIN) || defined(Q_OS_OS2) || defined(Q_OS_MAC)
-      //      urlQuery.addQueryItem("body", linkString + "%0A%0A" + content);
-      //#else
-      //      urlQuery.addQueryItem("body", linkString + "\n\n" + content);
-      //#endif
-      url.setQuery(urlQuery);
-      externalApp = true;
-    } else if (action->objectName() == "evernoteShareAct") {
-      url.setUrl("https://www.evernote.com/clip.action");
-      QUrlQuery urlQuery;
-      urlQuery.addQueryItem("url", linkString);
-      urlQuery.addQueryItem("title", title);
-      url.setQuery(urlQuery);
-    } else if (action->objectName() == "facebookShareAct") {
-      url.setUrl("https://www.facebook.com/sharer.php");
-      QUrlQuery urlQuery;
-      urlQuery.addQueryItem("u", linkString);
-      urlQuery.addQueryItem("t", title);
-      url.setQuery(urlQuery);
-    } else if (action->objectName() == "livejournalShareAct") {
-      url.setUrl("http://www.livejournal.com/update.bml");
-      QUrlQuery urlQuery;
-      urlQuery.addQueryItem("event", linkString);
-      urlQuery.addQueryItem("subject", title);
-      url.setQuery(urlQuery);
-    } else if (action->objectName() == "pocketShareAct") {
-      url.setUrl("https://getpocket.com/save");
-      QUrlQuery urlQuery;
-      urlQuery.addQueryItem("url", linkString);
-      urlQuery.addQueryItem("title", title);
-      url.setQuery(urlQuery);
-    } else if (action->objectName() == "twitterShareAct") {
-      url.setUrl("https://twitter.com/share");
-      QUrlQuery urlQuery;
-      urlQuery.addQueryItem("url", linkString);
-      urlQuery.addQueryItem("text", title);
-      url.setQuery(urlQuery);
-    } else if (action->objectName() == "vkShareAct") {
-      url.setUrl("https://vk.com/share.php");
-      QUrlQuery urlQuery;
-      urlQuery.addQueryItem("url", linkString);
-      urlQuery.addQueryItem("title", title);
-      urlQuery.addQueryItem("description", "");
-      urlQuery.addQueryItem("image", "");
-      url.setQuery(urlQuery);
-    } else if (action->objectName() == "linkedinShareAct") {
-      url.setUrl("https://www.linkedin.com/shareArticle?mini=true");
-      QUrlQuery urlQuery;
-      urlQuery.addQueryItem("url", linkString);
-      urlQuery.addQueryItem("title", title);
-      url.setQuery(urlQuery);
-    } else if (action->objectName() == "bloggerShareAct") {
-      url.setUrl("https://www.blogger.com/blog_this.pyra?t");
-      QUrlQuery urlQuery;
-      urlQuery.addQueryItem("u", linkString);
-      urlQuery.addQueryItem("n", title);
-      url.setQuery(urlQuery);
-    } else if (action->objectName() == "printfriendlyShareAct") {
-      url.setUrl("https://www.printfriendly.com/print");
-      QUrlQuery urlQuery;
-      urlQuery.addQueryItem("url", linkString);
-      url.setQuery(urlQuery);
-    } else if (action->objectName() == "instapaperShareAct") {
-      url.setUrl("https://www.instapaper.com/hello2");
-      QUrlQuery urlQuery;
-      urlQuery.addQueryItem("url", linkString);
-      urlQuery.addQueryItem("title", title);
-      url.setQuery(urlQuery);
-    } else if (action->objectName() == "redditShareAct") {
-      url.setUrl("https://reddit.com/submit");
-      QUrlQuery urlQuery;
-      urlQuery.addQueryItem("url", linkString);
-      urlQuery.addQueryItem("title", title);
-      url.setQuery(urlQuery);
-    } else if (action->objectName() == "hackerNewsShareAct") {
-      url.setUrl("http://news.ycombinator.com/submitlink");
-      QUrlQuery urlQuery;
-      urlQuery.addQueryItem("u", linkString);
-      urlQuery.addQueryItem("t", title);
-      url.setQuery(urlQuery);
-    } else if (action->objectName() == "telegramShareAct") {
-      url.setUrl("tg://msg_url");
-      QUrlQuery urlQuery;
-      urlQuery.addQueryItem("url", linkString);
-      urlQuery.addQueryItem("text", title);
-      url.setQuery(urlQuery);
-      externalApp = true;
-    } else if (action->objectName() == "viberShareAct") {
-      url.setUrl("viber://forward");
-      QUrlQuery urlQuery;
-      urlQuery.addQueryItem("text", title + "%20" + linkString);
-      url.setQuery(urlQuery);
-      externalApp = true;
-    }
-
-    if ((mainWindow_->externalBrowserOn_ <= 0) && !externalApp) {
-      mainWindow_->openNewsTab_ = NEW_TAB_FOREGROUND;
-      mainWindow_->createWebTab(url);
-    } else {
-      QDesktopServices::openUrl(url);
-    }
-  }
-}
-#endif
 //-----------------------------------------------------------------------------
 int NewsTabWidget::getUnreadCount(QString countString)
 {
@@ -2862,14 +2694,6 @@ void NewsTabWidget::actionNewspaper(QUrl url)
             indexList.first(), QItemSelectionModel::Select|QItemSelectionModel::Rows);
       currentNewsIdOld = newsId.toInt();
       mainWindow_->newsLabelMenu_->popup(QCursor::pos());
-#ifdef USE_SHARENEWS
-    } else if (url.host() == "share.menu.ui") {
-      newsView_->selectionModel()->clearSelection();
-      newsView_->selectionModel()->select(
-            indexList.first(), QItemSelectionModel::Select|QItemSelectionModel::Rows);
-      currentNewsIdOld = newsId.toInt();
-      mainWindow_->shareMenu_->popup(QCursor::pos());
-#endif
     } else if (url.host() == "open.browser.ui") {
       QUrl url = QUrl::fromEncoded(getLinkNews(indexList.first().row()).toUtf8());
       if (url.host().isEmpty() || (QUrl(url).host().indexOf('.') == -1)) {

@@ -136,24 +136,6 @@ public:
   QAction *showLabelsMenuAct_;
   QAction *findTextAct_;
   QAction *openHomeFeedAct_;
-#ifdef USE_SHARENEWS
-  QAction *shareMenuAct_;
-  QAction *emailShareAct_;
-  QAction *evernoteShareAct_;
-  QAction *facebookShareAct_;
-  QAction *livejournalShareAct_;
-  QAction *pocketShareAct_;
-  QAction *twitterShareAct_;
-  QAction *vkShareAct_;
-  QAction *linkedinShareAct_;
-  QAction *bloggerShareAct_;
-  QAction *printfriendlyShareAct_;
-  QAction *instapaperShareAct_;
-  QAction *redditShareAct_;
-  QAction *hackerNewsShareAct_;
-  QAction *telegramShareAct_;
-  QAction *viberShareAct_;
-#endif
   QAction *copyLinkAct_;
   QAction *pageUpWebViewAct_;
   QAction *pageDownWebViewAct_;
@@ -170,14 +152,8 @@ public:
 
   QActionGroup *newsFilterGroup_;
   QActionGroup *newsLabelGroup_;
-#ifdef USE_SHARENEWS
-  QActionGroup *shareGroup_;
-#endif
 
   QMenu *newsLabelMenu_;
-#ifdef USE_SHARENEWS
-  QMenu *shareMenu_;
-#endif
   QMenu *newsSortByMenu_;
 
   QString newsListFontFamily_;
@@ -461,11 +437,6 @@ private slots:
 
   void customizeMainToolbar();
   void showCustomizeToolbarDlg(QAction *action);
-
-#ifdef USE_SHARENEWS
-  void slotShareNews(QAction *action);
-  void showMenuShareNews();
-#endif
 
   void slotOpenHomeFeed();
   void sortedByTitleFeedsTree();
