@@ -35,7 +35,7 @@ AboutDialog::AboutDialog(const QString &lang, QWidget *parent) :
 
   QString revisionStr;
   if (QString("%1").arg(VCS_REVISION) != "0") {
-      revisionStr = "<BR>" + tr("Revision") + " " + QString("%1").arg(VCS_REVISION);
+      revisionStr = "<BR>" + tr("Revision") + " " + QString("%1").arg(VCS_REVISION) + " " + QString("(%1)").arg(VCS_SHORT_HASH);
   }
   QString appInfo =
       "<html><style>a { color: blue; text-decoration: none; }</style><body>"

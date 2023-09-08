@@ -9,18 +9,27 @@ project(${TARGET_NAME}
 
 # create revision file
 
-execute_process(COMMAND  git rev-list --count HEAD
+execute_process(COMMAND git rev-list --count HEAD
                 OUTPUT_VARIABLE GIT_REV_COUNT
                 ERROR_QUIET)
 
 if ("${GIT_REV_COUNT}" STREQUAL "")
     set(GIT_REV_COUNT "0")
+    set(GIT_REV_HASH "")
 else()
     string(STRIP "${GIT_REV_COUNT}" ${GIT_REV_COUNT})
+
+    execute_process(COMMAND git rev-parse --short HEAD
+                OUTPUT_VARIABLE GIT_REV_HASH
+                ERROR_QUIET)
+    string(REGEX REPLACE "\n$" "" GIT_REV_HASH "${GIT_REV_HASH}")
+    set(GIT_REV_HASH "\"${GIT_REV_HASH}\"")
 endif()
 
 set(VERSION "#define VCS_REVISION ${GIT_REV_COUNT}")
+set(HASH "#define VCS_SHORT_HASH ${GIT_REV_HASH}")
 file(WRITE ${CMAKE_CURRENT_SOURCE_DIR}/src/VersionRev.h "${VERSION}")
+file(APPEND ${CMAKE_CURRENT_SOURCE_DIR}/src/VersionRev.h "${HASH}")
 
 # qt setting
 set(CMAKE_AUTOMOC ON)
