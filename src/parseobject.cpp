@@ -134,7 +134,6 @@ void ParseObject::slotParse(const QByteArray &xmlData, const int &feedId,
   {
     if (mainApp->mainWindow()->avoidOldNews_ == true)
     {
-      addSingleNewsAnyDate_ = !mainApp->mainWindow()->avoidOldNews_;
       avoidedOldSingleNews_ = mainApp->mainWindow()->avoidOldNews_;
       avoidedOldSingleNewsDate_ = mainApp->mainWindow()->avoidedOldNewsDate_;
     }

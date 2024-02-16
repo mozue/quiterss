@@ -110,7 +110,7 @@ const QString kCreateFeedsTableQuery(
     "flags text, "                    // more flags (example "focused", "hidden")
     "authentication integer default 0, "    // enable authentification, sets on feed creation
     "duplicateNewsMode integer default 0, " // news duplicates process mode
-    "addSingleNewsAnyDateOn integer default 1, " // enable adding news with any date into the database
+    "addSingleNewsAnyDateOn integer default 0, " // disable adding news with any date into the database
     "avoidedOldSingleNewsDateOn integer default 0, " // avoid adding news before this date into the database
     "avoidedOldSingleNewsDate varchar, " // date to avoid
     "typeFeed integer default 0, "          // reserved for future purposes
