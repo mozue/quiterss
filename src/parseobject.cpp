@@ -130,6 +130,16 @@ void ParseObject::slotParse(const QByteArray &xmlData, const int &feedId,
     avoidedOldSingleNewsDate_ = q.value(4).toDate();
   }
 
+  if (avoidedOldSingleNews_ == false)
+  {
+    if (mainApp->mainWindow()->avoidOldNews_ == true)
+    {
+      addSingleNewsAnyDate_ = !mainApp->mainWindow()->avoidOldNews_;
+      avoidedOldSingleNews_ = mainApp->mainWindow()->avoidOldNews_;
+      avoidedOldSingleNewsDate_ = mainApp->mainWindow()->avoidedOldNewsDate_;
+    }
+  }
+
   // id not found (ex. feed deleted while updating)
   if (feedUrl.isEmpty()) {
     qWarning() << QString("Feed with id = '%1' not found").arg(parseFeedId_);
