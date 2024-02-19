@@ -3217,7 +3217,7 @@ void MainWindow::showOptionDlg(int index)
 
   optionsDialog_->setProxy(mainApp->networkProxy());
 
-  optionsDialog_->editUserAgent_->setText(settings.value("userAgent", DEFAULT_USER_AGENT).toString());
+  optionsDialog_->editUserAgent_->setText(settings.value("Settings/userAgent", DEFAULT_USER_AGENT).toString());
 
   int timeoutRequest = settings.value("Settings/timeoutRequest", 15).toInt();
   int numberRequests = settings.value("Settings/numberRequest", 10).toInt();
