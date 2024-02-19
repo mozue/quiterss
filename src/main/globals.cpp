@@ -85,7 +85,12 @@ void Globals::init()
   Settings settings;
   settings.beginGroup("Settings");
   noDebugOutput_ = settings.value("noDebugOutput", true).toBool();
-  userAgent_ = settings.value("userAgent", "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36").toString();
+  userAgent_ = settings.value("userAgent", DEFAULT_USER_AGENT).toString();
 
   isInit_ = true;
+}
+
+void Globals::setUserAgent(const QString userAgent)
+{
+  userAgent_ = userAgent;
 }

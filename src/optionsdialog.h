@@ -71,6 +71,8 @@ public:
   QSpinBox *numberRequests_;
   QSpinBox *numberRepeats_;
 
+  LineEdit *editUserAgent_;
+
   // browser
   QRadioButton *embeddedBrowserOn_;
   QRadioButton *externalBrowserOn_;

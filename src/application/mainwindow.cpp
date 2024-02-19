@@ -41,6 +41,8 @@
 #include <QStatusBar>
 #include <qzregexp.h>
 
+#include "globals.h"
+
 // ---------------------------------------------------------------------------
 MainWindow::MainWindow(QWidget *parent)
   : QMainWindow(parent)
@@ -3215,6 +3217,8 @@ void MainWindow::showOptionDlg(int index)
 
   optionsDialog_->setProxy(mainApp->networkProxy());
 
+  optionsDialog_->editUserAgent_->setText(settings.value("userAgent", DEFAULT_USER_AGENT).toString());
+
   int timeoutRequest = settings.value("Settings/timeoutRequest", 15).toInt();
   int numberRequests = settings.value("Settings/numberRequest", 10).toInt();
   int numberRepeats = settings.value("Settings/numberRepeats", 2).toInt();
@@ -3638,6 +3642,14 @@ void MainWindow::showOptionDlg(int index)
   settings.setValue("Settings/timeoutRequest", timeoutRequest);
   settings.setValue("Settings/numberRequest", numberRequests);
   settings.setValue("Settings/numberRepeats", numberRepeats);
+
+  QString userAgent = optionsDialog_->editUserAgent_->text();
+  if (userAgent.size() == 0)
+  {
+    userAgent = DEFAULT_USER_AGENT;
+  }
+  settings.setValue("Settings/userAgent", userAgent);
+  globals.setUserAgent(userAgent);
 
   if (optionsDialog_->embeddedBrowserOn_->isChecked()) {
     if (optionsDialog_->defaultExternalBrowserOn_->isChecked())

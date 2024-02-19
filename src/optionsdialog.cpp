@@ -473,7 +473,7 @@ void OptionsDialog::createNetworkConnectionsWidget()
   manualWidget_->setLayout(manualLayout);
 
   networkConnectionsLayout->addWidget(manualWidget_);
-  networkConnectionsLayout->addSpacing(20);
+  networkConnectionsLayout->addSpacing(10);
 
   timeoutRequest_ = new QSpinBox();
   timeoutRequest_->setRange(0, 300);
@@ -481,6 +481,24 @@ void OptionsDialog::createNetworkConnectionsWidget()
   numberRequests_->setRange(1, 10);
   numberRepeats_ = new QSpinBox();
   numberRepeats_->setRange(1, 10);
+
+  /*
+   * User agent
+   */
+  QVBoxLayout *userAgentLayout = new QVBoxLayout();
+  QMargins margins= userAgentLayout->contentsMargins();
+  margins.setLeft(0);
+  userAgentLayout->setContentsMargins(margins);
+
+  userAgentLayout->addWidget(new QLabel(tr("User agent:")));
+  editUserAgent_ = new LineEdit();
+  userAgentLayout->addWidget(editUserAgent_);
+
+  QWidget *userAgentWidget = new QWidget();
+  userAgentWidget->setLayout(userAgentLayout);
+  networkConnectionsLayout->addWidget(userAgentWidget);
+
+  networkConnectionsLayout->addSpacing(10);
 
   QGridLayout *requestLayout = new QGridLayout();
   requestLayout->setColumnStretch(1, 1);

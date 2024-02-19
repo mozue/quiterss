@@ -20,6 +20,8 @@
 
 #include <QString>
 
+#define DEFAULT_USER_AGENT "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+
 class Globals
 {
 public:
@@ -28,6 +30,7 @@ public:
   void init();
 
   QString userAgent() const { return userAgent_; }
+  void setUserAgent(const QString userAgent);
 
   // public on purpose
   const bool logFileOutput_;
