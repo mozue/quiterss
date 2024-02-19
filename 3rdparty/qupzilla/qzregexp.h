@@ -18,13 +18,6 @@
 #ifndef QZREGEXP_H
 #define QZREGEXP_H
 
-#include <QObject> // Needed for QT_VERSION
-
-#if (QT_VERSION < 0x050000)
-// Qt 4 - use QRegExp directly
-#include <QRegExp>
-#define QzRegExp QRegExp
-#else // Qt 5
 #include <QRegularExpression>
 #include <QStringList>
 
@@ -33,7 +26,7 @@ class QzRegExp : public QRegularExpression
 public:
     QzRegExp();
     QzRegExp(const QString &pattern, Qt::CaseSensitivity cs = Qt::CaseSensitive);
-    QzRegExp(const QzRegExp &re);
+    const QzRegExp& operator=(const QzRegExp &re);
 
     void setMinimal(bool minimal);
     int indexIn(const QString &str, int offset = 0) const;
@@ -43,8 +36,6 @@ public:
 private:
     QStringList m_capturedTexts;
     int m_matchedLength;
-
 };
-#endif // Qt 5
 
 #endif // QZREGEXP_H
