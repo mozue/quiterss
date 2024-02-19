@@ -5,6 +5,7 @@ on:
     paths-ignore:
       - '.github/**'
       - 'data/ca-bundle.crt'
+      - 'README.md'
     branches:
       - master
   schedule:
