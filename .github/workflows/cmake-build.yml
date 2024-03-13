@@ -1,4 +1,4 @@
-name: CMake with gcc in windows
+name: CMake build with gcc in windows
 
 on:
   push:
