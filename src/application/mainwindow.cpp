@@ -2745,10 +2745,6 @@ void MainWindow::slotFeedCountsUpdate(FeedCountStruct counts)
       feedsModel_->setData(indexTitle, counts.title);
     }
   }
-
-  if (isStartImportFeed_ && !counts.xmlUrl.isEmpty()) {
-    emit faviconRequestUrl(counts.htmlUrl, counts.xmlUrl);
-  }
 }
 
 /** @brief Recalculate counters for specified categories

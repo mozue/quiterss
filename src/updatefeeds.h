@@ -106,6 +106,7 @@ signals:
   void signalUpdateFeedsModel();
   void signalRequestUrl(int feedId, QString urlString,
                         QDateTime date, QString userInfo);
+  void signalImportFeedsGetFavicon(QString urlString, QString feedUrl);
   void xmlReadyParse(QByteArray data, int feedId,
                      QDateTime dtReply, QString codecName);
   void setStatusFeed(int feedId, QString status);

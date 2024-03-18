@@ -182,6 +182,8 @@ UpdateFeeds::UpdateFeeds(QObject *parent, bool addFeed)
             updateObject_, SLOT(slotIconSave(QString,QByteArray)));
     connect(updateObject_, SIGNAL(signalIconUpdate(int,QByteArray)),
             parent, SLOT(slotIconFeedUpdate(int,QByteArray)));
+    connect(updateObject_, SIGNAL(signalImportFeedsGetFavicon(QString,QString)),
+            faviconObject_, SLOT(requestUrl(QString,QString)));
 
     connect(parent, SIGNAL(signalQuitApp()),
             updateObject_, SLOT(quitApp()));
@@ -363,6 +365,7 @@ void UpdateObject::slotImportFeeds(QByteArray xmlData)
   QSqlQuery q(db_);
   QList<int> idsList;
   QList<QString> urlsList;
+  QList<QString> htmlsList;
   QXmlStreamReader xml;
   QString convertData;
   bool codecOk = false;
@@ -477,6 +480,7 @@ void UpdateObject::slotImportFeeds(QByteArray xmlData)
 
             idsList.append(q.lastInsertId().toInt());
             urlsList.append(xmlUrlString);
+            htmlsList.append(xml.attributes().value("htmlUrl").toString());
           }
           parentIdsStack.push(q.lastInsertId().toInt());
         }
@@ -506,6 +510,7 @@ void UpdateObject::slotImportFeeds(QByteArray xmlData)
   for (int i = 0; i < idsList.count(); i++) {
     updateFeedsCount_ = updateFeedsCount_ + 2;
     emit signalRequestUrl(idsList.at(i), urlsList.at(i), QDateTime(), "");
+    emit signalImportFeedsGetFavicon(htmlsList.at(i), urlsList.at(i));
   }
   emit showProgressBar(updateFeedsCount_);
 }
