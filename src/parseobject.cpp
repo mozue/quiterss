@@ -417,6 +417,12 @@ void ParseObject::parseAtom(const QString &feedUrl, const QDomDocument &doc)
     newsItem.eLength = enclosureElem.attribute("length");
     QDomNodeList linksList = newsList.item(i).toElement().elementsByTagName("link");
     for (int j = 0; j < linksList.size(); j++) {
+      auto parentTagName = linksList.at(j).parentNode().toElement().tagName();
+      if (QString::compare(parentTagName, "source", Qt::CaseInsensitive) == 0)
+      {
+        continue;
+      }
+
       if (linksList.at(j).toElement().attribute("type") == "text/html") {
         if (linksList.at(j).toElement().attribute("rel") == "self")
           newsItem.link = linksList.at(j).toElement().attribute("href");
@@ -424,7 +430,11 @@ void ParseObject::parseAtom(const QString &feedUrl, const QDomDocument &doc)
           newsItem.linkAlternate = linksList.at(j).toElement().attribute("href");
         if (linksList.at(j).toElement().attribute("rel") == "replies")
           newsItem.comments = linksList.at(j).toElement().attribute("href");
+#if 1
       } else if (newsItem.linkAlternate.isEmpty()) {
+#else
+      } else {
+#endif
         if (linksList.at(j).toElement().attribute("rel") == "alternate")
           newsItem.linkAlternate = linksList.at(j).toElement().attribute("href");
       }
