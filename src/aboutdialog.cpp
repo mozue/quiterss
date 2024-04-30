@@ -19,6 +19,7 @@
 #include "mainapplication.h"
 #include "settings.h"
 #include "VersionNo.h"
+#include "BuildDateTime.h"
 
 #include <sqlite3.h>
 #include <QWebPage>
@@ -35,27 +36,31 @@ AboutDialog::AboutDialog(const QString &lang, QWidget *parent) :
 
   QString revisionStr;
   if (QString("%1").arg(VCS_REVISION) != "0") {
-      revisionStr = "<BR>" + tr("Revision") + " " + QString("%1").arg(VCS_REVISION) + " " + QString("(%1)").arg(VCS_SHORT_HASH);
+    revisionStr = "<BR>" + tr("Revision") + " " +
+      "<B>" +QString("%1").arg(VCS_REVISION) + "</B>" + " " +
+      QString("(<B>%1</B>)").arg(VCS_SHORT_HASH);
   }
+
   QString appInfo =
-      "<html><style>a { color: blue; text-decoration: none; }</style><body>"
-      "<CENTER>"
-      "<IMG SRC=\":/images/images/logo.png\">"
-      "<BR><IMG SRC=\":/images/images/logo_text.png\">"
-      "<P>"
-      + tr("Version") + " " + "<B>" + QString(STRPRODUCTVER) + "</B>" + QString(" (%1)").arg(STRDATE)
-      + revisionStr
-      + "</P>"
-      + "<BR>"
-      + tr("QuiteRSS is a open-source cross-platform RSS/Atom news reader")
-      + "<P>" + tr("Includes:")
-      + QString(" Qt-%1, SQLite-%2, WebKit-%4").
-      arg(QT_VERSION_STR).arg(SQLITE_VERSION).arg(qWebKitVersion())
-      + "</P>"
-      + QString("<a href=\"%1\">%1</a>").arg("https://quiterss.org") +
-      "<P>Copyright &copy; 2011-2021 QuiteRSS Team "
-      + QString("<a href=\"%1\">E-mail</a>").arg("mailto:quiterssteam@gmail.com") + "</P>"
-      "</CENTER></body></html>";
+    "<html><style>a { color: blue; text-decoration: none; }</style><body>"
+    "<CENTER>"
+    "<IMG SRC=\":/images/images/logo.png\">"
+    "<BR><IMG SRC=\":/images/images/logo_text.png\">"
+    "<P>"
+    + tr("Version") + " " + "<B>" + QString(STRPRODUCTVER) + "</B>" + QString(" (%1)").arg(STRDATE)
+    + revisionStr
+    + "<BR>" + tr("Build at") + " " + "<B>" + QString("%1").arg(__BUILD_DATE_AND_TIME__) + "</B>"
+    + "</P>"
+    + "<BR>"
+    + tr("QuiteRSS is a open-source cross-platform RSS/Atom news reader")
+    + "<P>" + tr("Includes:")
+    + QString(" Qt-%1, SQLite-%2, WebKit-%4").
+    arg(QT_VERSION_STR).arg(SQLITE_VERSION).arg(qWebKitVersion())
+    + "</P>"
+    + QString("<a href=\"%1\">%1</a>").arg("https://quiterss.org") +
+    "<P>Copyright &copy; 2011-2021 QuiteRSS Team "
+    + QString("<a href=\"%1\">E-mail</a>").arg("mailto:quiterssteam@gmail.com") + "</P>"
+    "</CENTER></body></html>";
   QLabel *infoLabel = new QLabel(appInfo);
   infoLabel->setOpenExternalLinks(true);
   infoLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
