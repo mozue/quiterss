@@ -42,10 +42,7 @@ jobs:
         run: make release -j$(grep -c ^processor /proc/cpuinfo)
       - name: Deploy - Qt
         run: |
-          windeployqt --no-opengl-sw --no-angle --no-system-d3d-compiler --no-translations --force ./release/target/QuiteRSS.exe
-      - name: Deploy - Qt language file
-        run: |
-          cp $MSYSTEM_PREFIX/share/qt5/translations/qtbase_* ./release/target/lang
+          windeployqt --no-opengl-sw --no-angle --no-system-d3d-compiler --force ./release/target/QuiteRSS.exe
       - name: Deploy - mingw
         run: |
           cp $MSYSTEM_PREFIX/bin/libcrypto-*.dll ./release/target/

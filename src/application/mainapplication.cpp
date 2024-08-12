@@ -382,8 +382,10 @@ void MainApplication::setTranslateApplication()
   if (!qt_translator_)
     qt_translator_ = new QTranslator(this);
   removeTranslator(qt_translator_);
-#ifdef HAVE_X11
+#if defined(HAVE_X11)
   qt_translator_->load(QLibraryInfo::location (QLibraryInfo::TranslationsPath) + "/qtbase_" + langFileName_);
+#elif defined(Q_OS_WIN)
+  qt_translator_->load(resourcesDir() + "/translations/qt_" + langFileName_);
 #else
   qt_translator_->load(resourcesDir() + "/lang/qtbase_" + langFileName_);
 #endif
