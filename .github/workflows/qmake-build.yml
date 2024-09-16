@@ -48,6 +48,10 @@ jobs:
           cp $MSYSTEM_PREFIX/bin/libcrypto-*.dll ./release/target/
           cp $MSYSTEM_PREFIX/bin/libssl-*.dll ./release/target/
           ldd ./release/target/QuiteRSS.exe | grep "=> /" | grep ${{matrix.sys}} | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./release/target/
+      - name: Deploy - Qt imageformats dependency
+        working-directory: ./release/target/
+        run: |
+          find ./imageformats/ -name "*.dll" -exec ldd {} \; | grep "=> /" | grep ${{matrix.sys}} | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./
       - name: Deploy - strip
         run: |
           find ./release/target/ -name '*.dll' -exec strip {} \;
